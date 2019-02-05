@@ -15,53 +15,53 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="idUser", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $idUser;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $nombre;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apellido1", type="string", length=255)
+     * @ORM\Column(name="surname1", type="string", length=255)
      */
-    private $apellido1;
+    private $surname1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apellido2", type="string", length=255)
+     * @ORM\Column(name="surname2", type="string", length=255)
      */
-    private $apellido2;
+    private $surname2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="string", length=255)
+     * @ORM\Column(name="adress", type="string", length=255)
      */
-    private $direccion;
+    private $adress;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="cp", type="integer")
+     * @ORM\Column(name="zipCode", type="integer")
      */
-    private $cp;
+    private $zipCode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="localizacion", type="string", length=255)
+     * @ORM\Column(name="location", type="string", length=255)
      */
-    private $localizacion;
+    private $location;
 
     /**
      * @var string
@@ -73,30 +73,30 @@ class User
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaNacimiento", type="datetime")
+     * @ORM\Column(name="bornDate", type="datetime")
      */
-    private $fechaNacimiento;
+    private $bornDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaCreacion", type="datetimetz")
+     * @ORM\Column(name="createDate", type="datetimetz")
      */
-    private $fechaCreacion;
+    private $createDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="documentoIdentidad", type="string", length=255)
+     * @ORM\Column(name="idDocument", type="string", length=255)
      */
-    private $documentoIdentidad;
+    private $idDocument;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observaciones", type="text")
+     * @ORM\Column(name="comment", type="text")
      */
-    private $observaciones;
+    private $comment;
 
     /**
      * @var string
@@ -111,21 +111,21 @@ class User
      *
      * @return int
      */
-    public function getId()
+    public function getIdUser()
     {
-        return $this->id;
+        return $this->idUser;
     }
 
     /**
      * Set nombre
      *
-     * @param string $nombre
+     * @param string $name
      *
      * @return User
      */
-    public function setNombre($nombre)
+    public function setName($name)
     {
-        $this->nombre = $nombre;
+        $this->name = $name;
 
         return $this;
     }
@@ -135,21 +135,21 @@ class User
      *
      * @return string
      */
-    public function getNombre()
+    public function getName()
     {
-        return $this->nombre;
+        return $this->name;
     }
 
     /**
      * Set apellido1
      *
-     * @param string $apellido1
+     * @param string $surname1
      *
      * @return User
      */
-    public function setApellido1($apellido1)
+    public function setSurname1($surname1)
     {
-        $this->apellido1 = $apellido1;
+        $this->surname1 = $surname1;
 
         return $this;
     }
@@ -159,21 +159,21 @@ class User
      *
      * @return string
      */
-    public function getApellido1()
+    public function getSurname1()
     {
-        return $this->apellido1;
+        return $this->surname1;
     }
 
     /**
      * Set apellido2
      *
-     * @param string $apellido2
+     * @param string $surname2
      *
      * @return User
      */
-    public function setApellido2($apellido2)
+    public function setSurname2($surname2)
     {
-        $this->apellido2 = $apellido2;
+        $this->surname2 = $surname2;
 
         return $this;
     }
@@ -183,21 +183,21 @@ class User
      *
      * @return string
      */
-    public function getApellido2()
+    public function getSurname2()
     {
-        return $this->apellido2;
+        return $this->surname2;
     }
 
     /**
      * Set direccion
      *
-     * @param string $direccion
+     * @param string $adress
      *
      * @return User
      */
-    public function setDireccion($direccion)
+    public function setAdress($adress)
     {
-        $this->direccion = $direccion;
+        $this->adress = $adress;
 
         return $this;
     }
@@ -207,21 +207,21 @@ class User
      *
      * @return string
      */
-    public function getDireccion()
+    public function getAdress()
     {
-        return $this->direccion;
+        return $this->adress;
     }
 
     /**
      * Set cp
      *
-     * @param integer $cp
+     * @param integer $zipCode
      *
      * @return User
      */
-    public function setCp($cp)
+    public function setZipCode($zipCode)
     {
-        $this->cp = $cp;
+        $this->zipCode = $zipCode;
 
         return $this;
     }
@@ -231,21 +231,21 @@ class User
      *
      * @return int
      */
-    public function getCp()
+    public function getZipCode()
     {
-        return $this->cp;
+        return $this->zipCode;
     }
 
     /**
      * Set localizacion
      *
-     * @param string $localizacion
+     * @param string $location
      *
      * @return User
      */
-    public function setLocalizacion($localizacion)
+    public function setLocation($location)
     {
-        $this->localizacion = $localizacion;
+        $this->location = $location;
 
         return $this;
     }
@@ -255,9 +255,9 @@ class User
      *
      * @return string
      */
-    public function getLocalizacion()
+    public function getLocation()
     {
-        return $this->localizacion;
+        return $this->location;
     }
 
     /**
@@ -287,13 +287,13 @@ class User
     /**
      * Set fechaNacimiento
      *
-     * @param \DateTime $fechaNacimiento
+     * @param \DateTime $bornDate
      *
      * @return User
      */
-    public function setFechaNacimiento($fechaNacimiento)
+    public function setBornDate($bornDate)
     {
-        $this->fechaNacimiento = $fechaNacimiento;
+        $this->bornDate = $bornDate;
 
         return $this;
     }
@@ -303,21 +303,21 @@ class User
      *
      * @return \DateTime
      */
-    public function getFechaNacimiento()
+    public function getBornDate()
     {
-        return $this->fechaNacimiento;
+        return $this->bornDate;
     }
 
     /**
      * Set fechaCreacion
      *
-     * @param \DateTime $fechaCreacion
+     * @param \DateTime $createDate
      *
      * @return User
      */
-    public function setFechaCreacion($fechaCreacion)
+    public function setCreateDate($createDate)
     {
-        $this->fechaCreacion = $fechaCreacion;
+        $this->createDate = $createDate;
 
         return $this;
     }
@@ -327,21 +327,21 @@ class User
      *
      * @return \DateTime
      */
-    public function getFechaCreacion()
+    public function getCreateDate()
     {
-        return $this->fechaCreacion;
+        return $this->createDate;
     }
 
     /**
      * Set documentoIdentidad
      *
-     * @param string $documentoIdentidad
+     * @param string $idDocument
      *
      * @return User
      */
-    public function setDocumentoIdentidad($documentoIdentidad)
+    public function setIdDocument($idDocument)
     {
-        $this->documentoIdentidad = $documentoIdentidad;
+        $this->idDocument = $idDocument;
 
         return $this;
     }
@@ -351,21 +351,21 @@ class User
      *
      * @return string
      */
-    public function getDocumentoIdentidad()
+    public function getIdDocument()
     {
-        return $this->documentoIdentidad;
+        return $this->idDocument;
     }
 
     /**
      * Set observaciones
      *
-     * @param string $observaciones
+     * @param string $comment
      *
      * @return User
      */
-    public function setObservaciones($observaciones)
+    public function setComment($comment)
     {
-        $this->observaciones = $observaciones;
+        $this->comment = $comment;
 
         return $this;
     }
@@ -375,9 +375,9 @@ class User
      *
      * @return string
      */
-    public function getObservaciones()
+    public function getComment()
     {
-        return $this->observaciones;
+        return $this->comment;
     }
 
     /**

@@ -19,7 +19,7 @@ class Offer
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $idOffer;
 
     /**
      * @var string
@@ -48,9 +48,9 @@ class Offer
      *
      * @return int
      */
-    public function getId()
+    public function getIdOffer()
     {
-        return $this->id;
+        return $this->idOffer;
     }
 
     /**
