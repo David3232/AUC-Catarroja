@@ -65,7 +65,7 @@ class OfferController extends Controller
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createDeleteOfferForm($offer);
 
         return $this->render('offer/show.html.twig', array(
             'offer' => $offer,
@@ -81,7 +81,7 @@ class OfferController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createDeleteOfferForm($offer);
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
 
@@ -106,7 +106,7 @@ class OfferController extends Controller
      */
     public function deleteOfferAction(Request $request, Offer $offer)
     {
-        $form = $this->createDeleteForm($offer);
+        $form = $this->createDeleteOfferForm($offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
