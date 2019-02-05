@@ -125,7 +125,7 @@ class OfferController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteOfferForm(Offer $offer)
+    private function createDeleteForm(Offer $offer)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('offer_delete', array('id' => $offer->getIdOffer())))

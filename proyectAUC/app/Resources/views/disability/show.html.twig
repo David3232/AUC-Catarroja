@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Disability</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Iddi</th>
+                <td>{{ disability.iddi }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ disability.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ disability.description }}</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <td>{{ disability.grade }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('disability_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('disability_edit', { 'iddi': disability.iddi }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
