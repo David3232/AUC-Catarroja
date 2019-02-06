@@ -40,7 +40,11 @@
       <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/symfony" />
       <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
 </project>
