@@ -20,7 +20,7 @@ class OfferController extends Controller
      * @Route("/", name="offer_index")
      * @Method("GET")
      */
-    public function indexOfferAction()
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -37,7 +37,7 @@ class OfferController extends Controller
      * @Route("/new", name="offer_new")
      * @Method({"GET", "POST"})
      */
-    public function newOfferAction(Request $request)
+    public function newAction(Request $request)
     {
         $offer = new Offer();
         $form = $this->createForm('AppBundle\Form\OfferType', $offer);
@@ -63,7 +63,7 @@ class OfferController extends Controller
      * @Route("/{id}", name="offer_show")
      * @Method("GET")
      */
-    public function showOfferAction(Offer $offer)
+    public function showAction(Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
 
@@ -79,7 +79,7 @@ class OfferController extends Controller
      * @Route("/{id}/edit", name="offer_edit")
      * @Method({"GET", "POST"})
      */
-    public function editOfferAction(Request $request, Offer $offer)
+    public function editAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
@@ -104,7 +104,7 @@ class OfferController extends Controller
      * @Route("/{id}", name="offer_delete")
      * @Method("DELETE")
      */
-    public function deleteOfferAction(Request $request, Offer $offer)
+    public function deleteAction(Request $request, Offer $offer)
     {
         $form = $this->createDeleteForm($offer);
         $form->handleRequest($request);

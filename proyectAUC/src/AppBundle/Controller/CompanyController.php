@@ -20,7 +20,7 @@ class CompanyController extends Controller
      * @Route("/", name="company_index")
      * @Method("GET")
      */
-    public function indexCompanyAction()
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -37,7 +37,7 @@ class CompanyController extends Controller
      * @Route("/new", name="company_new")
      * @Method({"GET", "POST"})
      */
-    public function newCompanyAction(Request $request)
+    public function newAction(Request $request)
     {
         $company = new Company();
         $form = $this->createForm('AppBundle\Form\CompanyType', $company);
@@ -63,9 +63,9 @@ class CompanyController extends Controller
      * @Route("/{id}", name="company_show")
      * @Method("GET")
      */
-    public function showCompanyAction(Company $company)
+    public function showAction(Company $company)
     {
-        $deleteForm = $this->createDeleteCompanyForm($company);
+        $deleteForm = $this->createDeleteForm($company);
 
         return $this->render('company/show.html.twig', array(
             'company' => $company,
@@ -79,9 +79,9 @@ class CompanyController extends Controller
      * @Route("/{id}/edit", name="company_edit")
      * @Method({"GET", "POST"})
      */
-    public function editCompanyAction(Request $request, Company $company)
+    public function editAction(Request $request, Company $company)
     {
-        $deleteForm = $this->createDeleteCompanyForm($company);
+        $deleteForm = $this->createDeleteForm($company);
         $editForm = $this->createForm('AppBundle\Form\CompanyType', $company);
         $editForm->handleRequest($request);
 
@@ -104,9 +104,9 @@ class CompanyController extends Controller
      * @Route("/{id}", name="company_delete")
      * @Method("DELETE")
      */
-    public function deleteCompanyAction(Request $request, Company $company)
+    public function deleteAction(Request $request, Company $company)
     {
-        $form = $this->createDeleteCompanyForm($company);
+        $form = $this->createDeleteForm($company);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -125,7 +125,7 @@ class CompanyController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteCompanyForm(Company $company)
+    private function createDeleteForm(Company $company)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('company_delete', array('id' => $company->getId())))

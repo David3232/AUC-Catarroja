@@ -13,10 +13,8 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')->add('apellido1')->add('apellido2')->add('direccion')->add('cp')->add('localizacion')->add('email')->add('fechaNacimiento')->add('fechaCreacion')->add('documentoIdentidad')->add('observaciones')->add('role');
-    }
-    
-    /**
+        $builder->add('name')->add('surname1')->add('surname2')->add('adress')->add('zipCode')->add('location')->add('email')->add('bornDate')->add('createDate')->add('idDocument')->add('comment')->add('role')->add('disabilities');
+    }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

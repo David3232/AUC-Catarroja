@@ -20,7 +20,7 @@ class UserController extends Controller
      * @Route("/", name="user_index")
      * @Method("GET")
      */
-    public function indexUserAction()
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -37,7 +37,7 @@ class UserController extends Controller
      * @Route("/new", name="user_new")
      * @Method({"GET", "POST"})
      */
-    public function newUserAction(Request $request)
+    public function newAction(Request $request)
     {
         $user = new User();
         $form = $this->createForm('AppBundle\Form\UserType', $user);
@@ -63,9 +63,9 @@ class UserController extends Controller
      * @Route("/{id}", name="user_show")
      * @Method("GET")
      */
-    public function showUserAction(User $user)
+    public function showAction(User $user)
     {
-        $deleteForm = $this->createDeleteUserForm($user);
+        $deleteForm = $this->createDeleteForm($user);
 
         return $this->render('user/show.html.twig', array(
             'user' => $user,
@@ -79,9 +79,9 @@ class UserController extends Controller
      * @Route("/{id}/edit", name="user_edit")
      * @Method({"GET", "POST"})
      */
-    public function editUserAction(Request $request, User $user)
+    public function editAction(Request $request, User $user)
     {
-        $deleteForm = $this->createDeleteUserForm($user);
+        $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('AppBundle\Form\UserType', $user);
         $editForm->handleRequest($request);
 
@@ -104,9 +104,9 @@ class UserController extends Controller
      * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
      */
-    public function deleteUserAction(Request $request, User $user)
+    public function deleteAction(Request $request, User $user)
     {
-        $form = $this->createDeleteUserForm($user);
+        $form = $this->createDeleteForm($user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -125,7 +125,7 @@ class UserController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteUserForm(User $user)
+    private function createDeleteForm(User $user)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('user_delete', array('id' => $user->getId())))

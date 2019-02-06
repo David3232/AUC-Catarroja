@@ -6,7 +6,7 @@
     <table>
         <thead>
             <tr>
-                <th>Iddi</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Grade</th>
@@ -16,17 +16,17 @@
         <tbody>
         {% for disability in disabilities %}
             <tr>
-                <td><a href="{{ path('disability_show', { 'iddi': disability.iddi }) }}">{{ disability.iddi }}</a></td>
+                <td><a href="{{ path('disability_show', { 'id': disability.id }) }}">{{ disability.id }}</a></td>
                 <td>{{ disability.name }}</td>
                 <td>{{ disability.description }}</td>
                 <td>{{ disability.grade }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('disability_show', { 'iddi': disability.iddi }) }}">show</a>
+                            <a href="{{ path('disability_show', { 'id': disability.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('disability_edit', { 'iddi': disability.iddi }) }}">edit</a>
+                            <a href="{{ path('disability_edit', { 'id': disability.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
