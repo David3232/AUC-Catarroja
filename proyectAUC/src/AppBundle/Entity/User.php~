@@ -408,47 +408,5 @@ class User
     {
         return $this->role;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->disabilities = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add disability.
-     *
-     * @param \AppBundle\Entity\Disability $disability
-     *
-     * @return User
-     */
-    public function addDisability(\AppBundle\Entity\Disability $disability)
-    {
-        $this->disabilities[] = $disability;
-
-        return $this;
-    }
-
-    /**
-     * Remove disability.
-     *
-     * @param \AppBundle\Entity\Disability $disability
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeDisability(\AppBundle\Entity\Disability $disability)
-    {
-        return $this->disabilities->removeElement($disability);
-    }
-
-    /**
-     * Get disabilities.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getDisabilities()
-    {
-        return $this->disabilities;
-    }
 }
+
