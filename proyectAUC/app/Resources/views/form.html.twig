@@ -5,22 +5,31 @@
 {% block body %}
     <div class="form">
         <form class="needs-validation" novalidate>
+            <div class="head">
+                <h1>Crear Usuario</h1>
+            </div>
             <div class="form-row">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom01">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona un nombre
+                    </div>
                     <div class="valid-feedback">
                         Campo correcto
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona un apellido
+                    </div>
                     <div class="valid-feedback">
                         Campo correcto
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustomUsername">Username</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -30,29 +39,41 @@
                         <div class="invalid-feedback">
                             Por favor, selecciona un nombre de usuario valida
                         </div>
+                        <div class="valid-feedback">
+                            Campo correcto
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom03">City</label>
                     <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
                     <div class="invalid-feedback">
                         Por favor, selecciona una ciudad valida
                     </div>
+                    <div class="valid-feedback">
+                        Campo correcto
+                    </div>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom04">Comunidad</label>
                     <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
                     <div class="invalid-feedback">
                         Por favor, selecciona una comunidad valida
                     </div>
+                    <div class="valid-feedback">
+                        Campo correcto
+                    </div>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Código postal</label>
                     <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
                     <div class="invalid-feedback">
                         Por favor, selecciona un codigo postal
+                    </div>
+                    <div class="valid-feedback">
+                        Campo correcto
                     </div>
                 </div>
             </div>
@@ -62,6 +83,7 @@
                     <label class="form-check-label" for="invalidCheck">
                         Acepta términos y condiciones de uso
                     </label>
+
                     <div class="invalid-feedback">
                         Tienes que aceptar términos y condiciones de uso antes
                     </div>
