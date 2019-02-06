@@ -22,6 +22,16 @@ class User
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Offer", mappedBy="user")
+     */
+    private $offers;
+
+    public function __construct()
+    {
+        $this->offers = new ArrayCollection();
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
