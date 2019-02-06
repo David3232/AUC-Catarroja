@@ -15,7 +15,19 @@
         });
     }, false);
 })();*/
-function isFull(event){
-    let caja =event.currentTarget;
-    console.log(caja);
+function showInformation(event){
+    let div_correct = document.getElementById();
+    let div_incorrect = document.getElementById();
+
 }
+function isFull(event){
+    let box = event.currentTarget;
+    if(box.textContent===""){
+
+    }
+    console.log(box);
+}
+
+let form=document.getElementsByClassName('needs-validation')[0];
+
+form.addEventListener("focusout", isFull);
