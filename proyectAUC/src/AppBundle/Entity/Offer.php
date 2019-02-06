@@ -19,7 +19,13 @@ class Offer
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idOffer;
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="offers")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+     */
+    private $company;
 
     /**
      * @var string
@@ -48,9 +54,25 @@ class Offer
      *
      * @return int
      */
-    public function getIdOffer()
+    public function getId()
     {
-        return $this->idOffer;
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * @param mixed $comapny
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
     }
 
     /**

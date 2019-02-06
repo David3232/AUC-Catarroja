@@ -15,11 +15,11 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="idUser", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idUser;
+    private $id;
 
     /**
      * @var string
@@ -111,9 +111,9 @@ class User
      *
      * @return int
      */
-    public function getIdUser()
+    public function getId()
     {
-        return $this->idUser;
+        return $this->id;
     }
 
     /**

@@ -48,7 +48,7 @@ class DisabilityController extends Controller
             $em->persist($disability);
             $em->flush();
 
-            return $this->redirectToRoute('disability_show', array('iddi' => $disability->getIddi()));
+            return $this->redirectToRoute('disability_show', array('id' => $disability->getId()));
         }
 
         return $this->render('disability/new.html.twig', array(
@@ -60,7 +60,7 @@ class DisabilityController extends Controller
     /**
      * Finds and displays a disability entity.
      *
-     * @Route("/{iddi}", name="disability_show")
+     * @Route("/{id}", name="disability_show")
      * @Method("GET")
      */
     public function showAction(Disability $disability)
@@ -76,7 +76,7 @@ class DisabilityController extends Controller
     /**
      * Displays a form to edit an existing disability entity.
      *
-     * @Route("/{iddi}/edit", name="disability_edit")
+     * @Route("/{id}/edit", name="disability_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Disability $disability)
@@ -88,7 +88,7 @@ class DisabilityController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('disability_edit', array('iddi' => $disability->getIddi()));
+            return $this->redirectToRoute('disability_edit', array('id' => $disability->getId()));
         }
 
         return $this->render('disability/edit.html.twig', array(
@@ -101,7 +101,7 @@ class DisabilityController extends Controller
     /**
      * Deletes a disability entity.
      *
-     * @Route("/{iddi}", name="disability_delete")
+     * @Route("/{id}", name="disability_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Disability $disability)
@@ -128,7 +128,7 @@ class DisabilityController extends Controller
     private function createDeleteForm(Disability $disability)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('disability_delete', array('iddi' => $disability->getIddi())))
+            ->setAction($this->generateUrl('disability_delete', array('id' => $disability->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -15,11 +15,11 @@ class Disability
     /**
      * @var int
      *
-     * @ORM\Column(name="iddi", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $iddi;
+    private $id;
 
     /**
      * @var string
@@ -50,7 +50,7 @@ class Disability
      */
     public function getId()
     {
-        return $this->iddi;
+        return $this->id;
     }
 
     /**
