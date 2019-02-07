@@ -1,0 +1,8 @@
+.form{
+    border: 1px solid black;
+    margin: 100px 200px 0 200px;
+    padding: 25px 50px 50px 50px;
+}
+.form > .header{
+    text-align: center;
+}
