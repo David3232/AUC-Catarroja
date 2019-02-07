@@ -30,6 +30,8 @@ class Company
     public function __construct()
     {
         $this->offers = new ArrayCollection();
+
+        $this->date = new \DateTime("now");
     }
 
     /**
@@ -289,6 +291,10 @@ class Company
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function __toString() {
+        return $this->name;
     }
 }
 

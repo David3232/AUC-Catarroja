@@ -21,11 +21,12 @@ class Offer
      */
     private $id;
 
+    /*
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="offers")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     */
     private $user;
+    */
 
     /**
      * @ORM\ManyToMany(targetEntity="Disability", inversedBy="offers")

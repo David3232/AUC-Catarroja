@@ -22,10 +22,11 @@ class User
      */
     private $id;
 
+    /*
     /**
      * @ORM\OneToMany(targetEntity="Offer", mappedBy="user")
-     */
     private $offers;
+    */
 
     /**
      * @ORM\ManyToMany(targetEntity="Disability", inversedBy="users")
@@ -84,14 +85,14 @@ class User
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="bornDate", type="datetime")
+     * @ORM\Column(name="bornDate", type="date")
      */
     private $bornDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="createDate", type="datetimetz")
+     * @ORM\Column(name="createDate", type="datetime")
      */
     private $createDate;
 
@@ -420,7 +421,10 @@ class User
     public function __construct()
     {
         $this->disabilities = new \Doctrine\Common\Collections\ArrayCollection();
+
         $this->offers = new ArrayCollection();
+
+        $this->createDate = new \DateTime("now");
     }
 
     /**
@@ -457,5 +461,9 @@ class User
     public function getDisabilities()
     {
         return $this->disabilities;
+    }
+
+    public function __toString() {
+        return $this->name;
     }
 }

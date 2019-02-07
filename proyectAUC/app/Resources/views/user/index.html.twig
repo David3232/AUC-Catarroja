@@ -17,6 +17,7 @@
                 <th>Borndate</th>
                 <th>Createdate</th>
                 <th>Iddocument</th>
+                <th>Disabilities</th>
                 <th>Comment</th>
                 <th>Role</th>
                 <th>Actions</th>
@@ -34,8 +35,13 @@
                 <td>{{ user.location }}</td>
                 <td>{{ user.email }}</td>
                 <td>{% if user.bornDate %}{{ user.bornDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ user.createDate }}</td>
+                <td>{{ user.createDate|date('Y-m-d H:i:s') }}</td>
                 <td>{{ user.idDocument }}</td>
+                <td>
+                {% for disability in user.disabilities %}
+                {{ disability }}
+                {% endfor %}
+                </td>
                 <td>{{ user.comment }}</td>
                 <td>{{ user.role }}</td>
                 <td>
