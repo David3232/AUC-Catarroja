@@ -110,6 +110,28 @@ class OfferController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //PDF
+            // $file stores the uploaded PDF file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $offer->getPdf();
+
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            try {
+                $file->move(
+                    $this->getParameter('pdf_directory'),
+                    $fileName
+                );
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+
+            // updates the 'brochure' property to store the PDF file name
+            // instead of its contents
+            $product->setBrochure($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($offer);
             $em->flush();
