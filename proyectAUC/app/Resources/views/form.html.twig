@@ -12,21 +12,21 @@
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom01">Nombre</label>
                     <input type="text" class="form-control" id="name" placeholder="Nombre" required>
-                    <div id="name_error" class="invalid-feedback">
+                    <div id="nameError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un nombre
                     </div>
-                    <div id="name_correcto" class="valid-feedback">
-                        Campo correcto
+                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
                     </div>
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Apellido</label>
                     <input type="text" class="form-control" id="surname" placeholder="Apellido" required>
-                    <div id="surname_error" class="invalid-feedback">
+                    <div id="surnameError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un apellido
                     </div>
-                    <div id="surname_correcto" class="valid-feedback">
-                        Campo correcto
+                    <div id="surnameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
                     </div>
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
@@ -36,11 +36,11 @@
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
                         </div>
                         <input type="text" class="form-control" id="username" placeholder="Username" aria-describedby="inputGroupPrepend" required>
-                        <div id="username_error" class="invalid-feedback">
+                        <div id="usernameError" class="invalid-feedback" style="display: none">
                             Por favor, selecciona un nombre de usuario valida
                         </div>
-                        <div id="username_correcto" class="valid-feedback">
-                            Campo correcto
+                        <div id="usernameCorrect" class="valid-feedback" style="display: none">
+                            Campo correct
                         </div>
                     </div>
                 </div>
@@ -48,32 +48,22 @@
             <div class="form-row">
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom03">City</label>
-                    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-                    <div id="codigoPostal_error" class="invalid-feedback">
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                    <div id="cityError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona una ciudad valida
                     </div>
-                    <div id="codigoPostal_correcto" class="valid-feedback">
-                        Campo correcto
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom04">Comunidad</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-                    <div id="codigoPostal_error" class="invalid-feedback">
-                        Por favor, selecciona una comunidad valida
-                    </div>
-                    <div id=codigoPostal_correcto"" class="valid-feedback">
-                        Campo correcto
+                    <div id="cityCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Código postal</label>
-                    <input type="text" class="form-control" id="codigoPostal" placeholder="Zip" required>
-                    <div id="codigoPostal_error" class="invalid-feedback">
+                    <input type="text" class="form-control" id="zip" placeholder="Zip" required>
+                    <div id="zipError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="codigoPostal_correcto" class="valid-feedback">
-                        Campo correcto
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
                     </div>
                 </div>
             </div>
@@ -89,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" id="formButton" disabled type="submit">Submit form</button>
         </form>
     </div>
     <script src="{{ asset('js/form.js') }}"></script>

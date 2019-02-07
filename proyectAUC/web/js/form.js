@@ -1,31 +1,94 @@
-/*(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        let forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        let validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();*/
-function showInformation(event){
-    let div_correct = document.getElementById();
-    let div_incorrect = document.getElementById();
 
-}
-function isFull(event){
-    let box = event.currentTarget;
-    if(box.textContent===""){
-
+function showComment(correct,error,box,button){
+    //Si hay algun campo incorrecto
+    if(correct!==undefined){
+        box.style.borderColor="#28A745";
+        correct.style.display = "block";
+        error=document.getElementById(box.id+"Error");
+        error.style.display = "none";
+        error=undefined;
     }
-    console.log(box);
+    //Si estan todos los campos correctos
+    if(error!==undefined){
+        box.style.borderColor="#E73568";
+        error.style.display = "block";
+        correct=document.getElementById(box.id+"Correct");
+        correct.style.display = "none";
+        correct=undefined;
+    }
+}
+/**
+ * funcion que muestra si el campo esta correcto o incorrecto
+ * @param box
+ */
+function showInformation(box){
+    let correct;
+    let error;
+    let button = document.getElementById("formButton");
+    console.log(box.value.length);
+    if(box.value.length===0){
+        switch (box.id) {
+            case "name":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "surname":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "username":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "city":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "state":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "zip":
+                error=document.getElementById(box.id+"Error");
+                break;
+        }
+    }else{
+        switch (box.id) {
+            case "name":/*
+                if(box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }*/
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "surname":
+                correct=document.getElementById(box.id+"Correct");
+                //error=document.getElementById(box.id+"Error");
+                break;
+            case "username":
+                correct=document.getElementById(box.id+"Correct");
+                //error=document.getElementById(box.id+"Error");
+                break;
+            case "city":
+                correct=document.getElementById(box.id+"Correct");
+                //error=document.getElementById(box.id+"Error");
+                break;
+            case "state":
+                correct=document.getElementById(box.id+"Correct");
+                //error=document.getElementById(box.id+"Error");
+                break;
+            case "zip":
+                correct=document.getElementById(box.id+"Correct");
+                //error=document.getElementById(box.id+"Error");
+                break;
+        }
+    }
+    showComment(correct,error,box,button);
+}
+
+/**
+ * Funcion que cuando la caja está vacia o el campo no es correct lo notifica
+ * @param event
+ */
+function isFull(event){
+    let box = event.target;
+    showInformation(box);
 }
 
 let form=document.getElementsByClassName('needs-validation')[0];
