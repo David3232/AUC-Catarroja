@@ -21,6 +21,14 @@
                 <th>Description</th>
                 <td>{{ offer.description }}</td>
             </tr>
+                        <tr>
+                <th>disabilities</th>
+                <td>
+                    {% for disability in offer.disabilities %}
+                        {{ disability }}
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
