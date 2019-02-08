@@ -1,16 +1,156 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+{% endblock %}
 {% block body %}
-    <h1>User creation</h1>
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="Create" />
+    {{ form_errors(form) }}
+    <div class="form">
+        <form class="needs-validation" novalidate>
+            <div class="head">
+                <h1>Crear Usuario</h1>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom01">Nombre</label>
+                    {{ form_row(form.name) }}
+                   <!-- <input type="text" class="form-control" id="name" placeholder="Nombre" required>-->
+                    <div id="nameError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un nombre
+                    </div>
+                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom02">Apellido</label>
+                    {{ form_row(form.surname1) }}
+                    <!--<input type="text" class="form-control" id="surname" placeholder="Apellido" required>-->
+                    <div id="surnameError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un apellido
+                    </div>
+                    <div id="surnameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+            <div class="form-row">
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom03">City</label>
+                    {{ form_row(form.surname2) }}
+                    <!--<input type="text" class="form-control" id="city" placeholder="City" required>-->
+                    <div id="cityError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona una ciudad valida
+                    </div>
+                    <div id="cityCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Código postal</label>
+                    {{ form_row(form.adress) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Zip Code</label>
+                    {{ form_row(form.zipCode) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Location</label>
+                    {{ form_row(form.location) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Email</label>
+                    {{ form_row(form.email) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Fecha de nacimiento</label>
+                    {{ form_row(form.bornDate) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Id Document</label>
+                    {{ form_row(form.idDocument) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Comentario</label>
+                    {{ form_row(form.comment) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-3 lg-6 sm-12">
+                    <label for="validationCustom05">Rol</label>
+                    {{ form_row(form.role) }}
+                    <!--<input type="text" class="form-control" id="zip" placeholder="Zip" required>-->
+                    <div id="zipError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un codigo postal
+                    </div>
+                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Acepta términos y condiciones de uso
+                    </label>
+
+                    <div class="invalid-feedback">
+                        Tienes que aceptar términos y condiciones de uso antes
+                    </div>
+                </div>
+            </div>
+            <input class="btn btn-primary" id="formButton" disabled type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-    </ul>
-
+    <script src="{{ asset('js/form.js') }}"></script>
 {% endblock %}
