@@ -31,51 +31,82 @@ function showInformation(box){
             case "name":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname":
+            case "surname1":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "username":
+            case "surname2":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "city":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
+            case "adress":
                 error=document.getElementById(box.id+"Error");
                 break;
             case "zip":
                 error=document.getElementById(box.id+"Error");
                 break;
-        }
+            case "location":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "email":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "bornDate":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "idDocument":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "comment":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "role":
+                error=document.getElementById(box.id+"Error");
+                break;
+        }/*
+        if(box.value.length>=5){
+            correct=document.getElementById(box.id+"Correct");
+        }else{
+            error=document.getElementById(box.id+"Error");
+        }*/
     }else{
         switch (box.id) {
-            case "name":/*
-                if(box.value.length>=5){
-                    correct=document.getElementById(box.id+"Correct");
-                }else{
-                    error=document.getElementById(box.id+"Error");
-                }*/
+            /*
+        if(box.value.length>=5){
+            correct=document.getElementById(box.id+"Correct");
+        }else{
+            error=document.getElementById(box.id+"Error");
+        }*/
+            case "name":
                 correct=document.getElementById(box.id+"Correct");
                 break;
-            case "surname":
+            case "surname1":
                 correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
                 break;
-            case "username":
+            case "surname2":
                 correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
                 break;
-            case "city":
+            case "adress":
                 correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
                 break;
             case "zip":
                 correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+                break;
+            case "location":
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "email":
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "bornDate":
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "idDocument":
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "comment":
+                correct=document.getElementById(box.id+"Correct");
+                break;
+            case "role":
+                correct=document.getElementById(box.id+"Correct");
                 break;
         }
     }
@@ -90,27 +121,7 @@ function isFull(event){
     let box = event.target;
     showInformation(box);
 }
-
-let form=document.getElementsByClassName('needs-validation')[0];
-
-form.addEventListener("focusout", isFull);
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        let i;
-        for (i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
+//no selecciona el form
+let form=document.getElementsByClassName('form_user')[0];
+console.log(form);
+//form.addEventListener("focusout", isFull);

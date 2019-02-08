@@ -3,19 +3,18 @@
     <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
 {% endblock %}
 {% block body %}
-
-    {{ form_start(form) }}
+    {{ form_start(form, { 'id': 'form_user' }) }}
     {{ form_errors(form) }}
     <div class="form">
-        <form class="needs-validation" novalidate>
+        <form class="formUser" novalidate>
             <div class="head">
                 <h1>Crear Usuario</h1>
             </div>
             <div class="form-row">
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom01">Nombre</label>
-                    <div id="name">
-                        {{ form_widget(form.name) }}
+                    <div id="name_div">
+                        {{ form_widget(form.name, { 'id': 'name' }) }}
                     </div>
                     <div id="nameError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un nombre
@@ -26,45 +25,45 @@
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Apellido 1</label>
-                    <div id="surname">
-                        {{ form_widget(form.surname1) }}
+                    <div id="surname1_div">
+                        {{ form_widget(form.surname1, { 'id': 'surname1' }) }}
                     </div>
-                    <div id="surnameError" class="invalid-feedback" style="display: none">
+                    <div id="surname1Error" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un apellido
                     </div>
-                    <div id="surnameCorrect" class="valid-feedback" style="display: none">
+                    <div id="surname1Correct" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Apellido 2</label>
-                    <div id="surname">
-                        {{ form_widget(form.surname2) }}
+                    <div id="surname2_div">
+                        {{ form_widget(form.surname2, { 'id': 'surname2' }) }}
                     </div>
-                    <div id="surnameError" class="invalid-feedback" style="display: none">
+                    <div id="surname2Error" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un apellido
                     </div>
-                    <div id="surnameCorrect" class="valid-feedback" style="display: none">
+                    <div id="surname2Correct" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
             <div class="form-row">
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Address</label>
-                    <div id="zip">
-                        {{ form_widget(form.adress) }}
+                    <div id="adress_div">
+                        {{ form_widget(form.adress, { 'id': 'adress' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="adressError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="adressCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Zip Code</label>
-                    <div id="zip">
-                        {{ form_widget(form.zipCode) }}
+                    <div id="zip_div">
+                        {{ form_widget(form.zipCode, { 'id': 'zip' }) }}
                     </div>
                     <div id="zipError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
@@ -75,73 +74,73 @@
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Location</label>
-                    <div id="zip">
-                        {{ form_widget(form.location) }}
+                    <div id="location_div">
+                        {{ form_widget(form.location, { 'id': 'location' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="locationError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="locationCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Email</label>
-                    <div id="zip">
-                        {{ form_widget(form.email) }}
+                    <div id="email_div">
+                        {{ form_widget(form.email, { 'id': 'email' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="emailError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="emailCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Fecha de nacimiento</label>
-                    <div id="zip">
-                        {{ form_widget(form.bornDate) }}
+                    <div id="bornDate_div">
+                        {{ form_widget(form.bornDate, { 'id': 'bornDate' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="bornDateError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="bornDateCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Id Document</label>
-                    <div id="zip">
-                        {{ form_widget(form.idDocument) }}
+                    <div id="idDocument_div">
+                        {{ form_widget(form.idDocument, { 'id': 'idDocument' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="idDocumentError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Comentario</label>
-                    <div id="zip">
-                        {{ form_widget(form.comment) }}
+                    <div id="comment_div">
+                        {{ form_widget(form.comment, { 'id': 'comment' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="commentError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="commentCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
                 <div class="col-md-3 lg-6 sm-12">
                     <label for="validationCustom05">Rol</label>
-                    <div id="zip">
-                        {{ form_widget(form.role) }}
+                    <div id="role_div">
+                        {{ form_widget(form.role, { 'id': 'role' }) }}
                     </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
+                    <div id="roleError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un codigo postal
                     </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                    <div id="roleCorrect" class="valid-feedback" style="display: none">
                         Campo correct
                     </div>
                 </div>
@@ -149,13 +148,6 @@
             <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Acepta términos y condiciones de uso
-                    </label>
-
-                    <div class="invalid-feedback">
-                        Tienes que aceptar términos y condiciones de uso antes
-                    </div>
                 </div>
             </div>
             <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
@@ -163,5 +155,5 @@
         </form>
     </div>
     {{ form_end(form) }}
-    <script src="{{ asset('js/form.js') }}"></script>
+    <script src="{{ asset('js/formUser.js') }}"></script>
 {% endblock %}
