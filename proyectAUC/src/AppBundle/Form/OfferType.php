@@ -5,6 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class OfferType extends AbstractType
 {
@@ -15,10 +17,12 @@ class OfferType extends AbstractType
     {
         $builder->add('company')
                 ->add('title')
-                ->add('pdf')
+                ->add('pdf', FileType::class, ['label' => 'Archivo PDF: '])
                 ->add('description')
                 ->add('disabilities');
-    }/**
+    }
+    
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
