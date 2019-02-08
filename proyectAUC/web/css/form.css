@@ -6,3 +6,9 @@
 .form > .header{
     text-align: center;
 }
+input[id^='appbundle']{
+    width: 80%;
+    height: 30%;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
