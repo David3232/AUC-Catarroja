@@ -1,16 +1,66 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+{% endblock %}
 {% block body %}
-    <h1>Disability creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_start(form, { 'attr':{'id': 'formDisability' }}) }}
+    {{ form_errors(form) }}
+    <div class="form">
+        <form class="formUser" novalidate>
+            <div class="head">
+                <h1>Crear Disfuncionalidad</h1>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom01">Nombre</label>
+                    <div id="title_div">
+                        {{ form_widget(form.name, { 'id': 'name' }) }}
+                    </div>
+                    <div id="nameError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un nombre
+                    </div>
+                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom02">Descripción</label>
+                    <div id="pdf_div">
+                        {{ form_widget(form.description, { 'id': 'description' }) }}
+                    </div>
+                    <div id="descriptionError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona una descripción
+                    </div>
+                    <div id="descriptionCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom02">Grado</label>
+                    <div id="surname2_div">
+                        {{ form_widget(form.grade, { 'id': 'grade' }) }}
+                    </div>
+                    <div id="gradeError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un grado
+                    </div>
+                    <div id="gradeCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
+            </div>
+            {{ form_rest(form) }}
+        </form>
+    </div>
     {{ form_end(form) }}
-
     <ul>
         <li>
-            <a href="{{ path('disability_index') }}">Back to the list</a>
+            <a href="{{ path('offer_index') }}">Back to the list</a>
         </li>
     </ul>
+    <script src="{{ asset('js/formDisability.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
 {% endblock %}
+
+
