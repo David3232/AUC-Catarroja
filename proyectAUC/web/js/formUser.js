@@ -140,5 +140,5 @@ function isFull(event){
     showInformation(box);
 }
 
-let form=document.getElementById('form_user');
+let form=document.getElementById('formUser');
 form.addEventListener("focusout", isFull);
