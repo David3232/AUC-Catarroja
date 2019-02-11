@@ -49,24 +49,10 @@ function showInformation(box){
             case "email":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "bornDate":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "idDocument":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "comment":
-                error=document.getElementById(box.id+"Error");
-                break;
             case "role":
                 error=document.getElementById(box.id+"Error");
                 break;
-        }/*
-        if(box.value.length>=5){
-            correct=document.getElementById(box.id+"Correct");
-        }else{
-            error=document.getElementById(box.id+"Error");
-        }*/
+        }
     }else{
         switch (box.id) {
             /*
@@ -76,37 +62,69 @@ function showInformation(box){
             error=document.getElementById(box.id+"Error");
         }*/
             case "name":
-                correct=document.getElementById(box.id+"Correct");
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "surname1":
-                correct=document.getElementById(box.id+"Correct");
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "surname2":
-                correct=document.getElementById(box.id+"Correct");
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "adress":
-                correct=document.getElementById(box.id+"Correct");
+                let hasBar = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='/'){
+                        hasBar=true;
+                    }
+                }
+                if(hasBar===true && box.value.length>=3){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "zip":
-                correct=document.getElementById(box.id+"Correct");
+                if(box.value.length===5 && isNaN(box.value)===false){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "location":
-                correct=document.getElementById(box.id+"Correct");
+                if(box.value.length>=3 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "email":
-                correct=document.getElementById(box.id+"Correct");
-                break;
-            case "bornDate":
-                correct=document.getElementById(box.id+"Correct");
-                break;
-            case "idDocument":
-                correct=document.getElementById(box.id+"Correct");
-                break;
-            case "comment":
-                correct=document.getElementById(box.id+"Correct");
-                break;
-            case "role":
-                correct=document.getElementById(box.id+"Correct");
+                let hasDot = false;
+                let hasAt = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='@'){
+                        hasAt=true;
+                    }
+                    if(box.value[i]==='.'){
+                        hasDot=true;
+                    }
+                }
+                if(hasDot===true && hasAt===true && box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
         }
     }
