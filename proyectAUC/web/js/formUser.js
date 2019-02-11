@@ -55,12 +55,6 @@ function showInformation(box){
         }
     }else{
         switch (box.id) {
-            /*
-        if(box.value.length>=5){
-            correct=document.getElementById(box.id+"Correct");
-        }else{
-            error=document.getElementById(box.id+"Error");
-        }*/
             case "name":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");

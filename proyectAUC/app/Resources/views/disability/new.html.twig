@@ -14,7 +14,7 @@
             <div class="form-row">
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom01">Nombre</label>
-                    <div id="title_div">
+                    <div id="name_div">
                         {{ form_widget(form.name, { 'id': 'name' }) }}
                     </div>
                     <div id="nameError" class="invalid-feedback" style="display: none">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Descripción</label>
-                    <div id="pdf_div">
+                    <div id="description_div">
                         {{ form_widget(form.description, { 'id': 'description' }) }}
                     </div>
                     <div id="descriptionError" class="invalid-feedback" style="display: none">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-6 lg-6 sm-12">
                     <label for="validationCustom02">Grado</label>
-                    <div id="surname2_div">
+                    <div id="grade_div">
                         {{ form_widget(form.grade, { 'id': 'grade' }) }}
                     </div>
                     <div id="gradeError" class="invalid-feedback" style="display: none">
@@ -56,7 +56,7 @@
     {{ form_end(form) }}
     <ul>
         <li>
-            <a href="{{ path('offer_index') }}">Back to the list</a>
+            <a href="{{ path('disability_index') }}">Back to the list</a>
         </li>
     </ul>
     <script src="{{ asset('js/formDisability.js') }}"></script>
