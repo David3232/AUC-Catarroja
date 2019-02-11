@@ -121,7 +121,6 @@ function isFull(event){
     let box = event.target;
     showInformation(box);
 }
-//no selecciona el form
-let form=document.getElementsByClassName('form_user')[0];
-console.log(form);
-//form.addEventListener("focusout", isFull);
+
+let form=document.getElementById('form_user');
+form.addEventListener("focusout", isFull);

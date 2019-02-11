@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
 {% endblock %}
 {% block body %}
-    {{ form_start(form, { 'id': 'form_user' }) }}
+    {{ form_start(form, { 'attr':{'id': 'form_user' }}) }}
     {{ form_errors(form) }}
     <div class="form">
         <form class="formUser" novalidate>
