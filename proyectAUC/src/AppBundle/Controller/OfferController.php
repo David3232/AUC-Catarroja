@@ -123,11 +123,11 @@ class OfferController extends Controller
     {
         $deleteForm = $this->createDeleteForm($offer);
         
-        /*
+
         $offer->setPdf(
             new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
         );
-        */
+  
 
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);

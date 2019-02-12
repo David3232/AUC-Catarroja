@@ -1,48 +1,85 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}"/>
+{% endblock %}
 {% block body %}
     <h1>Offer</h1>
-
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ offer.id }}</td>
+                <td class="card">
+                    {{ offer.id }}</td>
             </tr>
             <tr>
                 <th>Title</th>
-                <td>{{ offer.title }}</td>
+                <td>
+                    {{ offer.title }}</td>
             </tr>
             <tr>
                 <th>Pdf</th>
-                <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a></td>
+                <td>
+                    <a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a>
+                </td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ offer.description }}</td>
+                <td>
+                    {{ offer.description }}</td>
             </tr>
-                        <tr>
+            <tr>
                 <th>disabilities</th>
                 <td>
                     {% for disability in offer.disabilities %}
                         {{ disability }}
-                    {% endfor %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                        <br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="show ">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">PDF</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Disfuncionalidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{ offer.id }}</td>
+                    <td>
+                        {{ offer.title }}</td>
+                    <td>
+                        <a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a>
+                    </td>
+                    <td>
+                        {{ offer.description }}</td>
+                    <td>
+                        {% for disability in offer.disabilities %}
+                            {{ disability }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('offer_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('offer_edit', { 'id': offer.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
+        <ul>
+            <li>
+                <a href="{{ path('offer_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('offer_edit', { 'id': offer.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        {% endblock %}
+    
