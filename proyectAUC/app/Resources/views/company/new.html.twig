@@ -1,16 +1,116 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+{% endblock %}
 {% block body %}
-    <h1>Company creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_start(form, { 'attr':{'id': 'formCompany' }}) }}
+    {{ form_errors(form) }}
+    <div class="form">
+        <form class="formUser" novalidate>
+            <div class="head">
+                <h1>Crear Compañía</h1>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom01">Nombre</label>
+                    <div id="name_div">
+                        {{ form_widget(form.name, { 'id': 'name' }) }}
+                    </div>
+                    <div id="nameError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un nombre
+                    </div>
+                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom02">Address</label>
+                    <div id="address_div">
+                        {{ form_widget(form.address, { 'id': 'address' }) }}
+                    </div>
+                    <div id="addressError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un apellido
+                    </div>
+                    <div id="addressCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="col-md-6 lg-6 sm-12">
+                    <label for="validationCustom02">CP</label>
+                    <div id="zipCode_div">
+                        {{ form_widget(form.zipcode, { 'id': 'zipcode' }) }}
+                    </div>
+                    <div id="zipcodeError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un apellido
+                    </div>
+                    <div id="zipcodeCorrect" class="valid-feedback" style="display: none">
+                        Campo correct
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 lg-6 sm-12">
+                        <label for="validationCustom05">Town</label>
+                        <div id="town_div">
+                            {{ form_widget(form.town, { 'id': 'town' }) }}
+                        </div>
+                        <div id="townError" class="invalid-feedback" style="display: none">
+                            Por favor, selecciona una address
+                        </div>
+                        <div id="townCorrect" class="valid-feedback" style="display: none">
+                            Campo correct
+                        </div>
+                    </div>
+                    <div class="col-md-3 lg-6 sm-12">
+                        <label for="validationCustom05">Nombre de contacto</label>
+                        <div id="contactName_div">
+                            {{ form_widget(form.contactname, { 'id': 'contactname' }) }}
+                        </div>
+                        <div id="contactnameError" class="invalid-feedback" style="display: none">
+                            Por favor, selecciona un codigo postal
+                        </div>
+                        <div id="contactnameCorrect" class="valid-feedback" style="display: none">
+                            Campo correct
+                        </div>
+                    </div>
+                    <div class="col-md-3 lg-6 sm-12">
+                        <label for="validationCustom05">Telefon</label>
+                        <div id="telephone_div">
+                            {{ form_widget(form.telefon, { 'id': 'telefon' }) }}
+                        </div>
+                        <div id="telefonError" class="invalid-feedback" style="display: none">
+                            Por favor, selecciona una locaclización
+                        </div>
+                        <div id="telefonCorrect" class="valid-feedback" style="display: none">
+                            Campo correct
+                        </div>
+                    </div>
+                    <div class="col-md-3 lg-6 sm-12">
+                        <label for="validationCustom05">Email</label>
+                        <div id="email_div">
+                            {{ form_widget(form.email, { 'id': 'email' }) }}
+                        </div>
+                        <div id="emailError" class="invalid-feedback" style="display: none">
+                            Por favor, selecciona un email
+                        </div>
+                        <div id="emailCorrect" class="valid-feedback" style="display: none">
+                            Campo correct
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
+            </div>
+            {{ form_rest(form) }}
+        </form>
+    </div>
     {{ form_end(form) }}
-
     <ul>
         <li>
             <a href="{{ path('company_index') }}">Back to the list</a>
         </li>
     </ul>
+    <script src="{{ asset('js/formCompany.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
 {% endblock %}
+
+

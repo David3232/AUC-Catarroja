@@ -31,51 +31,94 @@ function showInformation(box){
             case "name":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname":
+            case "surname1":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "username":
+            case "surname2":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "city":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
+            case "adress":
                 error=document.getElementById(box.id+"Error");
                 break;
             case "zip":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "location":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "email":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "role":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "name":/*
-                if(box.value.length>=5){
+            case "name":
+                if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
-                }else{
-                    error=document.getElementById(box.id+"Error");
-                }*/
-                correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
-            case "surname":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "surname1":
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
-            case "username":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "surname2":
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
-            case "city":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "adress":
+                let hasBar = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='/'){
+                        hasBar=true;
+                    }
+                }
+                if(hasBar===true && box.value.length>=3){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
             case "zip":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+                if(box.value.length===5 && isNaN(box.value)===false){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
+                break;
+            case "location":
+                if(box.value.length>=3 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
+                break;
+            case "email":
+                let hasDot = false;
+                let hasAt = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='@'){
+                        hasAt=true;
+                    }
+                    if(box.value[i]==='.'){
+                        hasDot=true;
+                    }
+                }
+                if(hasDot===true && hasAt===true && box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
         }
     }
@@ -91,26 +134,5 @@ function isFull(event){
     showInformation(box);
 }
 
-let form=document.getElementsByClassName('needs-validation')[0];
-
+let form=document.getElementById('formUser');
 form.addEventListener("focusout", isFull);
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        let i;
-        for (i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}

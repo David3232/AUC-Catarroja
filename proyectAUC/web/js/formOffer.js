@@ -28,54 +28,28 @@ function showInformation(box){
     console.log(box.value.length);
     if(box.value.length===0){
         switch (box.id) {
-            case "name":
+            case "title":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "username":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "city":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
-                error=document.getElementById(box.id+"Error");
-                break;
-            case "zip":
+            case "description":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "name":/*
-                if(box.value.length>=5){
+            case "title":
+                if(box.value.length>=3){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
-                }*/
-                correct=document.getElementById(box.id+"Correct");
+                }
                 break;
-            case "surname":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "username":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "city":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "state":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
-                break;
-            case "zip":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "description":
+                if(box.value.length>=50){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
                 break;
         }
     }
@@ -91,6 +65,5 @@ function isFull(event){
     showInformation(box);
 }
 
-let form=document.getElementsByClassName('needs-validation')[0];
-
+let form=document.getElementById('formOffer');
 form.addEventListener("focusout", isFull);

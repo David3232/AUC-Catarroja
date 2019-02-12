@@ -31,51 +31,91 @@ function showInformation(box){
             case "name":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname":
+            case "address":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "username":
+            case "zipcode":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "city":
+            case "town":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "state":
+            case "contactname":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "zip":
+            case "telefon":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "email":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "name":/*
-                if(box.value.length>=5){
+            case "name":
+                if(box.value.length>=2){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
-                }*/
-                correct=document.getElementById(box.id+"Correct");
+                }
                 break;
-            case "surname":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "address":
+                let hasBar = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='/'){
+                        hasBar=true;
+                    }
+                }
+                if(hasBar===true && box.value.length>=3){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
-            case "username":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "zipcode":
+                if(box.value.length===5 && isNaN(box.value)===false){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
-            case "city":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "town":
+                if(box.value.length>=2 && isNaN(box.value)===true){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
                 break;
-            case "state":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "contactname":
+                if(box.value.length>=2){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
                 break;
-            case "zip":
-                correct=document.getElementById(box.id+"Correct");
-                //error=document.getElementById(box.id+"Error");
+            case "telefon":
+                if(box.value.length>=9 && isNaN(box.value)===false){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
+                break;
+            case "email":
+                let hasDot = false;
+                let hasAt = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='@'){
+                        hasAt=true;
+                    }
+                    if(box.value[i]==='.'){
+                        hasDot=true;
+                    }
+                }
+                if(hasDot===true && hasAt===true && box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else {
+                    error = document.getElementById(box.id + "Error");
+                }
                 break;
         }
     }
@@ -91,6 +131,5 @@ function isFull(event){
     showInformation(box);
 }
 
-let form=document.getElementsByClassName('needs-validation')[0];
-
+let form=document.getElementById('formCompany');
 form.addEventListener("focusout", isFull);
