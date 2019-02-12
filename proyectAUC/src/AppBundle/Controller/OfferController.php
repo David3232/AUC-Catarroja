@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
  * Offer controller.
@@ -34,6 +35,20 @@ class OfferController extends Controller
     }
 
     /**
+     * Action for download pdfs.
+     *
+     * @return
+     */
+    public function fileAction(Offer $offer)
+    {
+        // load the file from the filesystem
+        $file = new File($this->getParameter('pdf_directory').'/'.$offer->getPdf());
+
+        // display the file contents in the browser instead of downloading it
+        return $this->file($file, 'Prueba.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    /**
      * Creates a new offer entity.
      *
      * @Route("/new", name="offer_new")
@@ -54,7 +69,7 @@ class OfferController extends Controller
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
-            // Move the file to the directory where brochures are stored
+            // Move the file to the directory where pdfs are stored
             try {
                 $file->move(
                     $this->getParameter('pdf_directory'),
@@ -64,7 +79,7 @@ class OfferController extends Controller
                 // ... handle exception if something happens during file upload
             }
 
-            // updates the 'brochure' property to store the PDF file name
+            // updates the 'pdf' property to store the PDF file name
             // instead of its contents
             $offer->setPdf($fileName);
 
@@ -107,14 +122,19 @@ class OfferController extends Controller
     public function editAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
-        $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
-        $editForm->handleRequest($request);
-
+        
+        /*
         $offer->setPdf(
             new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
         );
+        */
+
+        $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
+        $editForm->handleRequest($request);
+        //dump($editForm);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('offer_edit', array('id' => $offer->getId()));

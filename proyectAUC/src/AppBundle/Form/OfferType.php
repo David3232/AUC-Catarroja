@@ -17,7 +17,7 @@ class OfferType extends AbstractType
     {
         $builder->add('company')
                 ->add('title')
-                ->add('pdf', FileType::class, ['label' => 'Archivo PDF: '])
+                ->add('pdf', FileType::class)
                 ->add('description')
                 ->add('disabilities');
     }
