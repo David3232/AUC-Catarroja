@@ -73,6 +73,13 @@ class Offer
     private $pdf;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="telephone", type="integer")
+     */
+    private $telephone;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
