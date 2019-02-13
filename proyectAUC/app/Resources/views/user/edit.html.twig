@@ -102,7 +102,7 @@
                 <div class="col-md-4 lg-6 sm-12">
                     <label for="validationCustom05">Fecha de nacimiento</label>
                     <div id="bornDate_div">
-                        {{ form_widget(edit_form.bornDate, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'bornDate' } }) }}
+                        {{ form_widget(edit_form.bornDate, { 'attr': {'class': 'col-md-10 lg-10 sm-10', 'id': 'bornDate' } }) }}
                     </div>
                     <div id="bornDateError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona una fecha de nacimiento
@@ -114,10 +114,7 @@
                 <div class="col-md-4 lg-6 sm-12">
                     <label for="validationCustom05">Id Document</label>
                     <div id="idDocument_div">
-                        {{ form_widget(edit_form.idDocument, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'idDocument' } }) }}
-                    </div>
-                    <div class="modal-body">
-                        <button type="button" class="col-md-1 lg-1 sm-1 btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+                        {{ form_widget(edit_form.idDocument, { 'attr': {'class': 'col-md-9 lg-9 sm-9 ', 'id': 'idDocument', 'data-toggle': 'tooltip', 'data-placement': 'right',  'title': 'Tooltip on right' } }) }}
                     </div>
                     <div id="idDocumentError" class="invalid-feedback" style="display: none">
                         Por favor, selecciona un id de documento
@@ -182,6 +179,6 @@
         </li>
     </ul>
 
-    <script src="{{ asset('js/formUser.js') }}"></script>
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/formUser.js') }}"></script>
 {% endblock %}
