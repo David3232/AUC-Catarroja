@@ -73,11 +73,27 @@ class Offer
     private $pdf;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="telephone", type="integer")
      */
     private $telephone;
+
+    /**
+     * @return int
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param int $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
 
     /**
      * @var string
@@ -226,29 +242,5 @@ class Offer
     public function getDisabilities()
     {
         return $this->disabilities;
-    }
-
-        /**
-     * Set telephone
-     *
-     * @param integer $telephone
-     *
-     * @return Company
-     */
-    public function settelephone($telephone)
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    /**
-     * Get telephone
-     *
-     * @return int
-     */
-    public function gettelephone()
-    {
-        return $this->telephone;
     }
 }
