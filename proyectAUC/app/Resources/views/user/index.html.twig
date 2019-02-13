@@ -1,49 +1,83 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+{% endblock %}
+{% block body %}<!--
+    <table>
+        <caption>Statement Summary</caption>
+        <thead>
+        <tr>
+            <th scope="col">Account</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Period</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Account">Visa - 3412</td>
+            <td data-label="Due Date">04/01/2016</td>
+            <td data-label="Amount">$1,190</td>
+            <td data-label="Period">03/01/2016 - 03/31/2016</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Account">Visa - 6076</td>
+            <td data-label="Due Date">03/01/2016</td>
+            <td data-label="Amount">$2,443</td>
+            <td data-label="Period">02/01/2016 - 02/29/2016</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Account">Corporate AMEX</td>
+            <td data-label="Due Date">03/01/2016</td>
+            <td data-label="Amount">$1,181</td>
+            <td data-label="Period">02/01/2016 - 02/29/2016</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Acount">Visa - 3412</td>
+            <td data-label="Due Date">02/01/2016</td>
+            <td data-label="Amount">$842</td>
+            <td data-label="Period">01/01/2016 - 01/31/2016</td>
+        </tr>
+        </tbody>
+    </table>-->
 
-{% block body %}
+    <div class="list table-responsive" style="overflow-x:auto;">
     <h1>Users list</h1>
 
-    <table>
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Surname1</th>
-                <th>Surname2</th>
-                <th>Adress</th>
-                <th>Zipcode</th>
-                <th>Location</th>
-                <th>Email</th>
-                <th>Borndate</th>
-                <th>Createdate</th>
-                <th>Iddocument</th>
-                <th>Disabilities</th>
-                <th>Comment</th>
-                <th>Role</th>
-                <th>Actions</th>
+            <tr scope="row">
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname1</th>
+                <th scope="col">Surname2</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Location</th>
+                <th scope="col">Email</th>
+                <th scope="col">Disabilities</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
-            <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.surname1 }}</td>
-                <td>{{ user.surname2 }}</td>
-                <td>{{ user.adress }}</td>
-                <td>{{ user.zipCode }}</td>
-                <td>{{ user.location }}</td>
-                <td>{{ user.email }}</td>
-                <td>{% if user.bornDate %}{{ user.bornDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ user.createDate|date('Y-m-d H:i:s') }}</td>
-                <td>{{ user.idDocument }}</td>
-                <td>
+            <tr scope="row">
+                <td scope="col"><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td scope="col">{{ user.name }}</td>
+                <td scope="col">{{ user.surname1 }}</td>
+                <td scope="col">{{ user.surname2 }}</td>
+                <td scope="col">{{ user.adress }}</td>
+                <td scope="col">{{ user.zipCode }}</td>
+                <td scope="col">{{ user.location }}</td>
+                <td scope="col">{{ user.email }}</td>
+                <td scope="col">
                 {% for disability in user.disabilities %}
                 {{ disability }}
                 {% endfor %}
                 </td>
                 <td>{{ user.comment }}</td>
-                <td>{{ user.role }}</td>
                 <td>
                     <ul>
                         <li>
@@ -58,7 +92,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+    </div>
     <ul>
         <li>
             <a href="{{ path('user_new') }}">Create a new user</a>
