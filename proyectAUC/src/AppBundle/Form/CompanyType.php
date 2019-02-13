@@ -18,7 +18,7 @@ class CompanyType extends AbstractType
                 ->add('zipcode')
                 ->add('town')
                 ->add('contactname')
-                ->add('telefon')
+                ->add('telephone')
                 ->add('email');
     }/**
      * {@inheritdoc}
