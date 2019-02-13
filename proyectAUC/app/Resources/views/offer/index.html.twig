@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+{% endblock %}
 {% block body %}
-    <h1>Offers list</h1>
-
+    <div class="titleForm">
+        <h1>Offers list</h1>
+    </div>
     <table>
         <thead>
             <tr>
