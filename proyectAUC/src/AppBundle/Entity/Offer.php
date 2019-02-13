@@ -227,4 +227,28 @@ class Offer
     {
         return $this->disabilities;
     }
+
+        /**
+     * Set telephone
+     *
+     * @param integer $telephone
+     *
+     * @return Company
+     */
+    public function settelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return int
+     */
+    public function gettelephone()
+    {
+        return $this->telephone;
+    }
 }
