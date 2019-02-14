@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>
-            {% block title %}Welcome!{% endblock %}
+            {% block title %}Bienvenido a la aplicación de AUCCatarroja{% endblock %}
         </title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -12,27 +12,21 @@
     <body>
     <!--Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link"  href="{{ path('offer_index') }}">Offer <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link"  href="{{ path('user_index') }}">User <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link"  href="{{ path('disability_index') }}">Disability <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link"  href="{{ path('company_index') }}">Company <span class="sr-only"></span></a>
-                </li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="#">Poner Icono xD</a>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ path('offer_index') }}" role="tab" aria-controls="home" aria-selected="true">Offer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="{{ path('user_index') }}" role="tab" aria-controls="profile" aria-selected="false">User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{ path('company_index') }}" role="tab" aria-controls="contact" aria-selected="false">Company</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{ path('disability_index') }}" role="tab" aria-controls="contact" aria-selected="false">Disability</a>
+            </li>
+        </ul>
     </nav>
     <!-- Start form-->
         {% block body %}{% endblock %}
