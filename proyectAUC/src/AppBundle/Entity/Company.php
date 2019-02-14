@@ -72,9 +72,9 @@ class Company
     /**
      * @var int
      *
-     * @ORM\Column(name="telefon", type="integer")
+     * @ORM\Column(name="telephone", type="integer")
      */
-    private $telefon;
+    private $telephone;
 
     /**
      * @var string
@@ -222,27 +222,27 @@ class Company
     }
 
     /**
-     * Set telefon
+     * Set telephone
      *
-     * @param integer $telefon
+     * @param integer $telephone
      *
      * @return Company
      */
-    public function setTelefon($telefon)
+    public function settelephone($telephone)
     {
-        $this->telefon = $telefon;
+        $this->telephone = $telephone;
 
         return $this;
     }
 
     /**
-     * Get telefon
+     * Get telephone
      *
      * @return int
      */
-    public function getTelefon()
+    public function gettelephone()
     {
-        return $this->telefon;
+        return $this->telephone;
     }
 
     /**

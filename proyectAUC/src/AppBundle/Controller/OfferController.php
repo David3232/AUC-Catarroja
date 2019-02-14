@@ -135,9 +135,30 @@ class OfferController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
+            //PDF
+            // $file stores the uploaded PDF file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $offer->getPdf();
+
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+
+            // Move the file to the directory where pdfs are stored
+            try {
+                $file->move(
+                    $this->getParameter('pdf_directory'),
+                    $fileName
+                );
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+
+            // updates the 'pdf' property to store the PDF file name
+            // instead of its contents
+            $offer->setPdf($fileName);
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('offer_edit', array('id' => $offer->getId()));
+            return $this->redirectToRoute('offer_show', array('id' => $offer->getId()));
         }
 
         return $this->render('offer/edit.html.twig', array(
