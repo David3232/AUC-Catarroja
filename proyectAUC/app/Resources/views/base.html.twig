@@ -10,6 +10,31 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
     </head>
     <body>
+    <!--Nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link"  href="{{ path('offer_index') }}">Offer <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link"  href="{{ path('user_index') }}">User <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link"  href="{{ path('disability_index') }}">Disability <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link"  href="{{ path('company_index') }}">Company <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Start form-->
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
