@@ -1,21 +1,109 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Offer edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    {{ form_start(edit_form, { 'attr':{'id': 'formOffer' }}) }}
+    {{ form_errors(edit_form) }}
+    <div class="form container-fluid">
+        <form class="formOffer" novalidate>
+            <div class="head">
+                <h1>Editar Oferta</h1>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom01">Compañia</label>
+                    <div id="company_div">
+                        {{ form_widget(edit_form.company, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'company' } }) }}
+                    </div>
+                    <div id="companyError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona una compañia
+                    </div>
+                    <div id="companyCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom02">Title</label>
+                    <div id="title_div">
+                        {{ form_widget(edit_form.title, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'title' } }) }}
+                    </div>
+                    <div id="titleError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un titulo
+                    </div>
+                    <div id="titleCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom02">Telephone</label>
+                    <div id="telephone_div">
+                        {{ form_widget(edit_form.telephone, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'telephone' } }) }}
+                    </div>
+                    <div id="telephoneError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un telefono
+                    </div>
+                    <div id="telephoneCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom05">PDF</label>
+                    <div id="pdf_div">
+                        {{ form_widget(edit_form.pdf, { 'attr': {'class': 'col-md-12 lg-9 sm-9', 'id': 'pdf' } }) }}
+                    </div>
+                    <div id="pdfError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona un pdf
+                    </div>
+                    <div id="pdfCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom05">Descripciones</label>
+                    <div id="description_div">
+                        {{ form_widget(edit_form.description, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'description' } }) }}
+                    </div>
+                    <div id="descriptionError" class="invalid-feedback" style="display: none">
+                        Por favor, escribe una descripción.
+                    </div>
+                    <div id="descriptionCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+                <div class="col-md-4 lg-6 sm-12">
+                    <label for="validationCustom05">Discapacidades</label>
+                    <div id="disabilities_div">
+                        {{ form_widget(edit_form.disabilities, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'disabilities' } }) }}
+                    </div>
+                    <div id="disabilitiesError" class="invalid-feedback" style="display: none">
+                        Por favor, selecciona las discapacidades
+                    </div>
+                    <div id="disabilitiesCorrect" class="valid-feedback" style="display: none">
+                        Campo correcto
+                    </div>
+                </div>
+            </div>
+            <input class="btn btn-primary" id="formButton" type="submit" value="Edit" />
+            {{ form_rest(edit_form) }}
+        </form>
+    </div>
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('offer_index') }}">Back to the list</a>
+            <a href="{{ path('user_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/formOffer.js') }}"></script>
 {% endblock %}
+{% block stylesheets %}
+{% endblock %}
+
