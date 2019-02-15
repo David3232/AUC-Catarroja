@@ -53,7 +53,7 @@ class Company
      *
      * @ORM\Column(name="zipcode", type="integer")
      */
-    private $zipcode;
+    private $zipCode;
 
     /**
      * @var string
@@ -67,7 +67,7 @@ class Company
      *
      * @ORM\Column(name="contactname", type="string", length=255)
      */
-    private $contactname;
+    private $contactName;
 
     /**
      * @var int
@@ -152,13 +152,13 @@ class Company
     /**
      * Set zipcode
      *
-     * @param integer $zipcode
+     * @param integer $zipCode
      *
      * @return Company
      */
-    public function setZipcode($zipcode)
+    public function setZipCode($zipCode)
     {
-        $this->zipcode = $zipcode;
+        $this->zipCode = $zipCode;
 
         return $this;
     }
@@ -168,9 +168,9 @@ class Company
      *
      * @return int
      */
-    public function getZipcode()
+    public function getZipCode()
     {
-        return $this->zipcode;
+        return $this->zipCode;
     }
 
     /**
@@ -200,13 +200,13 @@ class Company
     /**
      * Set contactname
      *
-     * @param string $contactname
+     * @param string $contactName
      *
      * @return Company
      */
-    public function setContactname($contactname)
+    public function setContactName($contactName)
     {
-        $this->contactname = $contactname;
+        $this->contactName = $contactName;
 
         return $this;
     }
@@ -216,9 +216,9 @@ class Company
      *
      * @return string
      */
-    public function getContactname()
+    public function getContactName()
     {
-        return $this->contactname;
+        return $this->contactName;
     }
 
     /**

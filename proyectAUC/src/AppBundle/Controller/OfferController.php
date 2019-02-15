@@ -6,6 +6,7 @@ use AppBundle\Entity\Offer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -122,43 +123,45 @@ class OfferController extends Controller
     public function editAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
-        
 
-        $offer->setPdf(
-            new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
-        );
-  
+        $editForm = $this->createForm('AppBundle\Form\OfferType', $offer,array('update'=>true));
 
-        $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
-        //dump($editForm);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-
+            dump($request->files->get('appbundle_offer')['pdfCambio']);
             //PDF
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-            $file = $offer->getPdf();
+            /*
+            if($request->files->get('appbundle_offer')){
+                $file = $request->files->get('appbundle_offer')['pdfCambio'];
 
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+                $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
-            // Move the file to the directory where pdfs are stored
-            try {
-                $file->move(
-                    $this->getParameter('pdf_directory'),
-                    $fileName
-                );
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
+                // Move the file to the directory where pdfs are stored
+                try {
+                    $file->move(
+                        $this->getParameter('pdf_directory'),
+                        $fileName
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
             }
+
 
             // updates the 'pdf' property to store the PDF file name
             // instead of its contents
             $offer->setPdf($fileName);
-
+*/
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('offer_show', array('id' => $offer->getId()));
+            return $this->render('offer/edit.html.twig', array(
+                'offer' => $offer,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
+            ));
+            /*return $this->redirectToRoute('offer_show', array('id' => $offer->getId()));*/
         }
 
         return $this->render('offer/edit.html.twig', array(
