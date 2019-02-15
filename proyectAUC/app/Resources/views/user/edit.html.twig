@@ -4,11 +4,11 @@
 {% block body %}
     {{ form_start(edit_form, { 'attr':{'id': 'formUser' }}) }}
     {{ form_errors(edit_form) }}
+    <header>
+        <h1 class="text-center">Usuario</h1>
+    </header>
     <div class="form container-fluid">
         <form class="formUser" novalidate>
-            <div class="head">
-                <h1>Editar Usuario</h1>
-            </div>
             <div class="form-row">
                 <div class="col-md-4 lg-6 sm-12">
                     <label for="validationCustom01">Nombre</label>

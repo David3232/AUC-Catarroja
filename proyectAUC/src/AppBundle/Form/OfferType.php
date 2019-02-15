@@ -22,13 +22,14 @@ class OfferType extends AbstractType
                 ->add('title')
                 ->add('telephone');
             if ($options["update"]==null){
-                $builder->add('pdf', FileType::class, ['required' => false]);
+                $builder->add('pdfFile', FileType::class, ['mapped'=>false]);
             }else{
                 $builder
-                    ->add('pdfCambio', FileType::class, ['required' => false,'mapped'=>false])
-                    ->add('pdf',HiddenType::class);
+                    ->add('pdfFile', FileType::class, ['required' => false,'mapped'=>false]);
             }
-            $builder->add('description')
+            $builder
+                ->add('pdf',HiddenType::class,array('label'=>null))
+                ->add('description')
                 ->add('disabilities');
     }
     

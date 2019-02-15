@@ -66,7 +66,7 @@ class OfferController extends Controller
             //PDF
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-            $file = $offer->getPdf();
+            $file = $offer->getPdfFile();
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
@@ -122,6 +122,10 @@ class OfferController extends Controller
      */
     public function editAction(Request $request, Offer $offer)
     {
+        if(!$request->files->get('appbundle_offer')){
+            $request->files->set('appbundle_offer',new File($this->getParameter('pdf_directory').'/'.$offer->getPdf()));
+            $offer->setPdfFile(new File($this->getParameter('pdf_directory').'/'.$offer->getPdf()));
+        }
         $deleteForm = $this->createDeleteForm($offer);
 
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer,array('update'=>true));
@@ -129,13 +133,11 @@ class OfferController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            dump($request->files->get('appbundle_offer')['pdfCambio']);
             //PDF
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-            /*
             if($request->files->get('appbundle_offer')){
-                $file = $request->files->get('appbundle_offer')['pdfCambio'];
+                $file = $request->files->get('appbundle_offer')['pdfFile'];
 
                 $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
@@ -145,16 +147,16 @@ class OfferController extends Controller
                         $this->getParameter('pdf_directory'),
                         $fileName
                     );
+                    // updates the 'pdf' property to store the PDF file name
+                    // instead of its contents
+                    $offer->setPdf($fileName);
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
                 }
             }
 
 
-            // updates the 'pdf' property to store the PDF file name
-            // instead of its contents
-            $offer->setPdf($fileName);
-*/
+
             $this->getDoctrine()->getManager()->flush();
             return $this->render('offer/edit.html.twig', array(
                 'offer' => $offer,

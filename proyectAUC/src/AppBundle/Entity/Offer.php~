@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Offer
@@ -21,6 +22,13 @@ class Offer
      */
     private $id;
 
+    /*
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="offers")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+    private $user;
+    */
+
     /**
      * @ORM\ManyToMany(targetEntity="Disability", inversedBy="offers")
      */
@@ -31,6 +39,22 @@ class Offer
      * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $company;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * @var string
@@ -44,7 +68,38 @@ class Offer
      *
      * @ORM\Column(name="pdf", type="string", length=255)
      */
-    private $pdf;
+        private $pdf;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @Assert\File(mimeTypes={ "application/pdf" })
+     */
+    private $pdfFile;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="telephone", type="integer")
+     */
+    private $telephone;
+
+    /**
+     * @return int
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param int $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
 
     /**
      * @var string
@@ -73,7 +128,7 @@ class Offer
     }
 
     /**
-     * @param mixed $comapny
+     * @param mixed $company
      */
     public function setCompany($company)
     {
@@ -151,5 +206,47 @@ class Offer
     {
         return $this->description;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->disabilities = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add disability.
+     *
+     * @param \AppBundle\Entity\Disability $disability
+     *
+     * @return Offer
+     */
+    public function addDisability(\AppBundle\Entity\Disability $disability)
+    {
+        $this->disabilities[] = $disability;
+
+        return $this;
+    }
+
+    /**
+     * Remove disability.
+     *
+     * @param \AppBundle\Entity\Disability $disability
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeDisability(\AppBundle\Entity\Disability $disability)
+    {
+        return $this->disabilities->removeElement($disability);
+    }
+
+    /**
+     * Get disabilities.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDisabilities()
+    {
+        return $this->disabilities;
+    }
+}

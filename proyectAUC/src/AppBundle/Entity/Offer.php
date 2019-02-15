@@ -67,10 +67,32 @@ class Offer
      * @var string
      *
      * @ORM\Column(name="pdf", type="string", length=255)
+     */
+        private $pdf;
+
+    /**
+     * @var string
+     *
      * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
      * @Assert\File(mimeTypes={ "application/pdf" })
      */
-    private $pdf;
+    private $pdfFile;
+
+    /**
+     * @return string
+     */
+    public function getPdfFile(): string
+    {
+        return $this->pdfFile;
+    }
+
+    /**
+     * @param string $pdfFile
+     */
+    public function setPdfFile(string $pdfFile)
+    {
+        $this->pdfFile = $pdfFile;
+    }
 
     /**
      * @var int
