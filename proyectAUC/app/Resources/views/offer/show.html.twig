@@ -1,62 +1,90 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-{# <link rel="stylesheet" href="{{ asset('css/show.css') }}" /> #}
-{# <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" /> #}
-{% endblock %}
 {% block body %}
 <header>
     <h1 class="text-center">OFERTA</h1>
 </header>
 <section>
 
-    <div class="container ">
+    <div class="container">
         <div class="row">
+            <div class="col-12">
+                <div class="card shadow border-dark p-4">
+                    <!-- Fila 1 -->
+                    <div class="row">
+                        <!-- Columna 1/4 -->
+                        <div class="form-group col-1">
+                            <label class="font-weight-bold">Id</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.id }}
+                            </div>
+                        </div>
 
-            <div class="card shadow border-dark p-4">
+                        <!-- Columna 2/4 -->
+                        <div class="form-group col-6">
+                            <label class="font-weight-bold">Título Oferta</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.title }}
+                            </div>
+                        </div>
+                        <!-- Columna 3/4 -->
+                        <div class="form-group col-2">
+                            <label class="font-weight-bold">Teléfono</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.telephone }}
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label class="font-weight-bold">Id</label>
-                    <div class="border shadow border-secondary rounded pl-2 p-2">
-                        {{ offer.id }}
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label class="font-weight-bold">Título Oferta</label>
-                    <div class="border shadow border-secondary rounded pl-2 p-2">
-                        {{ offer.title }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-bold">PDF</label>
-                    <div class="border shadow border-secondary rounded pl-2 p-2">
-                        <a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-bold">Descripción</label>
-                    <div class="border shadow border-secondary rounded pl-2 p-2">
-                        {{ offer.description }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-bold">Disfuncionalidad</label>
-                    <div class="border shadow border-secondary rounded pl-2 p-2">
-                        {% for disability in offer.disabilities %}
-                        {{ disability }}
-                        /
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 float-left">
-                        <a class="shadow btn btn-primary border-dark" href="{{ path('offer_index') }}">Volver a Ofertas</a>
-                        <a class="shadow btn btn-primary border-dark" href="{{ path('offer_edit', { 'id': offer.id }) }}">Editar Oferta</a>
-                    </div>
+                        <!-- Columna 4/4 -->
+                        <div class="form-group col-3">
+                            <label class="font-weight-bold">PDF</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                <a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a>
+                            </div>
+                        </div>
 
-                    <div class="col-8">
-                        {{ form_start(delete_form) }}
-                        <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Oferta</button>
-                        {{ form_end(delete_form) }}
+                    </div>
+                    <!-- Fila 2 -->
+
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="col-12">
+
+                            <div class="form-group ">
+                                <label class="font-weight-bold">Descripción</label>
+                                <textarea rows="1" class="col-12 border shadow border-secondary rounded pl-2 ">{{ offer.description }}</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Fila 3 -->
+
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="form-group col-12">
+                            <label class="font-weight-bold">Disfuncionalidad</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {% for disability in offer.disabilities %}
+                                {{ disability }}
+                                /
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 4 -->
+                    <div class="row">
+                        <!-- Columna 1/2 -->
+                        <div class="col-4 float-left">
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_index') }}">Volver a
+                                Ofertas</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_edit', { 'id': offer.id }) }}">Editar
+                                Oferta</a>
+                        </div>
+                        <!-- Columna 2/2 -->
+                        <div class="col-8">
+                            {{ form_start(delete_form) }}
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Oferta</button>
+                            {{ form_end(delete_form) }}
+                        </div>
                     </div>
                 </div>
             </div>

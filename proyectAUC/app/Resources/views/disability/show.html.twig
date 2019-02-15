@@ -1,40 +1,68 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
-    <h1>Disability</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ disability.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ disability.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ disability.description }}</td>
-            </tr>
-            <tr>
-                <th>Grade</th>
-                <td>{{ disability.grade }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('disability_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('disability_edit', { 'id': disability.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+<header>
+    <h1 class="text-center">Disfuncionalidad</h1>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow border-dark p-4">
+                    <!-- Fila 1 -->
+                    <div class="row">
+                        <!-- Columna 1/3 -->
+                        <div class="form-group col-1">
+                            <label class="font-weight-bold">Id</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.id }}
+                            </div>
+                        </div>
+                        <!-- Columna 2/3 -->
+                        <div class="form-group col-9">
+                            <label class="font-weight-bold">Typo Disfunionalida</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.name }}
+                            </div>
+                        </div>
+                        <!-- Columna 3/3 -->
+                        <div class="form-group col-2">
+                            <label class="font-weight-bold">Grado</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.grade }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 2 -->
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="col-12">
+                            <div class="form-group ">
+                                <label class="font-weight-bold">Observaciones</label>
+                                <textarea class="col-12 border shadow border-secondary rounded pl-2 " rows="4">{{ disability.description }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 3 -->
+                    <div class="row">
+                        <!-- Columna 1/2 -->
+                        <div class="col-5 float-left">
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_index') }}">Volver
+                                a
+                                Disfuncionalidades</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_edit', { 'id': disability.id }) }}">Editar
+                                Usuario</a>
+                        </div>
+                        <!-- Columna 2/2 -->
+                        <div class="col-7">
+                            {{ form_start(delete_form) }}
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Usuario</button>
+                            {{ form_end(delete_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
 {% endblock %}
