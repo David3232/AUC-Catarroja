@@ -8,31 +8,38 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/nav.css') }}"/>
     </head>
     <body>
-    <!--Nav-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Poner Icono xD</a>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ path('offer_index') }}" role="tab" aria-controls="home" aria-selected="true">Offer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="{{ path('user_index') }}" role="tab" aria-controls="profile" aria-selected="false">User</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{ path('company_index') }}" role="tab" aria-controls="contact" aria-selected="false">Company</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{ path('disability_index') }}" role="tab" aria-controls="contact" aria-selected="false">Disability</a>
-            </li>
-        </ul>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ulNav" id="ulNav">
+                <li class="nav-item liNav">
+                    <a class="nav-link aNav" id="user" href="{{ path('user_index') }}">User <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item liNav">
+                    <a class="nav-link aNav" id="disability" href="{{ path('disability_index') }}">Disability <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item liNav">
+                    <a class="nav-link aNav" id="offer" href="{{ path('offer_index') }}">Offer <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item liNav">
+                    <a class="nav-link aNav" id="company" href="{{ path('company_index') }}">Company <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <!-- Start form-->
+    <!--/.Navbar-->
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/nav.js') }}"></script>
     </body>
 </html>
