@@ -133,9 +133,5 @@ function isFull(event){
     showInformation(box);
 }
 
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
 let form=document.getElementById('formUser');
 form.addEventListener("focusout", isFull);
