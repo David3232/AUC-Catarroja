@@ -2,15 +2,16 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 {% endblock %}
 {% block body %}
+    <div class="index">
     <div class="titleForm">
         <h1>Offers list</h1>
     </div>
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Title</th>
                 <th>Pdf</th>
                 <th>Description</th>
@@ -20,7 +21,6 @@
         <tbody>
         {% for offer in offers %}
             <tr>
-                <td><a href="{{ path('offer_show', { 'id': offer.id }) }}">{{ offer.id }}</a></td>
                 <td>{{ offer.title }}</td>
                 <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a></td>
                 <td>{{ offer.description }}</td>
@@ -39,5 +39,8 @@
         {% endfor %}
         </tbody>
     </table>
-    <a class="btn btn-primary stretched-link" href="{{ path('offer_new') }}">Create a new offer</a>
+    </div>
+    <div class="createButton">
+        <a class="btn btn-primary stretched-link" href="{{ path('offer_new') }}">Create a new offer</a>
+    </div>
 {% endblock %}

@@ -2,38 +2,32 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 {% endblock %}
 {% block body %}
+    <div class="index">
     <div class="titleForm">
         <h1>Companies list</h1>
     </div>
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
-                <th>Address</th>
-                <th>Zipcode</th>
                 <th>Town</th>
                 <th>Contactname</th>
                 <th>telephone</th>
                 <th>Email</th>
-                <th>Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for company in companies %}
             <tr>
-                <td><a href="{{ path('company_show', { 'id': company.id }) }}">{{ company.id }}</a></td>
                 <td>{{ company.name }}</td>
-                <td>{{ company.address }}</td>
-                <td>{{ company.zipcode }}</td>
                 <td>{{ company.town }}</td>
                 <td>{{ company.contactname }}</td>
                 <td>{{ company.telephone }}</td>
                 <td>{{ company.email }}</td>
-                <td>{% if company.date %}{{ company.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
@@ -48,6 +42,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a class="btn btn-primary stretched-link" href="{{ path('company_new') }}">Create a new company</a>
+    </div>
+    <div class="createButton">
+        <a class="btn btn-primary stretched-link" href="{{ path('company_new') }}">Create a new company</a>
+    </div>
 {% endblock %}

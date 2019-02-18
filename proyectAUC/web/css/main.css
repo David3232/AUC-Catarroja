@@ -1,0 +1,16 @@
+.index{
+    overflow-x:auto;
+    margin-top: 5%;
+}
+.index > .titleForm{
+    margin-bottom: 3%;
+}
+
+#tableUser{
+    margin-left: 18.5%;
+}
+
+.createButton{
+    margin-left: 18.5%;
+    margin-top: 3%;
+}

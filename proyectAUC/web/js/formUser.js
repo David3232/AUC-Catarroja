@@ -48,9 +48,6 @@ function showInformation(box){
             case "email":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "role":
-                error=document.getElementById(box.id+"Error");
-                break;
         }
     }else{
         switch (box.id) {

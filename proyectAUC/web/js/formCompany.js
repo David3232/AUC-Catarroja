@@ -93,7 +93,7 @@ function showInformation(box){
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "telefon":
+            case "telephone":
                 if(box.value.length>=9 && isNaN(box.value)===false){
                     correct=document.getElementById(box.id+"Correct");
                 }else{

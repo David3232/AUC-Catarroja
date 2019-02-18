@@ -45,7 +45,7 @@ function showInformation(box){
                 }
                 break;
             case "description":
-                if(box.value.length>=50){
+                if(box.value.length>=10){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
