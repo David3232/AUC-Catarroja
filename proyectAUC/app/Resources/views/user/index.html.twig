@@ -11,12 +11,9 @@
     <table class="table">
         <thead>
             <tr scope="row">
-                <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Surname1</th>
                 <th scope="col">Surname2</th>
-                <th scope="col">Adress</th>
-                <th scope="col">Zipcode</th>
                 <th scope="col">Location</th>
                 <th scope="col">Email</th>
                 <th scope="col">Disabilities</th>
@@ -27,12 +24,9 @@
         <tbody>
         {% for user in users %}
             <tr scope="row">
-                <td scope="col"><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td scope="col">{{ user.name }}</td>
                 <td scope="col">{{ user.surname1 }}</td>
                 <td scope="col">{{ user.surname2 }}</td>
-                <td scope="col">{{ user.adress }}</td>
-                <td scope="col">{{ user.zipCode }}</td>
                 <td scope="col">{{ user.location }}</td>
                 <td scope="col">{{ user.email }}</td>
                 <td scope="col">
