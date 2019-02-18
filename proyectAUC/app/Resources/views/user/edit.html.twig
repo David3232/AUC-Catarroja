@@ -6,165 +6,170 @@
     {{ form_errors(edit_form) }}
     <div class="form container-fluid">
         <form class="formUser" novalidate>
-            <div class="head">
-                <h1>Editar Usuario</h1>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom01">Nombre</label>
-                    <div id="name_div">
-                        {{ form_widget(edit_form.name, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'name' } }) }}
-                    </div>
-                    <div id="nameError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un nombre
-                    </div>
-                    <div id="nameCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
+            <header>
+                <h1 class="text-center">Usuario</h1>
+            </header>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow border-dark p-4">
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <label for="validationCustom01">Nombre</label>
+                                <div id="name_div">
+                                    {{ form_widget(edit_form.name, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'name' } }) }}
+                                </div>
+                                <div id="nameError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un nombre
+                                </div>
+                                <div id="nameCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom02">Apellido 1</label>
+                                <div id="surname1_div">
+                                    {{ form_widget(edit_form.surname1, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'surname1' } }) }}
+                                </div>
+                                <div id="surname1Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un apellido
+                                </div>
+                                <div id="surname1Correct" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom02">Apellido 2</label>
+                                <div id="surname2_div">
+                                    {{ form_widget(edit_form.surname2, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'surname2' } }) }}
+                                </div>
+                                <div id="surname2Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un apellido
+                                </div>
+                                <div id="surname2Correct" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Address</label>
+                                <div id="adress_div">
+                                    {{ form_widget(edit_form.adress, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'adress' } }) }}
+                                </div>
+                                <div id="adressError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona una address
+                                </div>
+                                <div id="adressCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Zip Code</label>
+                                <div id="zip_div">
+                                    {{ form_widget(edit_form.zipCode, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'zip' } }) }}
+                                </div>
+                                <div id="zipError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un codigo postal
+                                </div>
+                                <div id="zipCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Location</label>
+                                <div id="location_div">
+                                    {{ form_widget(edit_form.location, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'location' } }) }}
+                                </div>
+                                <div id="locationError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona una locaclización
+                                </div>
+                                <div id="locationCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Email</label>
+                                <div id="email_div">
+                                    {{ form_widget(edit_form.email, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'email' } }) }}
+                                </div>
+                                <div id="emailError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un email
+                                </div>
+                                <div id="emailCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Fecha de nacimiento</label>
+                                <div id="bornDate_div">
+                                    {{ form_widget(edit_form.bornDate, { 'attr': {'class': 'col-md-10 lg-10 sm-10', 'id': 'bornDate' } }) }}
+                                </div>
+                                <div id="bornDateError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona una fecha de nacimiento
+                                </div>
+                                <div id="bornDateCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Id Document</label>
+                                <div id="idDocument_div">
+                                    {{ form_widget(edit_form.idDocument, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'idDocument', 'data-toggle': 'tooltip', 'data-placement': 'right',  'title': 'Documento de identificacion de la persona' } }) }}
+                                </div>
+                                <div id="idDocumentError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un id de documento
+                                </div>
+                                <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Comentario</label>
+                                <div id="comment_div">
+                                    {{ form_widget(edit_form.comment, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'comment' } }) }}
+                                </div>
+                                <div id="commentError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un comentario
+                                </div>
+                                <div id="commentCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="validationCustom05">Discapacidades</label>
+                                <div id="role_div">
+                                    {{ form_widget(edit_form.disabilities, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'disabilities' } }) }}
+                                </div>
+                                <div id="roleError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona las discapacidades
+                                </div>
+                                <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                            <div class="form-group col-4" style="display: none">
+                                <label for="validationCustom05">Rol</label>
+                                <div id="role_div">
+                                    {{ form_widget(edit_form.role, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'role' } }) }}
+                                </div>
+                                <div id="roleError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un rol
+                                </div>
+                                <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    Campo correct
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom02">Apellido 1</label>
-                    <div id="surname1_div">
-                        {{ form_widget(edit_form.surname1, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'surname1' } }) }}
-                    </div>
-                    <div id="surname1Error" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un apellido
-                    </div>
-                    <div id="surname1Correct" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom02">Apellido 2</label>
-                    <div id="surname2_div">
-                        {{ form_widget(edit_form.surname2, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'surname2' } }) }}
-                    </div>
-                    <div id="surname2Error" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un apellido
-                    </div>
-                    <div id="surname2Correct" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Address</label>
-                    <div id="adress_div">
-                        {{ form_widget(edit_form.adress, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'adress' } }) }}
-                    </div>
-                    <div id="adressError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una address
-                    </div>
-                    <div id="adressCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Zip Code</label>
-                    <div id="zip_div">
-                        {{ form_widget(edit_form.zipCode, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'zip' } }) }}
-                    </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un codigo postal
-                    </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Location</label>
-                    <div id="location_div">
-                        {{ form_widget(edit_form.location, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'location' } }) }}
-                    </div>
-                    <div id="locationError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una locaclización
-                    </div>
-                    <div id="locationCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Email</label>
-                    <div id="email_div">
-                        {{ form_widget(edit_form.email, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'email' } }) }}
-                    </div>
-                    <div id="emailError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un email
-                    </div>
-                    <div id="emailCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Fecha de nacimiento</label>
-                    <div id="bornDate_div">
-                        {{ form_widget(edit_form.bornDate, { 'attr': {'class': 'col-md-10 lg-10 sm-10', 'id': 'bornDate' } }) }}
-                    </div>
-                    <div id="bornDateError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una fecha de nacimiento
-                    </div>
-                    <div id="bornDateCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Id Document</label>
-                    <div id="idDocument_div">
-                        {{ form_widget(edit_form.idDocument, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'idDocument', 'data-toggle': 'tooltip', 'data-placement': 'right',  'title': 'Documento de identificacion de la persona' } }) }}
-                    </div>
-                    <div id="idDocumentError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un id de documento
-                    </div>
-                    <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Comentario</label>
-                    <div id="comment_div">
-                        {{ form_widget(edit_form.comment, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'comment' } }) }}
-                    </div>
-                    <div id="commentError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un comentario
-                    </div>
-                    <div id="commentCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12">
-                    <label for="validationCustom05">Discapacidades</label>
-                    <div id="role_div">
-                        {{ form_widget(edit_form.disabilities, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'disabilities' } }) }}
-                    </div>
-                    <div id="roleError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona las discapacidades
-                    </div>
-                    <div id="roleCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-4 lg-6 sm-12" style="display: none">
-                    <label for="validationCustom05">Rol</label>
-                    <div id="role_div">
-                        {{ form_widget(edit_form.role, { 'attr': {'class': 'col-md-9 lg-9 sm-9', 'id': 'role' } }) }}
-                    </div>
-                    <div id="roleError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un rol
-                    </div>
-                    <div id="roleCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            </div>
-            <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
-    {{ form_rest(edit_form) }}
-        </form>
-    </div>
+                <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
+        {{ form_rest(edit_form) }}
+            </form>
+        </div>
     {{ form_end(edit_form) }}
 
     <ul>
