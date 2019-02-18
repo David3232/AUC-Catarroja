@@ -19,6 +19,7 @@ class UserType extends AbstractType
                 ->add('surname2')
                 ->add('adress')
                 ->add('zipCode')
+                ->add('telephone')
                 ->add('location')
                 ->add('email')
                 ->add('bornDate', BirthdayType::class)

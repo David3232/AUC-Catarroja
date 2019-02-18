@@ -1,38 +1,74 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 {% endblock %}
 {% block body %}
-    <div class="list table-responsive" style="overflow-x:auto;">
+    <div class="container">
         <div class="titleForm">
             <h1>Users list</h1>
         </div>
-    <table class="table">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow border-dark p-4">
+                    <!-- Fila  -->
+                    <div class="row">
+                        <div class="form-group col-11">
+                            <div class="form-group col-2">
+                                <label>Nombre</label>
+                            </div>
+                            <div class="form-group col-3">
+                                <label>Apellidos</label>
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Email</label>
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Teléfono</label>
+                            </div>
+                            <div class="form-group col-3">
+                                <label>Discapacidades</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-1">
+                            <label>Acciones</label>
+                        </div>
+                    </div>
+                    <!-- Fila -->
+                    <div class="row">
+                        <div class="form-group col-11">
+                            <p>Prueba col 11 1</p>
+                        </div>
+                        <div class="form-group col-1">
+                            <p>Prueba col 1 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index" >
+        <div class="titleForm">
+            <h1>Users list</h1>
+        </div>
+    <table id="tableUser">
         <thead>
             <tr scope="row">
-                <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Surname1</th>
                 <th scope="col">Surname2</th>
-                <th scope="col">Adress</th>
-                <th scope="col">Zipcode</th>
                 <th scope="col">Location</th>
                 <th scope="col">Email</th>
                 <th scope="col">Disabilities</th>
-                <th scope="col">Comment</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr scope="row">
-                <td scope="col"><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td scope="col">{{ user.name }}</td>
                 <td scope="col">{{ user.surname1 }}</td>
                 <td scope="col">{{ user.surname2 }}</td>
-                <td scope="col">{{ user.adress }}</td>
-                <td scope="col">{{ user.zipCode }}</td>
                 <td scope="col">{{ user.location }}</td>
                 <td scope="col">{{ user.email }}</td>
                 <td scope="col">
@@ -40,7 +76,6 @@
                 {{ disability }}
                 {% endfor %}
                 </td>
-                <td>{{ user.comment }}</td>
                 <td>
                     <ul>
                         <li>
@@ -56,9 +91,7 @@
         </tbody>
     </table>
     </div>
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Create a new user</a>
-        </li>
-    </ul>
+    <div class="createButton">
+        <a class="btn btn-primary stretched-link" href="{{ path('user_new') }}">Create a new user</a>
+    </div>
 {% endblock %}

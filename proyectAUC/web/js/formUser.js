@@ -48,9 +48,6 @@ function showInformation(box){
             case "email":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "role":
-                error=document.getElementById(box.id+"Error");
-                break;
         }
     }else{
         switch (box.id) {
@@ -132,10 +129,6 @@ function isFull(event){
     let box = event.target;
     showInformation(box);
 }
-
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
 
 let form=document.getElementById('formUser');
 form.addEventListener("focusout", isFull);

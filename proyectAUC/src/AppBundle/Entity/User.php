@@ -68,6 +68,31 @@ class User
      */
     private $zipCode;
 
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="telephone", type="integer")
+     */
+    private $telephone;
+
+    /**
+     * @return int
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param int $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
+
+
     /**
      * @var string
      *
