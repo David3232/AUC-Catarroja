@@ -85,7 +85,16 @@
 
                         <!-- Columna 2/3 -->
                         <div class="col-md-4">
-
+<div class="row">
+<div class="col-md-6">
+                            <div class="form-group ">
+                                <label class="font-weight-bold">Teléfono</label>
+                                <div class="border shadow border-secondary rounded pl-2 p-2">
+                                    {{ user.telephone }}
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
                             <div class="form-group ">
                                 <label class="font-weight-bold">Fecha Nacimiento</label>
                                 <div class="border shadow border-secondary rounded pl-2 p-2">
@@ -93,7 +102,8 @@
                                     {{ user.bornDate|date('d-m-Y') }}{% endif %}
                                 </div>
                             </div>
-
+                            </div>
+</div>
                             <div class="form-group ">
                                 <label class="font-weight-bold">Direccición</label>
                                 <div class="border shadow border-secondary rounded pl-2 p-2">
@@ -114,6 +124,7 @@
                                     {{ user.role }}
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Columna 3/3 -->
