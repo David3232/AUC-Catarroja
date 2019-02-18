@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
 {% endblock %}
 {% block body %}
     <div class="list table-responsive" style="overflow-x:auto;">
@@ -56,9 +56,5 @@
         </tbody>
     </table>
     </div>
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Create a new user</a>
-        </li>
-    </ul>
+    <a class="btn btn-primary stretched-link" href="{{ path('user_new') }}">Create a new user</a>
 {% endblock %}
