@@ -56,7 +56,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom05" class="font-weight-bold">Dirección</label>
                                     <div id="adress_div">
-                                        {{ form_widget(edit_form.adress, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
+                                        {{ form_widget(edit_form.address, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
                                     </div>
                                     <div id="adressError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una address
@@ -143,25 +143,25 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom05" class="font-weight-bold">Disfuncionalidades</label>
-                                    <div id="role_div">
+                                    <div id="disabilities_div">
                                         {{ form_widget(edit_form.disabilities, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
                                     </div>
-                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                    <div id="disabilitiesError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona las disfuncionalidades
                                     </div>
-                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    <div id="disabilitiesCorrect" class="valid-feedback" style="display: none">
                                         Campo correct
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4" style="display: none">
                                     <label for="validationCustom05" class="font-weight-bold">Rol</label>
-                                    <div id="role_div">
-                                        {{ form_widget(edit_form.role, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
+                                    <div id="roles_div">
+                                        {{ form_widget(edit_form.roles, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
                                     </div>
-                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                    <div id="rolesError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un rol
                                     </div>
-                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    <div id="rolesCorrect" class="valid-feedback" style="display: none">
                                         Campo correct
                                     </div>
                                 </div>
