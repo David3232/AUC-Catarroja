@@ -6,7 +6,9 @@
 {% block body %}
     <div class="container">
         <div class="titleForm mt-4" align="center">
-            <h1>Users list</h1>
+            <div class="titleForm mt-4" align="center">
+                <h1>Offers Index</h1>
+            </div>
         </div>
         <div class="row">
             <div class="col-12">
@@ -32,7 +34,7 @@
                     </div>
                     <!-- Fila -->
                     {% for offer in offers %}
-                        <div class="row border shadow border-secondary rounded pl-1 mb-4">
+                        <div class="row pl-1 mt-3">
                             <div class="form-group col-11">
                                 <div class="row">
                                     <div class="col-md-2 pl-2 p-2">
@@ -62,7 +64,7 @@
                     {% endfor %}
                     <div class="row">
                         <div class="col-md-4 float-left">
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_new') }}">Create a new user</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_new') }}">Create a new offer</a>
                         </div>
                     </div>
                 </div>
