@@ -37,6 +37,13 @@ class User
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 2
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $name;
 
@@ -44,6 +51,12 @@ class User
      * @var string
      *
      * @ORM\Column(name="surname1", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $surname1;
 
@@ -51,6 +64,12 @@ class User
      * @var string
      *
      * @ORM\Column(name="surname2", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $surname2;
 
@@ -58,6 +77,9 @@ class User
      * @var string
      *
      * @ORM\Column(name="adress", type="string", length=255)
+     * @Assert\Length(
+     *      min = 3
+     * )
      */
     private $adress;
 
@@ -65,6 +87,14 @@ class User
      * @var int
      *
      * @ORM\Column(name="zipCode", type="integer")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 5
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $zipCode;
 
@@ -72,6 +102,13 @@ class User
      * @var int
      *
      * @ORM\Column(name="telephone", type="integer")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 9
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $telephone;
 
@@ -97,6 +134,13 @@ class User
      * @var string
      *
      * @ORM\Column(name="location", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $location;
 
@@ -104,6 +148,10 @@ class User
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=40)
+     * @Assert\NotBlank
+     * @Assert\Type(
+     *     type="Email"
+     * )
      */
     private $email;
 

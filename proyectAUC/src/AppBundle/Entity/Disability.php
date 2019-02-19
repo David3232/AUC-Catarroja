@@ -35,6 +35,10 @@ class Disability
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3
+     * )
      */
     private $name;
 
@@ -42,6 +46,10 @@ class Disability
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 10
+     * )
      */
     private $description;
 
@@ -49,6 +57,7 @@ class Disability
      * @var int
      *
      * @ORM\Column(name="grade", type="integer")
+     * 
      */
     private $grade;
 
