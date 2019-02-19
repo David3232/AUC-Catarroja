@@ -1,21 +1,76 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Disability edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    {{ form_start(edit_form, { 'attr':{'id': 'formDisability' }}) }}
+    {{ form_errors(edit_form) }}
+<section>
+    <div class="form container-fluid">
+        <form class="formDisability" novalidate>
+            <header>
+                <h1 class="text-center">Editar Discapacidad</h1>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow border-dark p-4">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom01" class="font-weight-bold">Nombre de la discapacidad</label>
+                                <div id="name_div">
+                                    {{ form_widget(edit_form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'company' } }) }}
+                                </div>
+                                <div id="nameError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un nombre
+                                </div>
+                                <div id="nameCorrect" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom02" class="font-weight-bold">Observaciones</label>
+                                <div id="description_div">
+                                    {{ form_widget(edit_form.description, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'description', 'rows': '1' } }) }}
+                                </div>
+                                <div id="descriptionError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona una descripcion
+                                </div>
+                                <div id="descriptionCorrect" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom02" class="font-weight-bold">Grado</label>
+                                <div id="grade_div">
+                                    {{ form_widget(edit_form.grade, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'grade' } }) }}
+                                </div>
+                                <div id="gradeError" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un grado
+                                </div>
+                                <div id="gradeCorrect" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 float-left">
+                                <input class="btn btn-primary shadow border-dark" id="formButton" type="submit" value="Editar" />
+                                <a class="shadow btn btn-primary border-dark" href="{{ path('user_index') }}">Volver a
+                                    Discapacidad</a>
+                            </div>
+                            <div class="col-md-8">
+                                {{ form_start(delete_form) }}
+                                <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Discapacidad</button>
+                                {{ form_end(delete_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_rest(edit_form) }}
+        </form>
+    </div>
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('disability_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/formOffer.js') }}"></script>
+
 {% endblock %}

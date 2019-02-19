@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * Offer
  *
@@ -60,6 +61,10 @@ class Offer
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3
+     * )
      */
     private $title;
 
@@ -76,6 +81,13 @@ class Offer
      * @var int
      *
      * @ORM\Column(name="telephone", type="integer")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 9
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $telephone;
 
@@ -99,6 +111,10 @@ class Offer
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 10
+     * )
      */
     private $description;
 

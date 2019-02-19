@@ -6,155 +6,184 @@
     <!-- Start form-->
     {{ form_start(form, { 'attr':{'id': 'formUser' }}) }}
     {{ form_errors(form) }}
-    <div class="form">
-        <form class="formUser" novalidate>
-            <div class="head">
-                <h1>Crear Usuario</h1>
-            </div>
-            <div class="form-row">
-                <div class="col-md-6 lg-6 sm-12">
-                    <label for="validationCustom01">Nombre</label>
-                    <div id="name_div">
-                        {{ form_widget(form.name, { 'id': 'name' }) }}
-                    </div>
-                    <div id="nameError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un nombre
-                    </div>
-                    <div id="nameCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
+    <section>
+        <div class="form container-fluid">
+            <form class="formUser" novalidate>
+                <header>
+                    <h1 class="text-center">Usuario</h1>
+                </header>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card shadow border-dark p-4">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom01" class="font-weight-bold">Nombre</label>
+                                    <div id="name_div">
+                                        {{ form_widget(form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'name' } }) }}
+                                    </div>
+                                    <div id="nameError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un nombre
+                                    </div>
+                                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Apellido 1</label>
+                                    <div id="surname1_div">
+                                        {{ form_widget(form.surname1, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'surname1' } }) }}
+                                    </div>
+                                    <div id="surname1Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un apellido
+                                    </div>
+                                    <div id="surname1Correct" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Apellido 2</label>
+                                    <div id="surname2_div">
+                                        {{ form_widget(form.surname2, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'surname2' } }) }}
+                                    </div>
+                                    <div id="surname2Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un apellido
+                                    </div>
+                                    <div id="surname2Correct" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Dirección</label>
+                                    <div id="adress_div">
+                                        {{ form_widget(form.adress, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
+                                    </div>
+                                    <div id="adressError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona una address
+                                    </div>
+                                    <div id="adressCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Código postal</label>
+                                    <div id="zip_div">
+                                        {{ form_widget(form.zipCode, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'zip' } }) }}
+                                    </div>
+                                    <div id="zipError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un codigo postal
+                                    </div>
+                                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Localización</label>
+                                    <div id="location_div">
+                                        {{ form_widget(form.location, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'location' } }) }}
+                                    </div>
+                                    <div id="locationError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona una localización
+                                    </div>
+                                    <div id="locationCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Email</label>
+                                    <div id="email_div">
+                                        {{ form_widget(form.email, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'email' } }) }}
+                                    </div>
+                                    <div id="emailError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un email
+                                    </div>
+                                    <div id="emailCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Fecha de nacimiento</label>
+                                    <div id="bornDate_div">
+                                        {{ form_widget(form.bornDate, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'bornDate' } }) }}
+                                    </div>
+                                    <div id="bornDateError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona una fecha de nacimiento
+                                    </div>
+                                    <div id="bornDateCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">DNI / NIE</label>
+                                    <div id="idDocument_div">
+                                        {{ form_widget(form.idDocument, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'idDocument', 'data-toggle': 'tooltip', 'data-placement': 'right',  'title': 'Documento de identificacion de la persona' } }) }}
+                                    </div>
+                                    <div id="idDocumentError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un id de documento
+                                    </div>
+                                    <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Comentario</label>
+                                    <div id="comment_div">
+                                        {{ form_widget(form.comment, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'comment' } }) }}
+                                    </div>
+                                    <div id="commentError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un comentario
+                                    </div>
+                                    <div id="commentCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Disfuncionalidades</label>
+                                    <div id="role_div">
+                                        {{ form_widget(form.disabilities, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
+                                    </div>
+                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona las disfuncionalidades
+                                    </div>
+                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4" style="display: none">
+                                    <label for="validationCustom05" class="font-weight-bold">Rol</label>
+                                    <div id="role_div">
+                                        {{ form_widget(form.role, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
+                                    </div>
+                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un rol
+                                    </div>
+                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 float-left">
+                                    <input class="btn btn-primary shadow border-dark" id="formButton" type="submit" value="Crear" />
+                                    <a class="shadow btn btn-primary border-dark" href="{{ path('user_index') }}">Volver a
+                                        Usuarios</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 lg-6 sm-12">
-                    <label for="validationCustom02">Apellido 1</label>
-                    <div id="surname1_div">
-                        {{ form_widget(form.surname1, { 'id': 'surname1' }) }}
-                    </div>
-                    <div id="surname1Error" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un apellido
-                    </div>
-                    <div id="surname1Correct" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-6 lg-6 sm-12">
-                    <label for="validationCustom02">Apellido 2</label>
-                    <div id="surname2_div">
-                        {{ form_widget(form.surname2, { 'id': 'surname2' }) }}
-                    </div>
-                    <div id="surname2Error" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un apellido
-                    </div>
-                    <div id="surname2Correct" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            <div class="form-row">
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Address</label>
-                    <div id="adress_div">
-                        {{ form_widget(form.adress, { 'id': 'adress' }) }}
-                    </div>
-                    <div id="adressError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una address
-                    </div>
-                    <div id="adressCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Zip Code</label>
-                    <div id="zip_div">
-                        {{ form_widget(form.zipCode, { 'id': 'zip' }) }}
-                    </div>
-                    <div id="zipError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un codigo postal
-                    </div>
-                    <div id="zipCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Location</label>
-                    <div id="location_div">
-                        {{ form_widget(form.location, { 'id': 'location' }) }}
-                    </div>
-                    <div id="locationError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una locaclización
-                    </div>
-                    <div id="locationCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Email</label>
-                    <div id="email_div">
-                        {{ form_widget(form.email, { 'id': 'email' }) }}
-                    </div>
-                    <div id="emailError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un email
-                    </div>
-                    <div id="emailCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Fecha de nacimiento</label>
-                    <div id="bornDate_div">
-                        {{ form_widget(form.bornDate, { 'id': 'bornDate' }) }}
-                    </div>
-                    <div id="bornDateError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona una fecha de nacimiento
-                    </div>
-                    <div id="bornDateCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Id Document</label>
-                    <div id="idDocument_div">
-                        {{ form_widget(form.idDocument, { 'id': 'idDocument' }) }}
-                    </div>
-                    <div class="modal-body">
-                        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-                    </div>
-                    <div id="idDocumentError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un id de documento
-                    </div>
-                    <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Comentario</label>
-                    <div id="comment_div">
-                        {{ form_widget(form.comment, { 'id': 'comment' }) }}
-                    </div>
-                    <div id="commentError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un comentario
-                    </div>
-                    <div id="commentCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-                <div class="col-md-3 lg-6 sm-12">
-                    <label for="validationCustom05">Rol</label>
-                    <div id="role_div">
-                        {{ form_widget(form.role, { 'id': 'role' }) }}
-                    </div>
-                    <div id="roleError" class="invalid-feedback" style="display: none">
-                        Por favor, selecciona un rol
-                    </div>
-                    <div id="roleCorrect" class="valid-feedback" style="display: none">
-                        Campo correct
-                    </div>
-                </div>
-            </div>
-            <input class="btn btn-primary" id="formButton" type="submit" value="Create" />
-            </div>
-            {{ form_rest(form) }}
-        </form>
-    </div>
-    {{ form_end(form) }}
-    <script src="{{ asset('js/formUser.js') }}"></script>
+                {{ form_rest(form) }}
+            </form>
+        </div>
+        {{ form_end(form) }}
+    </section>
+    <br>
+
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/formUser.js') }}"></script>
 {% endblock %}

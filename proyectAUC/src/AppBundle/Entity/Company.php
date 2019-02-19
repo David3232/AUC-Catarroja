@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Company
@@ -38,6 +39,10 @@ class Company
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 2
+     * )
      */
     private $name;
 
@@ -45,6 +50,10 @@ class Company
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3
+     * )
      */
     private $address;
 
@@ -52,6 +61,14 @@ class Company
      * @var int
      *
      * @ORM\Column(name="zipcode", type="integer")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 5
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $zipcode;
 
@@ -59,6 +76,13 @@ class Company
      * @var string
      *
      * @ORM\Column(name="town", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 2
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $town;
 
@@ -66,6 +90,10 @@ class Company
      * @var string
      *
      * @ORM\Column(name="contactname", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 2
+     * )
      */
     private $contactname;
 
@@ -73,6 +101,13 @@ class Company
      * @var int
      *
      * @ORM\Column(name="telephone", type="integer")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 9
+     * )
+     * @Assert\Type(
+     *     type="integer"
+     * )
      */
     private $telephone;
 
@@ -80,6 +115,11 @@ class Company
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Type(
+     *     type="Email"
+     * )
+     * 
      */
     private $email;
 
