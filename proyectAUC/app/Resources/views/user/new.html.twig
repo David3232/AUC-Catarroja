@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/create.css') }}"/>
 {% endblock %}
 {% block body %}
     <!-- Start form-->
@@ -18,14 +17,14 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom01" class="font-weight-bold">Nombre</label>
-                                    <div id="name_div">
-                                        {{ form_widget(form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'name' } }) }}
+                                    <div id="username_div">
+                                        {{ form_widget(form.username, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'name' } }) }}
                                     </div>
-                                    <div id="nameError" class="invalid-feedback" style="display: none">
+                                    <div id="usernameError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un nombre
                                     </div>
-                                    <div id="nameCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                    <div id="usernameCorrect" class="valid-feedback" style="display: none">
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -37,7 +36,7 @@
                                         Por favor, selecciona un apellido
                                     </div>
                                     <div id="surname1Correct" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -49,21 +48,21 @@
                                         Por favor, selecciona un apellido
                                     </div>
                                     <div id="surname2Correct" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom05" class="font-weight-bold">Dirección</label>
-                                    <div id="adress_div">
-                                        {{ form_widget(form.adress, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
+                                    <div id="address_div">
+                                        {{ form_widget(form.address, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
                                     </div>
-                                    <div id="adressError" class="invalid-feedback" style="display: none">
+                                    <div id="addressError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una address
                                     </div>
-                                    <div id="adressCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                    <div id="addressCorrect" class="valid-feedback" style="display: none">
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -75,7 +74,7 @@
                                         Por favor, selecciona un codigo postal
                                     </div>
                                     <div id="zipCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -87,7 +86,7 @@
                                         Por favor, selecciona una localización
                                     </div>
                                     <div id="locationCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +100,7 @@
                                         Por favor, selecciona un email
                                     </div>
                                     <div id="emailCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -113,7 +112,7 @@
                                         Por favor, selecciona una fecha de nacimiento
                                     </div>
                                     <div id="bornDateCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -125,11 +124,23 @@
                                         Por favor, selecciona un id de documento
                                     </div>
                                     <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Telefono</label>
+                                    <div id="role_div">
+                                        {{ form_widget(form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
+                                    </div>
+                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona la un numero de telefono
+                                    </div>
+                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                        Campo correcto
+                                    </div>
+                                </div>
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom05" class="font-weight-bold">Comentario</label>
                                     <div id="comment_div">
@@ -139,7 +150,7 @@
                                         Por favor, selecciona un comentario
                                     </div>
                                     <div id="commentCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -151,19 +162,21 @@
                                         Por favor, selecciona las disfuncionalidades
                                     </div>
                                     <div id="roleCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4" style="display: none">
-                                    <label for="validationCustom05" class="font-weight-bold">Rol</label>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Contraseña</label>
                                     <div id="role_div">
-                                        {{ form_widget(form.role, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
+                                        {{ form_widget(form.plainPassword, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
                                     </div>
                                     <div id="roleError" class="invalid-feedback" style="display: none">
-                                        Por favor, selecciona un rol
+                                        Por favor, selecciona una contraseña
                                     </div>
                                     <div id="roleCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                        Campo correcto
                                     </div>
                                 </div>
                             </div>

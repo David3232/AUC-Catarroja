@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -11,7 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -36,9 +37,32 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="userName", type="string", length=255)
      */
-    private $name;
+    private $userName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
 
     /**
      * @var string
@@ -57,9 +81,9 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="address", type="string", length=255)
      */
-    private $adress;
+    private $address;
 
     /**
      * @var int
@@ -136,12 +160,23 @@ class User
     private $comment;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="role", type="string", length=255)
+     * @ORM\Column(name="roles", type="json_array")
      */
-    private $role;
+    private $roles;
 
+    private $plainPassword;
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
 
     /**
      * Get id
@@ -156,13 +191,13 @@ class User
     /**
      * Set nombre
      *
-     * @param string $name
+     * @param string $userName
      *
      * @return User
      */
-    public function setName($name)
+    public function setUserName($userName)
     {
-        $this->name = $name;
+        $this->userName = $userName;
 
         return $this;
     }
@@ -172,9 +207,9 @@ class User
      *
      * @return string
      */
-    public function getName()
+    public function getUserName()
     {
-        return $this->name;
+        return $this->userName;
     }
 
     /**
@@ -228,13 +263,13 @@ class User
     /**
      * Set direccion
      *
-     * @param string $adress
+     * @param string $address
      *
      * @return User
      */
-    public function setAdress($adress)
+    public function setAddress($address)
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
@@ -244,9 +279,9 @@ class User
      *
      * @return string
      */
-    public function getAdress()
+    public function getAddress()
     {
-        return $this->adress;
+        return $this->address;
     }
 
     /**
@@ -420,13 +455,13 @@ class User
     /**
      * Set role
      *
-     * @param string $role
+     * @param string $roles
      *
      * @return User
      */
-    public function setRole($role)
+    public function setRoles($roles)
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
@@ -436,9 +471,9 @@ class User
      *
      * @return string
      */
-    public function getRole()
+    public function getRoles()
     {
-        return $this->role;
+        return $this->roles;
     }
     /**
      * Constructor
@@ -489,6 +524,16 @@ class User
     }
 
     public function __toString() {
-        return $this->name;
+        return $this->userName;
+    }
+
+    public function getSalt()
+    {
+        // The bcrypt and argon2i algorithms don't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
+    public function eraseCredentials()
+    {
     }
 }
