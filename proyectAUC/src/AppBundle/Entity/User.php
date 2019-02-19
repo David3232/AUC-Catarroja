@@ -182,9 +182,6 @@ class User implements UserInterface
      *
      * @ORM\Column(name="email", type="string", length=40)
      * @Assert\NotBlank
-     * @Assert\Type(
-     *     type="Email"
-     * )
      */
     private $email;
 
