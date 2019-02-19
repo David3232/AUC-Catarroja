@@ -27,7 +27,7 @@ function showInformation(box){
     let button = document.getElementById("formButton");
     if(box.value.length===0){
         switch (box.id) {
-            case "name":
+            case "username":
                 error=document.getElementById(box.id+"Error");
                 break;
             case "surname1":
@@ -36,7 +36,7 @@ function showInformation(box){
             case "surname2":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "adress":
+            case "address":
                 error=document.getElementById(box.id+"Error");
                 break;
             case "zip":
@@ -51,7 +51,7 @@ function showInformation(box){
         }
     }else{
         switch (box.id) {
-            case "name":
+            case "username":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
@@ -72,8 +72,14 @@ function showInformation(box){
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "adress":
-                if(box.value.length>=3){
+            case "address":
+                let hasBar = false;
+                for (let i=0;i<box.value.length;i++){
+                    if(box.value[i]==='/'){
+                        hasBar=true;
+                    }
+                }
+                if(hasBar===true && box.value.length>=3){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");

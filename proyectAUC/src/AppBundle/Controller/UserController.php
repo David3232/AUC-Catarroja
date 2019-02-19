@@ -5,7 +5,10 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
  * User controller.
@@ -32,18 +35,49 @@ class UserController extends Controller
     }
 
     /**
+     * Login
+     *
+     * @Route("/login", name="user_login")
+     */
+    public function loginAction(AuthenticationUtils $authenticationUtils)
+    {
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('default/entrar.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
+    }
+
+    /**
      * Creates a new user entity.
      *
      * @Route("/new", name="user_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
         $form = $this->createForm('AppBundle\Form\UserType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Encriptamos la constraseña
+            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
+
+            //Recogemos la info del Usuario
+            $user = $form->getData();
+
+            // Roles
+            $user->setRoles(array('ROLE_USER'));
+
+            //Insertamos el form en la BDD.
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
@@ -132,4 +166,6 @@ class UserController extends Controller
             ->getForm()
         ;
     }
+
+
 }
