@@ -81,7 +81,7 @@ class Company
      *      min = 2
      * )
      * @Assert\Type(
-     *     type="integer"
+     *     type="string"
      * )
      */
     private $town;

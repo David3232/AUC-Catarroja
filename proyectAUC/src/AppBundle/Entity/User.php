@@ -43,7 +43,7 @@ class User
      *      min = 2
      * )
      * @Assert\Type(
-     *     type="integer"
+     *     type="string"
      * )
      */
     private $name;
@@ -56,7 +56,7 @@ class User
      *      min = 2
      * )
      * @Assert\Type(
-     *     type="integer"
+     *     type="string"
      * )
      */
     private $surname1;
@@ -69,7 +69,7 @@ class User
      *      min = 2
      * )
      * @Assert\Type(
-     *     type="integer"
+     *     type="string"
      * )
      */
     private $surname2;
@@ -140,7 +140,7 @@ class User
      *      min = 3
      * )
      * @Assert\Type(
-     *     type="integer"
+     *     type="string"
      * )
      */
     private $location;
