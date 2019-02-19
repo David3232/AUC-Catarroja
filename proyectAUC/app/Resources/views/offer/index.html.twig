@@ -1,46 +1,73 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/list.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 {% endblock %}
 {% block body %}
-    <div class="index">
-    <div class="titleForm">
-        <h1>Offers list</h1>
+    <div class="container">
+        <div class="titleForm mt-4" align="center">
+            <h1>Users list</h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow border-dark p-4 mt-4">
+                    <!-- Fila  -->
+                    <div class="row">
+                        <div class=" col-11">
+                            <div class="row">
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Title</label>
+                                </div>
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Description</label>
+                                </div>
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Company</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-1">
+                            <label class="font-weight-bold">Acciones</label>
+                        </div>
+                    </div>
+                    <!-- Fila -->
+                    {% for offer in offers %}
+                        <div class="row border shadow border-secondary rounded pl-1 mb-4">
+                            <div class="form-group col-11">
+                                <div class="row">
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ offer.title }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ offer.description }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ offer.company }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="form-group mt-3">
+                                    <a href="{{ path('offer_show', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
+                                    <a href="{{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit"></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-md-4 float-left">
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_new') }}">Create a new user</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Pdf</th>
-                <th>Description</th>
-                <th>Company</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for offer in offers %}
-            <tr>
-                <td>{{ offer.title }}</td>
-                <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a></td>
-                <td>{{ offer.description }}</td>
-                <td>{{ offer.company }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('offer_show', { 'id': offer.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('offer_edit', { 'id': offer.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    </div>
-    <div class="createButton">
-        <a class="btn btn-primary stretched-link" href="{{ path('offer_new') }}">Create a new offer</a>
     </div>
 {% endblock %}
