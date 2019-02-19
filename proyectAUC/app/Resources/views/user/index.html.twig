@@ -13,84 +13,79 @@
                 <div class="card shadow border-dark p-4">
                     <!-- Fila  -->
                     <div class="row">
-                        <div class="form-group col-11">
-                            <div class="form-group col-2">
-                                <label>Nombre</label>
-                            </div>
-                            <div class="form-group col-3">
-                                <label>Apellidos</label>
-                            </div>
-                            <div class="form-group col-2">
-                                <label>Email</label>
-                            </div>
-                            <div class="form-group col-2">
-                                <label>Teléfono</label>
-                            </div>
-                            <div class="form-group col-3">
-                                <label>Discapacidades</label>
+                        <div class=" col-11">
+                            <div class="row">
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Nombre</label>
+                                </div>
+                                <div class=" col-md-3">
+                                    <label class="font-weight-bold">Apellidos</label>
+                                </div>
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Email</label>
+                                </div>
+                                <div class=" col-md-2">
+                                    <label class="font-weight-bold">Teléfono</label>
+                                </div>
+                                <div class=" col-md-3">
+                                    <label class="font-weight-bold">Discapacidades</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-1">
-                            <label>Acciones</label>
+                        <div class=" col-1">
+                            <label class="font-weight-bold">Acciones</label>
                         </div>
                     </div>
                     <!-- Fila -->
-                    <div class="row">
-                        <div class="form-group col-11">
-                            <p>Prueba col 11 1</p>
+                    {% for user in users %}
+                        <div class="row border shadow border-secondary rounded pl-1 mb-4">
+                            <div class="form-group col-11">
+                                <div class="row">
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ user.name }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ user.surname1 }} {{ user.surname2 }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ user.email }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>{{ user.telephone }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pl-2 p-2">
+                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
+                                            <label>
+                                                {% for disability in user.disabilities %}
+                                                    {{ disability }}
+                                                {% endfor %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="form-group mt-3">
+                                    <a href="{{ path('user_show', { 'id': user.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
+                                    <a href="{{ path('user_edit', { 'id': user.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit"></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-1">
-                            <p>Prueba col 1 1</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="index" >
-        <div class="titleForm">
-            <h1>Users list</h1>
         </div>
-    <table id="tableUser">
-        <thead>
-            <tr scope="row">
-                <th scope="col">Name</th>
-                <th scope="col">Surname1</th>
-                <th scope="col">Surname2</th>
-                <th scope="col">Location</th>
-                <th scope="col">Email</th>
-                <th scope="col">Disabilities</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr scope="row">
-                <td scope="col">{{ user.name }}</td>
-                <td scope="col">{{ user.surname1 }}</td>
-                <td scope="col">{{ user.surname2 }}</td>
-                <td scope="col">{{ user.location }}</td>
-                <td scope="col">{{ user.email }}</td>
-                <td scope="col">
-                {% for disability in user.disabilities %}
-                {{ disability }}
-                {% endfor %}
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
     </div>
+
     <div class="createButton">
         <a class="btn btn-primary stretched-link" href="{{ path('user_new') }}">Create a new user</a>
     </div>

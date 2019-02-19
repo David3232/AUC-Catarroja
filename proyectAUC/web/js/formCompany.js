@@ -59,14 +59,14 @@ function showInformation(box){
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "address":
+            case "address":/*
                 let hasBar = false;
                 for (let i=0;i<box.value.length;i++){
                     if(box.value[i]==='/'){
                         hasBar=true;
                     }
-                }
-                if(hasBar===true && box.value.length>=3){
+                }*/
+                if(/*hasBar===true &&*/ box.value.length>=3){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");

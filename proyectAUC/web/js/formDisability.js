@@ -34,9 +34,9 @@ function showInformation(box){
             case "description":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "grade":
+            /*case "grade":
                 error=document.getElementById(box.id+"Error");
-                break;
+                break;*/
         }
     }else{
         switch (box.id) {
@@ -53,14 +53,14 @@ function showInformation(box){
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
-                break;
+                break;/*
             case "grade":
                 if(box.value.length>=1 && isNaN(box.value)===false && box.value.length<=2){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
-                break;
+                break;*/
         }
     }
     showComment(correct,error,box,button);
