@@ -13,7 +13,9 @@ class DisabilityType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('description')->add('grade');
+        $builder->add('name')
+                ->add('description')
+                ->add('grade');
     }/**
      * {@inheritdoc}
      */
