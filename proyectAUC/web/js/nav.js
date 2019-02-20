@@ -6,7 +6,7 @@ function getURL(){
 
 function changeBg(id){
     let liNav = document.getElementById(id);
-    liNav.style.backgroundColor="#28A745";
+    liNav.style.backgroundColor="#019db5";
 }
 
 changeBg(getURL());
