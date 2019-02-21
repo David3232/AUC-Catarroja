@@ -1,9 +1,8 @@
-//Para el filtrado de buscar
+//Para el filtrado de buscar y que haga un paginado de toda la información
 $(document).ready(function() {
-    $('#example').DataTable( {
-        "paging":   false,
+    $('.tableList').DataTable( {
         "ordering": false,
         "info":     false,
-        "scrollX": true
+        "scrollX": true,
     } );
 } );
