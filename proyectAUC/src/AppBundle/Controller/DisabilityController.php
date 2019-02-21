@@ -102,18 +102,12 @@ class DisabilityController extends Controller
      * Deletes a disability entity.
      *
      * @Route("/{id}", name="disability_delete")
-     * @Method("DELETE")
+     * @Method({"GET", "DELETE"})
      */
-    public function deleteAction(Request $request, Disability $disability)
+    public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($disability);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($disability);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->getRepository(Disability::class)->delete($id);
 
         return $this->redirectToRoute('disability_index');
     }

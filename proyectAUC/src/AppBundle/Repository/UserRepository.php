@@ -19,5 +19,4 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
         $em->remove($delete);
         $em->flush();
     }
-
 }

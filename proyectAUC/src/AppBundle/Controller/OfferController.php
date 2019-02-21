@@ -168,20 +168,13 @@ class OfferController extends Controller
     /**
      * Deletes a offer entity.
      *
-     * @Route("/{id}", name="offer_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="offer_delete")
+     * @Method({"GET", "DELETE"})
      */
-    public function deleteAction(Request $request, Offer $offer)
+    public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($offer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($offer);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->getRepository(Offer::class)->delete($id);
 
         return $this->redirectToRoute('offer_index');
     }

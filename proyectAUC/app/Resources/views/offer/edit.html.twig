@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-4 " style="display: none">
                                 <label for="validationCustom05" class="font-weight-bold">PDF</label>
                                 <div id="pdf_div">
                                     {{ form_widget(edit_form.pdf, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'pdf' } }) }}
@@ -92,13 +92,9 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4 float-left">
+                                <input class="btn btn-primary shadow border-dark" id="formButton" type="submit" value="Editar" />
                                 <a class="shadow btn btn-primary border-dark" href="{{ path('offer_index') }}">Volver a
                                     Oferta</a>
-                            </div>
-                            <div class="col-md-8">
-                                {{ form_start(delete_form) }}
-                                <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Oferta</button>
-                                {{ form_end(delete_form) }}
                             </div>
                         </div>
                     </div>
