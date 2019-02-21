@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class CompanyRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function delete($id) {
+        $em = $this->getEntityManager();
+        $delete = $this->findOneById($id);
+
+        $em->remove($delete);
+        $em->flush();
+    }
 }

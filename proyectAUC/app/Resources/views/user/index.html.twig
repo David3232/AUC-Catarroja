@@ -34,6 +34,7 @@
                     <td>
                         <a href="{{ path('user_show', { 'id': user.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
                         <a href="{{ path('user_edit', { 'id': user.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit"></a>
+                        <a href="{{ path('user_delete', {'id': user.id}) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Borrar"></a>
                     </td>
                 </tr>
             {% endfor %}

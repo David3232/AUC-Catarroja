@@ -102,18 +102,12 @@ class CompanyController extends Controller
      * Deletes a company entity.
      *
      * @Route("/{id}", name="company_delete")
-     * @Method("DELETE")
+     * @Method({"GET", "DELETE"})
      */
-    public function deleteAction(Request $request, Company $company)
+    public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($company);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($company);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->getRepository(Company::class)->delete($id);
 
         return $this->redirectToRoute('company_index');
     }
