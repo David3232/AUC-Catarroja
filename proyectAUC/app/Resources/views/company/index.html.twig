@@ -6,86 +6,39 @@
 {% block body %}
     <div class="container">
         <div class="titleForm mt-4" align="center">
-            <h1>Company list</h1>
+            <h1>Lista de compañías</h1>
         </div>
+        <table class="tableList display" width="100%">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Contacto</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for company in companies %}
+                <tr>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.town }}</td>
+                    <td>{{ company.contactname }}</td>
+                    <td>{{ company.telephone }}</td>
+                    <td>{{ company.email }}</td>
+                    <td>
+                        <a href="{{ path('company_show', { 'id': company.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
+                        <a href="{{ path('company_edit', { 'id': company.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
         <div class="row">
-            <div class="col-12">
-                <div class="card shadow border-dark p-4 mt-4">
-                    <!-- Fila  -->
-                    <div class="row">
-                        <div class=" col-11">
-                            <div class="row">
-                                <div class=" col-md-2">
-                                    <label class="font-weight-bold">Nombre</label>
-                                </div>
-                                <div class=" col-md-3">
-                                    <label class="font-weight-bold">Ciudad</label>
-                                </div>
-                                <div class=" col-md-2">
-                                    <label class="font-weight-bold">Contacto</label>
-                                </div>
-                                <div class=" col-md-2">
-                                    <label class="font-weight-bold">Teléfono</label>
-                                </div>
-                                <div class=" col-md-3">
-                                    <label class="font-weight-bold">Email</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-1">
-                            <label class="font-weight-bold">Acciones</label>
-                        </div>
-                    </div>
-                    <!-- Fila -->
-                    {% for company in companies %}
-                        <div class="row pl-1 mt-3">
-                            <div class="form-group col-11">
-                                <div class="row">
-                                    <div class="col-md-2 pl-2 p-2">
-                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
-                                            <label>{{ company.name }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 pl-2 p-2">
-                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
-                                            <label>{{ company.town }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pl-2 p-2">
-                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
-                                            <label>{{ company.contactname }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pl-2 p-2">
-                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
-                                            <label>{{ company.telephone }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 pl-2 p-2">
-                                        <div class="form-group border shadow border-secondary rounded pl-2 mt-2">
-                                            <label>{{ company.email }}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <div class="form-group mt-3">
-                                    <a href="{{ path('company_show', { 'id': company.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
-                                    <a href="{{ path('company_edit', { 'id': company.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit"></a>
-                                    <a href="{{ path('company_delete', {'id': company.id}) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Borrar"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <hr style="border-top: dotted 1px;" />
-                    {% endfor %}
-                    <div class="row">
-                        <div class="col-md-4 float-left">
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('company_new') }}">Create a new company</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4 float-left">
+                <a class="shadow btn btn-primary border-dark" href="{{ path('company_new') }}">Crear compañía</a>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}

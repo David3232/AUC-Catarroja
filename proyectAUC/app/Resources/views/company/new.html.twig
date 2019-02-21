@@ -4,10 +4,10 @@
 {% block body %}
     <section>
         <div class="form container-fluid">
-            <form class="formDisability" novalidate>
+            <form id="formCompany" novalidate>
                 <header>
                     <div class="titleForm mt-4" align="center">
-                        <h1>Company new</h1>
+                        <h1>Nueva compañía</h1>
                     </div>
                 </header>
                 <div class="row">
@@ -15,14 +15,14 @@
                         <div class="card shadow border-dark p-4">
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="validationCustom01" class="font-weight-bold">Nombre de la discapacidad</label>
-                                    <div id="name_div">
-                                        {{ form_widget(form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'company' } }) }}
+                                    <label for="validationCustom01" class="font-weight-bold">Nombre de la compañía</label>
+                                    <div id="nameCompany">
+                                        {{ form_widget(form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9'} }, { 'attr': {'id': 'company' }}) }}
                                     </div>
-                                    <div id="nameError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.name.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un nombre
                                     </div>
-                                    <div id="nameCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.name.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -31,10 +31,10 @@
                                     <div id="address_div">
                                         {{ form_widget(form.address, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'contactName', 'rows': '1' } }) }}
                                     </div>
-                                    <div id="addressError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.name.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una dirección
                                     </div>
-                                    <div id="addressCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.name.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="validationCustom01" class="font-weight-bold">Nombre de la discapacidad</label>
+                                    <label for="validationCustom01" class="font-weight-bold">Nombre de la ciudad</label>
                                     <div id="town_div">
                                         {{ form_widget(form.town, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'town' } }) }}
                                     </div>

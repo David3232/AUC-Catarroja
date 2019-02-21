@@ -13,6 +13,8 @@ function showComment(correct,error,box,button){
         box.style.borderColor="#E73568";
         error.style.display = "block";
         correct=document.getElementById(box.id+"Correct");
+        console.log(correct);
+        console.log(error);
         correct.style.display = "none";
         correct=undefined;
     }
@@ -28,10 +30,10 @@ function showInformation(box){
     console.log(box.value.length);
     if(box.value.length===0){
         switch (box.id) {
-            case "name":
+            case "appbundle_company_name":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "address":
+            case "appbundle_company_address":
                 error=document.getElementById(box.id+"Error");
                 break;
             case "zipcode":
