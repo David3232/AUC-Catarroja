@@ -123,7 +123,9 @@ class UserController extends Controller
     public function deleteAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-        $em->getRepository(User::class)->delete($id);
+        $delete = $em->getRepository(User::class)->find($id);
+        $em->remove($delete);
+        $em->flush();
 
         return $this->redirectToRoute('user_index');
     }

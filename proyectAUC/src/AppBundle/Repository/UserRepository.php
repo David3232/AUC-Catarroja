@@ -12,7 +12,7 @@ use AppBundle\Entity\User;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-    function delete($id) {
+    public function delete($id) {
         $em = $this->getEntityManager();
         $delete = $this->findOneById($id);
 
