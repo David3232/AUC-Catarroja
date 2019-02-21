@@ -6,7 +6,7 @@
 {% block body %}
     <div class="container">
         <div class="titleForm mt-4" align="center">
-            <h1>Users list</h1>
+            <h1>Lista de usuarios</h1>
         </div>
         <table class="tableList display" width="100%">
             <thead>
@@ -27,9 +27,9 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.telephone }}</td>
                     <td>
-                            {% for disability in user.disabilities %}
-                                {{ disability }}
-                            {% endfor %}
+                        {% for disability in user.disabilities %}
+                            {{ disability }}
+                        {% endfor %}
                     </td>
                     <td>
                         <a href="{{ path('user_show', { 'id': user.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
