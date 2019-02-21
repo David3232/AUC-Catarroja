@@ -38,8 +38,6 @@ class User implements UserInterface
     /**
      * @var string
      *
-<<<<<<< HEAD
-     * @ORM\Column(name="name", type="string", length=255)
      * @Assert\NotBlank
      * @Assert\Length(
      *      min = 2
@@ -47,9 +45,7 @@ class User implements UserInterface
      * @Assert\Type(
      *     type="string"
      * )
-=======
      * @ORM\Column(name="userName", type="string", length=255)
->>>>>>> securityBranch
      */
     private $userName;
 
@@ -105,14 +101,10 @@ class User implements UserInterface
     /**
      * @var string
      *
-<<<<<<< HEAD
      * @ORM\Column(name="adress", type="string", length=255)
      * @Assert\Length(
      *      min = 3
      * )
-=======
-     * @ORM\Column(name="address", type="string", length=255)
->>>>>>> securityBranch
      */
     private $address;
 

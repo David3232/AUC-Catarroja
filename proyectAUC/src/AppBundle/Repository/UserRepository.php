@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
+
 /**
  * UserRepository
  *
@@ -10,4 +12,12 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    function delete($id) {
+        $em = $this->getEntityManager();
+        $delete = $this->findOneById($id);
+
+        $em->remove($delete);
+        $em->flush();
+    }
+
 }

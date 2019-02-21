@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -34,24 +35,6 @@ class UserController extends Controller
         ));
     }
 
-    /**
-     * Login
-     *
-     * @Route("/login", name="user_login")
-     */
-    public function loginAction(AuthenticationUtils $authenticationUtils)
-    {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('default/entrar.html.twig', array(
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ));
-    }
 
     /**
      * Creates a new user entity.
@@ -137,16 +120,10 @@ class UserController extends Controller
      * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, User $user)
+    public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($user);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->getRepository(User::class)->delete($id);
 
         return $this->redirectToRoute('user_index');
     }

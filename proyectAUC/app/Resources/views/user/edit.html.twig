@@ -15,14 +15,14 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="validationCustom01" class="font-weight-bold">Nombre</label>
-                                    <div id="name_div">
-                                        {{ form_widget(edit_form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'name' } }) }}
+                                    <div id="username_div">
+                                        {{ form_widget(edit_form.username, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'username' } }) }}
                                     </div>
-                                    <div id="nameError" class="invalid-feedback" style="display: none">
+                                    <div id="usernameError" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un nombre
                                     </div>
-                                    <div id="nameCorrect" class="valid-feedback" style="display: none">
-                                        Campo correct
+                                    <div id="usernameCorrect" class="valid-feedback" style="display: none">
+                                        Campo correcto
                                     </div>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -128,14 +128,14 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="validationCustom05" class="font-weight-bold">Comentario</label>
-                                    <div id="comment_div">
-                                        {{ form_widget(edit_form.comment, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'comment' } }) }}
+                                    <label for="validationCustom05" class="font-weight-bold">Teléfono</label>
+                                    <div id="telephone_div">
+                                        {{ form_widget(edit_form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
                                     </div>
-                                    <div id="commentError" class="invalid-feedback" style="display: none">
-                                        Por favor, selecciona un comentario
+                                    <div id="telephoneError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona las disfuncionalidades
                                     </div>
-                                    <div id="commentCorrect" class="valid-feedback" style="display: none">
+                                    <div id="telephoneCorrect" class="valid-feedback" style="display: none">
                                         Campo correct
                                     </div>
                                 </div>
@@ -151,15 +151,29 @@
                                         Campo correct
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4" style="display: none">
-                                    <label for="validationCustom05" class="font-weight-bold">Rol</label>
-                                    <div id="roles_div">
-                                        {{ form_widget(edit_form.roles, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
+                                <!--<div class="form-group col-md-4">
+                                    <label for="validationCustom05" class="font-weight-bold">Contraseña</label>
+                                    <div id="plainPassword_div">
+                                        {#{{ form_widget(edit_form.plainPassword, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'plainPassword' } }) }}#}
                                     </div>
-                                    <div id="rolesError" class="invalid-feedback" style="display: none">
-                                        Por favor, selecciona un rol
+                                    <div id="plainPasswordError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona las disfuncionalidades
                                     </div>
-                                    <div id="rolesCorrect" class="valid-feedback" style="display: none">
+                                    <div id="plainPasswordCorrect" class="valid-feedback" style="display: none">
+                                        Campo correct
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4 float-left">
+                                    <label for="validationCustom05" class="font-weight-bold">Comentario</label>
+                                    <div id="comment_div">
+                                        {{ form_widget(edit_form.comment, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'comment' } }) }}
+                                    </div>
+                                    <div id="commentError" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un comentario
+                                    </div>
+                                    <div id="commentCorrect" class="valid-feedback" style="display: none">
                                         Campo correct
                                     </div>
                                 </div>
@@ -171,9 +185,7 @@
                                         Usuarios</a>
                                 </div>
                                 <div class="col-md-8">
-                                    {{ form_start(delete_form) }}
-                                    <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Usuario</button>
-                                    {{ form_end(delete_form) }}
+                                    <button class="shadow btn btn-danger float-right border-dark" type="submit" value="Borrar" href="{{ path('user_delete', {'id': user.id}) }}">Borrar Usuario</button>
                                 </div>
                             </div>
                         </div>
