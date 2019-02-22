@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class UserType extends AbstractType
 {
@@ -29,7 +30,15 @@ class UserType extends AbstractType
                 ->add('bornDate', BirthdayType::class)
                 ->add('idDocument')
                 ->add('comment')
-                ->add('disabilities');
+                ->add('disabilities', EntityType::class, [
+                    // busca opciones de esta entidad
+                    'class' => 'AppBundle:Disability',
+                
+                    // utiliza la propiedad User.username como la cadena de opción visible
+                    'choice_label' => 'name',
+                    'multiple' => true,
+                        'expanded' => true,
+                ]);
     }/**
      * {@inheritdoc}
      */
