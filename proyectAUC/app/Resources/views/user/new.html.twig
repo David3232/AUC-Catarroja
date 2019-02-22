@@ -22,10 +22,10 @@
                                     <div id="username_div">
                                         {{ form_widget(form.username, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'name' } }) }}
                                     </div>
-                                    <div id="usernameError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.username.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un nombre
                                     </div>
-                                    <div id="usernameCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.username.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -34,10 +34,10 @@
                                     <div id="surname1_div">
                                         {{ form_widget(form.surname1, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'surname1' } }) }}
                                     </div>
-                                    <div id="surname1Error" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.surname1.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un apellido
                                     </div>
-                                    <div id="surname1Correct" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.surname1.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -46,10 +46,10 @@
                                     <div id="surname2_div">
                                         {{ form_widget(form.surname2, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'surname2' } }) }}
                                     </div>
-                                    <div id="surname2Error" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.surname2.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un apellido
                                     </div>
-                                    <div id="surname2Correct" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.surname2.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -60,10 +60,10 @@
                                     <div id="address_div">
                                         {{ form_widget(form.address, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'adress' } }) }}
                                     </div>
-                                    <div id="addressError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.address.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una address
                                     </div>
-                                    <div id="addressCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.address.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -72,10 +72,10 @@
                                     <div id="zip_div">
                                         {{ form_widget(form.zipCode, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'zip' } }) }}
                                     </div>
-                                    <div id="zipError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.zipCode.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un codigo postal
                                     </div>
-                                    <div id="zipCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.zipCode.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -84,10 +84,10 @@
                                     <div id="location_div">
                                         {{ form_widget(form.location, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'location' } }) }}
                                     </div>
-                                    <div id="locationError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.location.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una localización
                                     </div>
-                                    <div id="locationCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.location.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -98,10 +98,10 @@
                                     <div id="email_div">
                                         {{ form_widget(form.email, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'email' } }) }}
                                     </div>
-                                    <div id="emailError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.email.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un email
                                     </div>
-                                    <div id="emailCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.email.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -110,10 +110,10 @@
                                     <div id="bornDate_div">
                                         {{ form_widget(form.bornDate, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'bornDate' } }) }}
                                     </div>
-                                    <div id="bornDateError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.bornDate.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una fecha de nacimiento
                                     </div>
-                                    <div id="bornDateCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.bornDate.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -122,10 +122,10 @@
                                     <div id="idDocument_div">
                                         {{ form_widget(form.idDocument, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'idDocument', 'data-toggle': 'tooltip', 'data-placement': 'right',  'title': 'Documento de identificacion de la persona' } }) }}
                                     </div>
-                                    <div id="idDocumentError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.idDocument.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un id de documento
                                     </div>
-                                    <div id="idDocumentCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.idDocument.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -136,10 +136,10 @@
                                     <div id="role_div">
                                         {{ form_widget(form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
                                     </div>
-                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.telephone.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona la un numero de telefono
                                     </div>
-                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.telephone.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -148,10 +148,10 @@
                                     <div id="comment_div">
                                         {{ form_widget(form.comment, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'comment' } }) }}
                                     </div>
-                                    <div id="commentError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.comment.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona un comentario
                                     </div>
-                                    <div id="commentCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.comment.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -160,10 +160,10 @@
                                     <div id="role_div">
                                         {{ form_widget(form.disabilities, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
                                     </div>
-                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.disabilities.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona las disfuncionalidades
                                     </div>
-                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.disabilities.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>
@@ -174,10 +174,10 @@
                                     <div id="role_div">
                                         {{ form_widget(form.plainPassword, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'role' } }) }}
                                     </div>
-                                    <div id="roleError" class="invalid-feedback" style="display: none">
+                                    <div id="{{ form.plainPassword.vars.id }}Error" class="invalid-feedback" style="display: none">
                                         Por favor, selecciona una contraseña
                                     </div>
-                                    <div id="roleCorrect" class="valid-feedback" style="display: none">
+                                    <div id="{{ form.plainPassword.vars.id }}Correct" class="valid-feedback" style="display: none">
                                         Campo correcto
                                     </div>
                                 </div>

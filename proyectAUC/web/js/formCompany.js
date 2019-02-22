@@ -2,7 +2,7 @@
 function showComment(correct,error,box,button){
     //Si hay algun campo incorrecto
     if(correct!==undefined){
-        box.style.borderColor="#28A745";
+        box.setAttribute('style', 'border-color: #28A745 !important');
         correct.style.display = "block";
         error=document.getElementById(box.id+"Error");
         error.style.display = "none";
@@ -10,7 +10,7 @@ function showComment(correct,error,box,button){
     }
     //Si estan todos los campos correctos
     if(error!==undefined){
-        box.style.borderColor="#E73568";
+        box.setAttribute('style', 'border-color: #E73568 !important');
         error.style.display = "block";
         correct=document.getElementById(box.id+"Correct");
         correct.style.display = "none";
@@ -33,32 +33,32 @@ function showInformation(box){
             case "appbundle_company_address":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "zipcode":
+            case "appbundle_company_zipcode":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "town":
+            case "appbundle_company_town":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "contactname":
+            case "appbundle_company_contactname":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "telefon":
+            case "appbundle_company_telephone":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "email":
+            case "appbundle_company_email":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "name":
+            case "appbundle_company_name":
                 if(box.value.length>=2){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "address":/*
+            case "appbundle_company_address":/*
                 let hasBar = false;
                 for (let i=0;i<box.value.length;i++){
                     if(box.value[i]==='/'){
@@ -71,35 +71,35 @@ function showInformation(box){
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "zipcode":
+            case "appbundle_company_zipcode":
                 if(box.value.length===5 && isNaN(box.value)===false){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "town":
+            case "appbundle_company_town":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "contactname":
+            case "appbundle_company_contactname":
                 if(box.value.length>=2){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "telephone":
+            case "appbundle_company_telephone":
                 if(box.value.length>=9 && isNaN(box.value)===false){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "email":
+            case "appbundle_company_email":
                 let hasDot = false;
                 let hasAt = false;
                 for (let i=0;i<box.value.length;i++){
