@@ -20,8 +20,7 @@ class OfferType extends AbstractType
                 ->add('title')
                 ->add('telephone')
                 ->add('pdf', FileType::class, array(
-                    'label' => 'PDF',
-                    'required' => false))
+                    'label' => 'PDF'))
                 ->add('description')
                 ->add('disabilities');
     }

@@ -108,12 +108,11 @@ class OfferController extends Controller
     public function editAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
-        $em = $this->getDoctrine()->getManager();
 
         $offer->setPdf(
             new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
         );
-
+        dump($offer->getPdf());
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
 
