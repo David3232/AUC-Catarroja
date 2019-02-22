@@ -21,10 +21,10 @@
                                 <div id="company_div">
                                     {{ form_widget(form.company, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'company' } }) }}
                                 </div>
-                                <div id="companyError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.company.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, selecciona una compañia
                                 </div>
-                                <div id="companyCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.company.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
@@ -33,10 +33,10 @@
                                 <div id="title_div">
                                     {{ form_widget(form.title, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'title' } }) }}
                                 </div>
-                                <div id="titleError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.title.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, selecciona un titulo
                                 </div>
-                                <div id="titleCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.title.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
@@ -45,10 +45,10 @@
                                 <div id="telephone_div">
                                     {{ form_widget(form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
                                 </div>
-                                <div id="telephoneError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.telephone.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, selecciona un telefono
                                 </div>
-                                <div id="telephoneCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.telephone.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
@@ -59,10 +59,10 @@
                                 <div id="pdf_div">
                                     {{ form_widget(form.pdf, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'pdf' } }) }}
                                 </div>
-                                <div id="pdfError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.pdf.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, selecciona un pdf
                                 </div>
-                                <div id="pdfCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.pdf.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
@@ -71,10 +71,10 @@
                                 <div id="description_div">
                                     {{ form_widget(form.description, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'description' } }) }}
                                 </div>
-                                <div id="descriptionError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.description.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, escribe una descripción.
                                 </div>
-                                <div id="descriptionCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.description.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
@@ -83,10 +83,10 @@
                                 <div id="disabilities_div">
                                     {{ form_widget(form.disabilities, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
                                 </div>
-                                <div id="disabilitiesError" class="invalid-feedback" style="display: none">
+                                <div id="{{ form.disabilities.vars.id }}Error" class="invalid-feedback" style="display: none">
                                     Por favor, selecciona las discapacidades
                                 </div>
-                                <div id="disabilitiesCorrect" class="valid-feedback" style="display: none">
+                                <div id="{{ form.disabilities.vars.id }}Correct" class="valid-feedback" style="display: none">
                                     Campo correcto
                                 </div>
                             </div>
