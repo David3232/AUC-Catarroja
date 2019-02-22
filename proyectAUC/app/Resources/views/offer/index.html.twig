@@ -11,18 +11,27 @@
         <table class="tableList display" width="100%">
             <thead>
             <tr>
+                <th>Compañia</th>
                 <th>Título</th>
                 <th>Descripción</th>
-                <th>Email</th>
-                <th>Acción</th>
+                <th>Telefono</th>
+                <th>Diferentes Capacidades</th>
+                <th>PDF</th>
             </tr>
             </thead>
             <tbody>
             {% for offer in offers %}
                 <tr>
+                    <td>{{ offer.Company }}</td>
                     <td>{{ offer.title }}</td>
                     <td>{{ offer.description }}</td>
-                    <td>{{ offer.email }}</td>
+                    <td>{{ offer.telephone }}</td>
+                    <td>
+                        {% for disability in offer.disabilities %}
+                            {{ disability }}
+                        {% endfor %}
+                    </td>
+                    <td>{{ offer.pdf }}</td>
                     <td>
                         <a href="{{ path('offer_show', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
                         <a href="{{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit"></a>

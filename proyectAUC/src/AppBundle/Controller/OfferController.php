@@ -35,20 +35,6 @@ class OfferController extends Controller
     }
 
     /**
-     * Action for download pdfs.
-     *
-     * @return
-     */
-    public function fileAction(Offer $offer)
-    {
-        // load the file from the filesystem
-        $file = new File($this->getParameter('pdf_directory').'/'.$offer->getPdf());
-
-        // display the file contents in the browser instead of downloading it
-        return $this->file($file, 'Prueba.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
-    }
-
-    /**
      * Creates a new offer entity.
      *
      * @Route("/new", name="offer_new")
@@ -126,11 +112,12 @@ class OfferController extends Controller
         $offer->setPdf(
             new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
         );
-
+        dump($offer->getPdf());
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
 
             //PDF
             // $file stores the uploaded PDF file
@@ -155,7 +142,7 @@ class OfferController extends Controller
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('offer_show', array('id' => $offer->getId()));
+            return $this->redirectToRoute('offer_edit', array('id' => $offer->getId()));
         }
 
         return $this->render('offer/edit.html.twig', array(

@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
+{% form_theme edit_form _self %}
+{% block _appbundle_user_disabilities_widget %} 
 
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{% endblock %}
 {% block body %}
     {{ form_start(edit_form, { 'attr':{'id': 'formUser' }}) }}
     {{ form_errors(edit_form) }}
