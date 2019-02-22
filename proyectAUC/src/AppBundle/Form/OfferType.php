@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 
 class OfferType extends AbstractType
@@ -23,7 +23,16 @@ class OfferType extends AbstractType
                     'label' => 'PDF',
                     'required' => false))
                 ->add('description')
-                ->add('disabilities');
+                ->add('disabilities', EntityType::class, [
+                    // busca opciones de esta entidad
+                    'class' => 'AppBundle:Disability',
+                
+                    // utiliza la propiedad User.username como la cadena de opción visible
+                    'choice_label' => 'name',
+                    'multiple' => true,
+                        'expanded' => true,
+                ]);
+
     }
     
     /**
