@@ -28,23 +28,23 @@ function showInformation(box){
     console.log(box.value.length);
     if(box.value.length===0){
         switch (box.id) {
-            case "title":
+            case "appbundle_offer_title":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "description":
+            case "appbundle_offer_description":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "title":
+            case "appbundle_offer_title":
                 if(box.value.length>=3){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "description":
+            case "appbundle_offer_description":
                 if(box.value.length>=10){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
