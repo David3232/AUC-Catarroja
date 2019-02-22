@@ -26,9 +26,11 @@ class OfferType extends AbstractType
                     'class' => 'AppBundle:Disability',
                 
                     // utiliza la propiedad User.username como la cadena de opción visible
-                    'choice_label' => 'id',
+                    'choice_label' => 'name',
+                    'multiple' => true,
                         'expanded' => true,
                 ]);
+
     }
     
     /**
