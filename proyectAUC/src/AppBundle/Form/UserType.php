@@ -27,7 +27,10 @@ class UserType extends AbstractType
                 ->add('telephone')
                 ->add('location')
                 ->add('email')
-                ->add('bornDate', BirthdayType::class)
+                ->add('bornDate', BirthdayType::class, [
+                    'format' => 'dd-MM-yyyy',  
+                    
+                ])
                 ->add('idDocument')
                 ->add('comment')
                 ->add('disabilities', EntityType::class, [
