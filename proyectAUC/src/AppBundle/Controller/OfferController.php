@@ -112,7 +112,6 @@ class OfferController extends Controller
         $offer->setPdf(
             new File($this->getParameter('pdf_directory').'/'.$offer->getPdf())
         );
-        dump($offer->getPdf());
         $editForm = $this->createForm('AppBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
 
@@ -125,6 +124,8 @@ class OfferController extends Controller
             $file = $offer->getPdf();
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+
+            dump($offer->getPdf());
 
             // Move the file to the directory where pdfs are stored
             try {
