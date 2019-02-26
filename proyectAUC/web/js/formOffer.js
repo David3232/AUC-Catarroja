@@ -76,4 +76,4 @@ function isFull(event){
 }
 
 let form=document.getElementById('formOffer');
-form.addEventListener("focusout", isFull);
+form.addEventListener("input", isFull);

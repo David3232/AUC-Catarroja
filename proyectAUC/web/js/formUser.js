@@ -159,4 +159,4 @@ function isFull(event){
 }
 
 let form=document.getElementById('formUser');
-form.addEventListener("focusout", isFull);
+form.addEventListener("input", isFull);

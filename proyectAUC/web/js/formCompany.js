@@ -131,4 +131,4 @@ function isFull(event){
 }
 
 let form=document.getElementById('formCompany');
-form.addEventListener("focusout", isFull);
+form.addEventListener("input", isFull);
