@@ -116,8 +116,9 @@ class Company
      *
      * @ORM\Column(name="email", type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Type(
-     *     type="Email"
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
      * )
      * 
      */
