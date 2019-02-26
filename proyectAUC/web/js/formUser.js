@@ -2,7 +2,7 @@
 function showComment(correct,error,box,button){
     //Si hay algun campo incorrecto
     if(correct!==undefined){
-        box.style.borderColor="#28A745";
+        box.setAttribute('style', 'border-color: #28A745 !important');
         correct.style.display = "block";
         error=document.getElementById(box.id+"Error");
         error.style.display = "none";
@@ -10,7 +10,7 @@ function showComment(correct,error,box,button){
     }
     //Si estan todos los campos correctos
     if(error!==undefined){
-        box.style.borderColor="#E73568";
+        box.setAttribute('style', 'border-color: #E73568 !important');
         error.style.display = "block";
         correct=document.getElementById(box.id+"Correct");
         correct.style.display = "none";
@@ -27,79 +27,86 @@ function showInformation(box){
     let button = document.getElementById("formButton");
     if(box.value.length===0){
         switch (box.id) {
-            case "username":
+            case "appbundle_user_username":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname1":
+            case "appbundle_user_surname1":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "surname2":
+            case "appbundle_user_surname2":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "address":
+            case "appbundle_user_address":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "zip":
+            case "appbundle_user_zipCode":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "location":
+            case "appbundle_user_location":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "email":
+            case "appbundle_user_email":
                 error=document.getElementById(box.id+"Error");
+                break;
+            case "appbundle_user_telephone":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "appbundle_user_plainPassword":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "appbundle_user_idDocument":
+                if(box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
                 break;
         }
     }else{
         switch (box.id) {
-            case "username":
+            case "appbundle_user_username":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "surname1":
+            case "appbundle_user_surname1":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "surname2":
+            case "appbundle_user_surname2":
                 if(box.value.length>=2 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "address":
-                let hasBar = false;
-                for (let i=0;i<box.value.length;i++){
-                    if(box.value[i]==='/'){
-                        hasBar=true;
-                    }
-                }
-                if(hasBar===true && box.value.length>=3){
+            case "appbundle_user_address":
+                if(box.value.length>=2){
                     correct=document.getElementById(box.id+"Correct");
-                }else {
-                    error = document.getElementById(box.id + "Error");
+                }else{
+                    error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "zip":
+            case "appbundle_user_zipCode":
                 if(box.value.length===5 && isNaN(box.value)===false){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "location":
+            case "appbundle_user_location":
                 if(box.value.length>=3 && isNaN(box.value)===true){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
                 }
                 break;
-            case "email":
+            case "appbundle_user_email":
                 let hasDot = false;
                 let hasAt = false;
                 for (let i=0;i<box.value.length;i++){
@@ -114,6 +121,27 @@ function showInformation(box){
                     correct=document.getElementById(box.id+"Correct");
                 }else {
                     error = document.getElementById(box.id + "Error");
+                }
+                break;
+            case "appbundle_user_telephone":
+                if(box.value.length>=9 && isNaN(box.value)===false && box.value.length<=15){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
+                break;
+            case "appbundle_user_plainPassword":
+                if(box.value.length>=5){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
+                break;
+            case "appbundle_user_idDocument":
+                if(box.value.length>=8 && box.value.length<=9){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
                 }
                 break;
         }
