@@ -29,7 +29,7 @@ class OfferType extends AbstractType
                     // utiliza la propiedad User.username como la cadena de opción visible
                     'choice_label' => 'name',
                     'multiple' => true,
-                        'expanded' => true,
+                    'expanded' => true,
                 ]);
 
     }
