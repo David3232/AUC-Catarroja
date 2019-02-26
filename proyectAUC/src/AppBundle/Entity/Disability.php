@@ -49,7 +49,7 @@ class Disability
      * @ORM\Column(name="description", type="text")
      * @Assert\NotBlank
      * @Assert\Length(
-     *      min = 10
+     *      min = 3
      * )
      */
     private $description;
