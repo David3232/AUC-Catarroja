@@ -138,7 +138,7 @@ function showInformation(box){
                 }
                 break;
             case "appbundle_user_idDocument":
-                if(box.value.length>=8 && box.value.length<=8){
+                if(box.value.length>=8 && box.value.length<=9){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
