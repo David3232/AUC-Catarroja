@@ -2,6 +2,9 @@
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
+
+    {{ form_start(form, { 'attr':{'id': 'formCompany' }}) }}
+    {{ form_errors(form) }}
     <section>
         <div class="form container-fluid">
             <form id="formCompany" novalidate>
