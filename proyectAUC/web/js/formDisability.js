@@ -25,7 +25,6 @@ function showInformation(box){
     let correct;
     let error;
     let button = document.getElementById("formButton");
-    console.log(box.value.length);
     if(box.value.length===0){
         switch (box.id) {
             case "appbundle_disability_name":

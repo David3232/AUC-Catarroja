@@ -59,7 +59,7 @@
                         <!-- Columna 2/3 -->
                         <div class="col-md-2">
                             <div class="form-group ">
-                                <label class="font-weight-bold">C.P</label>
+                                <label class="font-weight-bold">Código postal</label>
                                 <div class="border shadow border-secondary rounded pl-2 p-2">
                                     {{ company.zipCode }}
                                 </div>
@@ -98,23 +98,18 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <!-- Fila 4 -->
                     <div class="row">
-
                         <!-- Columna 1/2 -->
                         <div class="col-md-4 float-left">
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('company_index') }}">Volver a
-                                Empresas</a>
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('company_edit', { 'id': company.id }) }}">Editar
-                                Empresa</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('company_index') }}">Volver a compañía</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('company_edit', { 'id': company.id }) }}">Editar compañía</a>
                         </div>
                         <!-- Columna 2/2 -->
                         <div class="col-md-8">
                             {{ form_start(delete_form) }}
-                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Empresa</button>
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar compañía</button>
                             {{ form_end(delete_form) }}
                         </div>
                     </div>

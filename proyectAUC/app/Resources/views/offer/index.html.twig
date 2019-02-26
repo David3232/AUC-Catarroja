@@ -15,14 +15,15 @@
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Telefono</th>
-                <th>Diferentes Capacidades</th>
+                <th>Disapacidades</th>
                 <th>PDF</th>
+                <th>Acción</th>
             </tr>
             </thead>
             <tbody>
             {% for offer in offers %}
                 <tr>
-                    <td>{{ offer.Company }}</td>
+                    <td>{{ offer.company }}</td>
                     <td>{{ offer.title }}</td>
                     <td>{{ offer.description }}</td>
                     <td>{{ offer.telephone }}</td>
@@ -48,3 +49,4 @@
         </div>
     </div>
 {% endblock %}
+

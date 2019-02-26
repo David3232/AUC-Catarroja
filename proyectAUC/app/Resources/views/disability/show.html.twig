@@ -2,7 +2,7 @@
 {% block body %}
 <header>
     <div class="titleForm mt-4" align="center">
-        <h1>Disability show</h1>
+        <h1>Mostrar discapacidades</h1>
     </div>
 </header>
 <section>
@@ -21,7 +21,7 @@
                         </div>
                         <!-- Columna 2/3 -->
                         <div class="form-group col-md-9">
-                            <label class="font-weight-bold">Typo Disfunionalida</label>
+                            <label class="font-weight-bold">Tipo discapacidad</label>
                             <div class="border shadow border-secondary rounded pl-2 p-2">
                                 {{ disability.name }}
                             </div>
@@ -48,16 +48,13 @@
                     <div class="row">
                         <!-- Columna 1/2 -->
                         <div class="col-md-5 float-left">
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_index') }}">Volver
-                                a
-                                diferentes capacidades</a>
-                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_edit', { 'id': disability.id }) }}">Editar
-                                capacidad diferente</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_index') }}">Volver a discapacidades</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_edit', { 'id': disability.id }) }}">Editar discapacidades</a>
                         </div>
                         <!-- Columna 2/2 -->
                         <div class="col-md-7">
                             {{ form_start(delete_form) }}
-                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar capacidad diferente</button>
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar discapacidades</button>
                             {{ form_end(delete_form) }}
                         </div>
                     </div>
