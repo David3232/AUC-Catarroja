@@ -42,7 +42,7 @@ class CompanyController extends Controller
         $company = new Company();
         $form = $this->createForm('AppBundle\Form\CompanyType', $company);
         $form->handleRequest($request);
-
+        dump($form);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($company);
