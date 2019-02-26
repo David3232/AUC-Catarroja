@@ -212,6 +212,11 @@ class User implements UserInterface
      */
     private $roles;
 
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
     private $plainPassword;
 
     public function getPlainPassword()

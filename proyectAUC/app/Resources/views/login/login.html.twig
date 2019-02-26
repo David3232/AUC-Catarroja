@@ -1,8 +1,10 @@
     {% extends 'base.html.twig' %}
+            {% block body %}
     <div class=" mx-auto border border-dark rounded shadow p-4 mb-4 bg-white " style="width:20%">
         {% if error %}
             <h2>{{ error.messageKey|trans(error.messageData, 'security') }}</h2>
         {% endif %}
+
         <form action="{{ path('login') }}" method="post">
 
             <div class="form-group ">
