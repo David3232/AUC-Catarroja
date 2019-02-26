@@ -8,7 +8,7 @@ security:
         our_db_provider:
             entity:
                 class: AppBundle:User
-                property: userName
+                property: email
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -24,9 +24,9 @@ security:
                 check_path: login
             logout:
                 path:   /logout
-                target: / 
+                target: /login
     access_control:
-        # - { path: ^/user/new, roles: ROLE_USER }
+        - { path: ^/user/ roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
 
         
