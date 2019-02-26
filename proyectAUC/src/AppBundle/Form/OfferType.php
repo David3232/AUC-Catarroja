@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -21,6 +22,7 @@ class OfferType extends AbstractType
                 ->add('telephone')
                 ->add('pdf', FileType::class, array(
                     'label' => 'PDF'))
+                ->add('pdfLast', HiddenType::class)
                 ->add('description')
                 ->add('disabilities', EntityType::class, [
                     // busca opciones de esta entidad
