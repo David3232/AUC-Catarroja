@@ -24,9 +24,9 @@
                     <td>{{ disability.description }}</td>
                     <td>{{ disability.grade }}</td>
                     <td>
-                        <a href="{{ path('disability_show', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
-                        <a href="{{ path('disability_edit', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit"></a>
-                        <a href="{{ path('disability_delete', {'id': disability.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar"></a>
+                        <a href="{{ path('disability_show', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
+                        <a href="{{ path('disability_edit', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>
+                        <a href="{{ path('disability_delete', {'id': disability.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
                     </td>
                 </tr>
             {% endfor %}
