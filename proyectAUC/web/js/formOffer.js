@@ -2,7 +2,7 @@
 function showComment(correct,error,box,button){
     //Si hay algun campo incorrecto
     if(correct!==undefined){
-        box.style.borderColor="#28A745";
+        box.setAttribute('style', 'border-color: #28A745 !important');
         correct.style.display = "block";
         error=document.getElementById(box.id+"Error");
         error.style.display = "none";
@@ -10,7 +10,7 @@ function showComment(correct,error,box,button){
     }
     //Si estan todos los campos correctos
     if(error!==undefined){
-        box.style.borderColor="#E73568";
+        box.setAttribute('style', 'border-color: #E73568 !important');
         error.style.display = "block";
         correct=document.getElementById(box.id+"Correct");
         correct.style.display = "none";
@@ -28,24 +28,34 @@ function showInformation(box){
     console.log(box.value.length);
     if(box.value.length===0){
         switch (box.id) {
-            case "title":
+            case "appbundle_offer_title":
                 error=document.getElementById(box.id+"Error");
                 break;
-            case "description":
+            case "appbundle_offer_telephone":
+                error=document.getElementById(box.id+"Error");
+                break;
+            case "appbundle_offer_description":
                 error=document.getElementById(box.id+"Error");
                 break;
         }
     }else{
         switch (box.id) {
-            case "title":
+            case "appbundle_offer_title":
                 if(box.value.length>=3){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
                 }
                 break;
-            case "description":
+            case "appbundle_offer_description":
                 if(box.value.length>=10){
+                    correct=document.getElementById(box.id+"Correct");
+                }else{
+                    error=document.getElementById(box.id+"Error");
+                }
+                break;
+            case "appbundle_offer_telephone":
+                if(box.value.length>=9 && isNaN(box.value)===false && box.value.length<=15){
                     correct=document.getElementById(box.id+"Correct");
                 }else{
                     error=document.getElementById(box.id+"Error");
