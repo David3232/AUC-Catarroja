@@ -32,9 +32,9 @@
                         {% endfor %}
                     </td>
                     <td>
-                        <a href="{{ path('user_show', { 'id': user.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show"></a>
-                        <a href="{{ path('user_edit', { 'id': user.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit"></a>
-                        <a href="{{ path('user_delete', {'id': user.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar"></a>
+                        <a href="{{ path('user_show', { 'id': user.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>
+                        <a href="{{ path('user_delete', {'id': user.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
                     </td>
                 </tr>
             {% endfor %}
