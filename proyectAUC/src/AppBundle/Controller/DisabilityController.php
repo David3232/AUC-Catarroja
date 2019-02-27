@@ -104,7 +104,7 @@ class DisabilityController extends Controller
     /**
      * Deletes a disability entity.
      *
-     * @Route("/{id}", name="disability_delete")
+     * @Route("/{id}/delete", name="disability_delete")
      * @Method({"GET", "DELETE"})
      */
     public function deleteAction(Request $request, $id)

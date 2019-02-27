@@ -104,7 +104,7 @@ class CompanyController extends Controller
     /**
      * Deletes a company entity.
      *
-     * @Route("/{id}", name="company_delete")
+     * @Route("/{id}/delete", name="company_delete")
      * @Method({"GET", "DELETE"})
      */
     public function deleteAction(Request $request, $id)
