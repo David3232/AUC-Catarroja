@@ -32,10 +32,10 @@
                             {{ disability }}
                         {% endfor %}
                     </td>
-                    <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">View brochure (PDF)</a></td>
+                    <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">Ver PDF</a></td>
                     <td>
                         <a href="{{ path('offer_show', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
-                        <a href="{{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>
+                        <!--<a href="{#{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }#}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>-->
                         <a href="{{ path('offer_delete', {'id': offer.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
                     </td>
                 </tr>
