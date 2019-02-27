@@ -22,7 +22,6 @@ class OfferType extends AbstractType
                 ->add('telephone')
                 ->add('pdf', FileType::class, array(
                     'label' => 'PDF'))
-                ->add('pdfLast', HiddenType::class)
                 ->add('description')
                 ->add('disabilities', EntityType::class, [
                     // busca opciones de esta entidad
