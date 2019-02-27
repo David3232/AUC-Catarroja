@@ -15,13 +15,9 @@ use AppBundle\Form\UserType;
 /**
  * User controller.
  *
- * @Route("login")
  */
 class LoginController extends Controller
 {
-
-
-    
      /**
      * @Route("/", name="login")
      */
@@ -32,7 +28,7 @@ class LoginController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        return $this->render('login/login.html.twig', array(
+        return $this->render('login/index.html.twig', array(
             'last_username' => $lastUsername,
             'error'         => $error,
             ));
