@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Offer controller.
@@ -22,6 +23,7 @@ class OfferController extends Controller
      *
      * @Route("/", name="offer_index")
      * @Method("GET")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function indexAction()
     {
@@ -39,6 +41,7 @@ class OfferController extends Controller
      *
      * @Route("/usuario/", name="offer_indexusers")
      * @Method("GET")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function indexusersAction()
     {
@@ -57,6 +60,7 @@ class OfferController extends Controller
      *
      * @Route("/new", name="offer_new")
      * @Method({"GET", "POST"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -106,6 +110,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}", name="offer_show")
      * @Method("GET")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function showAction(Offer $offer)
     {
@@ -122,6 +127,7 @@ class OfferController extends Controller
      *
      * @Route("/usuario/{id}", name="offer_showusers")
      * @Method("GET")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function showusersAction(Offer $offer)
     {
@@ -190,6 +196,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}/delete", name="offer_delete")
      * @Method({"GET", "DELETE"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, $id)
     {
