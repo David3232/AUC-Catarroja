@@ -34,6 +34,24 @@ class OfferController extends Controller
         ));
     }
 
+     /**
+     * Lists all offer entities.
+     *
+     * @Route("/usuario/", name="offer_indexusers")
+     * @Method("GET")
+     */
+    public function indexusersAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('AppBundle:Offer')->findAll();
+
+        return $this->render('vistaUsuario/index.html.twig', array(
+            'offers' => $offers,
+        ));
+    }
+
+
     /**
      * Creates a new offer entity.
      *
@@ -98,6 +116,23 @@ class OfferController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+    /**
+     * Finds and displays a offer entity.
+     *
+     * @Route("/usuario/{id}", name="offer_showusers")
+     * @Method("GET")
+     */
+    public function showusersAction(Offer $offer)
+    {
+        $deleteForm = $this->createDeleteForm($offer);
+
+        return $this->render('vistaUsuario/show.html.twig', array(
+            'offer' => $offer,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
 
     /**
      * Displays a form to edit an existing offer entity.
