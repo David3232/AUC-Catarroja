@@ -1,0 +1,36 @@
+.ulNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #696969;
+}
+
+.liNav {
+    float: left;
+    width: 100px;
+}
+
+.liNav a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.liNav a:hover:not(.active) {
+    background-color: #111;
+}
+
+#navbarNav {
+    margin-left: 2%;
+    width: 100%;
+    background-color: #696969;
+}
+
+a:hover{
+    /*Quitar todo el css de los links en el nav*/
+}
+
+/* Table */

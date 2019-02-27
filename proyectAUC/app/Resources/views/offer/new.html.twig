@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+    {{ form_start(form, { 'attr':{'id': 'formOffer' }}) }}
+    {{ form_errors(form) }}
+<section>
+    <div class="form container-fluid">
+        <form class="formOffer" novalidate>
+            <header>
+                <div class="titleForm mt-4" align="center">
+                    <h1>Nueva oferta</h1>
+                </div>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow border-dark p-4">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom01" class="font-weight-bold">Compañia</label>
+                                <div id="company_div">
+                                    {{ form_widget(form.company, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'company' } }) }}
+                                </div>
+                                <div id="{{ form.company.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona una compañia
+                                </div>
+                                <div id="{{ form.company.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom02" class="font-weight-bold">Título</label>
+                                <div id="title_div">
+                                    {{ form_widget(form.title, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'title' } }) }}
+                                </div>
+                                <div id="{{ form.title.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un titulo
+                                </div>
+                                <div id="{{ form.title.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom02" class="font-weight-bold">Teléfono</label>
+                                <div id="telephone_div">
+                                    {{ form_widget(form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
+                                </div>
+                                <div id="{{ form.telephone.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un telefono
+                                </div>
+                                <div id="{{ form.telephone.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom05" class="font-weight-bold">PDF</label>
+                                <div id="pdf_div">
+                                    {{ form_widget(form.pdf, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'pdf' } }) }}
+                                </div>
+                                <div id="{{ form.pdf.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona un pdf
+                                </div>
+                                <div id="{{ form.pdf.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom05" class="font-weight-bold">Descripciones</label>
+                                <div id="description_div">
+                                    {{ form_widget(form.description, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'description' } }) }}
+                                </div>
+                                <div id="{{ form.description.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, escribe una descripción.
+                                </div>
+                                <div id="{{ form.description.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="validationCustom05" class="font-weight-bold">Discapacidades</label>
+                                <div id="disabilities_div">
+                                    {{ form_widget(form.disabilities, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'disabilities' } }) }}
+                                </div>
+                                <div id="{{ form.disabilities.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                    Por favor, selecciona las discapacidades
+                                </div>
+                                <div id="{{ form.disabilities.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                    Campo correcto
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 float-left">
+                                <input class="btn btn-primary shadow border-dark" id="formButton" type="submit" value="Crear" />
+                                <a class="shadow btn btn-primary border-dark" href="{{ path('offer_index') }}">Volver a
+                                    Oferta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_rest(form) }}
+        </form>
+    </div>
+    {{ form_end(form) }}
+
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/formOffer.js') }}"></script>
+{% endblock %}

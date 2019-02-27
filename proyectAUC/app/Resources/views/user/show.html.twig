@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <header>
+        <h1 class="text-center">Usuario</h1>
+    </header>
+    <section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow border-dark p-4">
+                        <!-- Fila 1 -->
+                        <div class="row">
+                            <!-- Columna 1/4 -->
+                            <div class="form-group col-md-1">
+                                <label class="font-weight-bold">Id</label>
+                                <div class="border shadow border-secondary rounded pl-2 p-2">
+                                    {{ user.id }}
+                                </div>
+                            </div>
+                            <!-- Columna 2/4 -->
+                            <div class="form-group col-md-3">
+                                <label class="font-weight-bold">Nombre</label>
+                                <div class="border shadow border-secondary rounded pl-2 p-2">
+                                    {{ user.username }}
+                                </div>
+                            </div>
+                            <!-- Columna 3/4 -->
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Apellidos</label>
+                                <div class="border shadow border-secondary rounded pl-2 p-2">
+                                    {{ user.surname1 }} {{ user.surname2 }}
+                                </div>
+                            </div>
+                            <!-- Columna 4/4 -->
+                            <div class="form-group col-md-2">
+                                <label class="font-weight-bold ">DNI / NIE</label>
+                                <div class="border shadow border-secondary rounded pl-2 p-2">
+                                    {{ user.idDocument }}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Fila 2 -->
+                        <div class="row">
+                            <!-- Columna 1/3 -->
+                            <div class="col-md-4">
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Email</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {{ user.email }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Disfuncionalidad</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {% for disability in user.disabilities %}
+                                            {{ disability }}
+                                            /
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">C.P</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {{ user.zipCode }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Fecha Creación</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {{ user.createDate|date('Y-m-d H:i:s') }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Columna 2/3 -->
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group ">
+                                            <label class="font-weight-bold">Teléfono</label>
+                                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                                {{ user.telephone }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group ">
+                                            <label class="font-weight-bold">Fecha Nacimiento</label>
+                                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                                {% if user.bornDate %}
+                                                    {{ user.bornDate|date('d-m-Y') }}{% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Dirección</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {{ user.address }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Localidad</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {{ user.location }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Roles</label>
+                                    <div class="border shadow border-secondary rounded pl-2 p-2">
+                                        {% for roles in user.roles %}
+                                            {{ roles }}
+                                            ,
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Columna 3/3 -->
+                            <div class="col-md-4">
+
+                                <div class="form-group ">
+                                    <label class="font-weight-bold">Observaciones</label>
+                                    <textarea rows="12" class="col-md-12 border shadow border-secondary rounded pl-2 ">{{ user.comment }}</textarea>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Fila 3 -->
+                        <div class="row">
+
+                            <!-- Columna 1/2 -->
+                            <div class="col-md-4 float-left">
+                                <a class="shadow btn btn-primary border-dark" href="{{ path('user_index') }}">Volver a
+                                    Usuarios</a>
+                                <a class="shadow btn btn-primary border-dark" href="{{ path('user_edit', { 'id': user.id }) }}">Editar
+                                    Usuario</a>
+                            </div>
+                            <!-- Columna 2/2 -->
+                            <div class="col-md-8">
+                                {{ form_start(delete_form) }}
+                                <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Usuario</button>
+                                {{ form_end(delete_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <br>
+{% endblock %}

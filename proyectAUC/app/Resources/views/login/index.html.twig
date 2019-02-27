@@ -1,0 +1,43 @@
+    {% extends 'base1.html.twig' %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}"/>
+    {% endblock %}
+    {% block body %}
+        <!-- JUMBOTRON -->
+        <div class="container" style="align-items: center; margin-top: 3%">
+            <div class="jumbotron jumbotron-fluid bg-info  border border-dark rounded" style="background-image: url({{ asset('imagenes/adaptadas/01.jpg') }}); background-size: cover; width: 150%; margin-left: -23%; height: 80vh;">
+                <div class="Fondojumbotron">
+                    <div class="pl-5 pr-5">
+                        <div class="row p-3">
+                            <div class="col-4"></div>
+                            <div class="col-12 col-md-4">
+                                <div class=" mx-auto border border-dark rounded shadow p-4 mb-4 bg-white justify-content-center" style="width:70%; margin-top:30%;">
+                                    {% if error %}
+                                        <h2>{{ error.messageKey|trans(error.messageData, 'security') }}</h2>
+                                    {% endif %}
+
+                                    <form action="{{ path('login') }}" method="post">
+
+                                        <div class="form-group ">
+                                            <label for="username">Email:</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Email" name="_username" value="{{ last_username }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="password">Password:</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Password" name="_password">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Acceder</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN JUMBOTRON -->
+    {% endblock %}

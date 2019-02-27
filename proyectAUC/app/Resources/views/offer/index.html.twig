@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="titleForm mt-4" align="center">
+            <h1>Lista de ofertas</h1>
+        </div>
+        <table class="tableList display" width="100%">
+            <thead>
+            <tr>
+                <th>Compañia</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Telefono</th>
+                <th>Disapacidades</th>
+                <th>PDF</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for offer in offers %}
+                <tr>
+                    <td>{{ offer.company }}</td>
+                    <td>{{ offer.title }}</td>
+                    <td>{{ offer.description }}</td>
+                    <td>{{ offer.telephone }}</td>
+                    <td>
+                        {% for disability in offer.disabilities %}
+                            {{ disability }}
+                        {% endfor %}
+                    </td>
+                    <td><a href="{{ asset('pdf/' ~ offer.pdf) }}">Ver PDF</a></td>
+                    <td>
+                        <a href="{{ path('offer_show', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
+                        <!--<a href="{#{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }#}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>-->
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('offer_delete', {'id': offer.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if is_granted('ROLE_ADMIN') %}
+        <div class="row">
+            <div class="col-md-4 float-left">
+                <a class="shadow btn btn-primary border-dark" href="{{ path('offer_new') }}">Crear nueva oferta</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="titleForm mt-4" align="center">
+            <h1>Lista de discapacidades</h1>
+        </div>
+        <table class="tableList display" width="100%">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Grado</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for disability in disabilities %}
+                <tr>
+                    <td>{{ disability.name }}</td>
+                    <td>{{ disability.description }}</td>
+                    <td>{{ disability.grade }}</td>
+                    <td>
+                        <a href="{{ path('disability_show', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
+                        <a href="{{ path('disability_edit', { 'id': disability.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>
+                        <a href="{{ path('disability_delete', {'id': disability.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-4 float-left">
+                <a class="shadow btn btn-primary border-dark" href="{{ path('disability_new') }}">Crear discapacidad</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

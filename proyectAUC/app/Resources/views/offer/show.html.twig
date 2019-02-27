@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<header>
+    <div class="titleForm mt-4" align="center">
+        <h1>Offers list</h1>
+    </div>
+</header>
+<section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow border-dark p-4">
+                    <!-- Fila 1 -->
+                    <div class="row">
+                        <!-- Columna 1/4 -->
+                        <div class="form-group col-md-1">
+                            <label class="font-weight-bold">Id</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.id }}
+                            </div>
+                        </div>
+
+                        <!-- Columna 2/4 -->
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Título Oferta</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.title }}
+                            </div>
+                        </div>
+                        <!-- Columna 3/4 -->
+                        <div class="form-group col-md-2">
+                            <label class="font-weight-bold">Teléfono</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ offer.telephone }}
+                            </div>
+                        </div>
+
+                        <!-- Columna 4/4 -->
+                        <div class="form-group col-md-3">
+                            <label class="font-weight-bold">PDF</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                <a href="{{ asset('pdf/' ~ offer.pdf) }}">Ver PDF</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Fila 2 -->
+
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <label class="font-weight-bold">Descripción</label>
+                                <textarea rows="1" class="col-md-12 border shadow border-secondary rounded pl-2 ">{{ offer.description }}</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Fila 3 -->
+
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="form-group col-md-12">
+                            <label class="font-weight-bold">Disfuncionalidad</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {% for disability in offer.disabilities %}
+                                {{ disability }}
+                                /
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 4 -->
+                    <div class="row">
+                        <!-- Columna 1/2 -->
+                        <div class="col-md-4 float-left">
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('offer_index') }}">Volver a
+                                Ofertas</a>
+                            <!--<a class="shadow btn btn-primary border-dark" href="{#{ path('offer_edit', { 'id': offer.id }) }#}">Editar
+                                Oferta</a>-->
+                        </div>
+                        <!-- Columna 2/2 -->
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="col-md-8">
+                            {{ form_start(delete_form) }}
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Oferta</button>
+                            {{ form_end(delete_form) }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<br>
+{% endblock %}

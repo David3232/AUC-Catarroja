@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+
+    {{ form_start(form, { 'attr':{'id': 'formCompany' }}) }}
+    {{ form_errors(form) }}
+    <section>
+        <div class="form container-fluid">
+            <form id="formCompany" novalidate>
+                <header>
+                    <div class="titleForm mt-4" align="center">
+                        <h1>Nueva compañía</h1>
+                    </div>
+                </header>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card shadow border-dark p-4">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom01" class="font-weight-bold">Nombre de la compañía</label>
+                                    <div id="nameCompany">
+                                        {{ form_widget(form.name, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'company' }}) }}
+                                    </div>
+                                    <div id="{{ form.name.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un nombre válido con un mínimo de 2 caracteres
+                                    </div>
+                                    <div id="{{ form.name.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Nombre correcto
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Dirección</label>
+                                    <div id="address_div">
+                                        {{ form_widget(form.address, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'contactName', 'rows': '1' } }) }}
+                                    </div>
+                                    <div id="{{ form.address.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona una dirección válida con un mínimo de 3 caracteres
+                                    </div>
+                                    <div id="{{ form.address.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Dirección correcta
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Código Postal</label>
+                                    <div id="telephone_div">
+                                        {{ form_widget(form.zipcode, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
+                                    </div>
+                                    <div id="{{ form.zipcode.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un codigo postal válido con 5 números
+                                    </div>
+                                    <div id="{{ form.zipcode.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Código postal correcto
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom01" class="font-weight-bold">Ciudad</label>
+                                    <div id="town_div">
+                                        {{ form_widget(form.town, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2  col-md-9 lg-9 sm-9', 'id': 'town' } }) }}
+                                    </div>
+                                    <div id="{{ form.town.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un ciudad con dos caracteres mínimo
+                                    </div>
+                                    <div id="{{ form.town.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Ciudad correcta
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Contacto</label>
+                                    <div id="contactName_div">
+                                        {{ form_widget(form.contactname, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'contactName', 'rows': '1' } }) }}
+                                    </div>
+                                    <div id="{{ form.contactname.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un nombre de contacto con 2 caracteres como mínimo
+                                    </div>
+                                    <div id="{{ form.contactname.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Contacto correcto
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="validationCustom02" class="font-weight-bold">Teléfono</label>
+                                    <div id="telephone_div">
+                                        {{ form_widget(form.telephone, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
+                                    </div>
+                                    <div id="{{ form.telephone.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un telefono con un mínimo de 9 números
+                                    </div>
+                                    <div id="{{ form.telephone.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Teléfono válido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4 float-left">
+                                    <label for="validationCustom02" class="font-weight-bold">Email</label>
+                                    <div id="email_div">
+                                        {{ form_widget(form.email, { 'attr': {'class': 'border shadow border-secondary rounded pl-2 p-2 col-md-12 lg-12 sm-12', 'id': 'telephone' } }) }}
+                                    </div>
+                                    <div id="{{ form.email.vars.id }}Error" class="invalid-feedback" style="display: none">
+                                        Por favor, selecciona un email válido
+                                    </div>
+                                    <div id="{{ form.email.vars.id }}Correct" class="valid-feedback" style="display: none">
+                                        Email correcto
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4 float-left">
+                                    <input class="btn btn-primary shadow border-dark" id="formButton" type="submit" value="Crear" />
+                                    <a class="shadow btn btn-primary border-dark" href="{{ path('company_index') }}">Volver a
+                                        Compañia</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ form_rest(form) }}
+            </form>
+        </div>
+        {{ form_end(form) }}
+    </section>
+    <script src="{{ asset('js/formCompany.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+{% endblock %}
+
+

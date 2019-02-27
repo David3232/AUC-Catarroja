@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<header>
+    <div class="titleForm mt-4" align="center">
+        <h1>Mostrar discapacidades</h1>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow border-dark p-4">
+                    <!-- Fila 1 -->
+                    <div class="row">
+                        <!-- Columna 1/3 -->
+                        <div class="form-group col-md-1">
+                            <label class="font-weight-bold">Id</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.id }}
+                            </div>
+                        </div>
+                        <!-- Columna 2/3 -->
+                        <div class="form-group col-md-9">
+                            <label class="font-weight-bold">Tipo discapacidad</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.name }}
+                            </div>
+                        </div>
+                        <!-- Columna 3/3 -->
+                        <div class="form-group col-md-2">
+                            <label class="font-weight-bold">Grado</label>
+                            <div class="border shadow border-secondary rounded pl-2 p-2">
+                                {{ disability.grade }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 2 -->
+                    <div class="row">
+                        <!-- Columna 1/1 -->
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <label class="font-weight-bold">Observaciones</label>
+                                <textarea class="col-md-12 border shadow border-secondary rounded pl-2 " rows="4">{{ disability.description }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 3 -->
+                    <div class="row">
+                        <!-- Columna 1/2 -->
+                        <div class="col-md-5 float-left">
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_index') }}">Volver a discapacidades</a>
+                            <a class="shadow btn btn-primary border-dark" href="{{ path('disability_edit', { 'id': disability.id }) }}">Editar discapacidades</a>
+                        </div>
+                        <!-- Columna 2/2 -->
+                        <div class="col-md-7">
+                            {{ form_start(delete_form) }}
+                            <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar discapacidades</button>
+                            {{ form_end(delete_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+{% endblock %}

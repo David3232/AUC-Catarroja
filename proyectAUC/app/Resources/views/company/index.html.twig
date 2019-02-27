@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="titleForm mt-4" align="center">
+            <h1>Lista de compañías</h1>
+        </div>
+        <table class="tableList display" width="100%">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Contacto</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for company in companies %}
+                <tr>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.town }}</td>
+                    <td>{{ company.contactname }}</td>
+                    <td>{{ company.telephone }}</td>
+                    <td>{{ company.email }}</td>
+                    <td>
+                        <a href="{{ path('company_show', { 'id': company.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
+                        <a href="{{ path('company_edit', { 'id': company.id }) }}"><img src="{{ asset('imagenes/edit.png') }}" class="actions" alt="Edit" title="Editar"></a>
+                        <a href="{{ path('company_delete', {'id': company.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-4 float-left">
+                <a class="shadow btn btn-primary border-dark" href="{{ path('company_new') }}">Crear compañía</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
