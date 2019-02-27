@@ -81,11 +81,13 @@
                                 Oferta</a>-->
                         </div>
                         <!-- Columna 2/2 -->
+                        {% if is_granted('ROLE_ADMIN') %}
                         <div class="col-md-8">
                             {{ form_start(delete_form) }}
                             <button class="shadow btn btn-danger float-right border-dark" type="submit">Borrar Oferta</button>
                             {{ form_end(delete_form) }}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Offer controller.
@@ -22,6 +23,7 @@ class OfferController extends Controller
      *
      * @Route("/", name="offer_index")
      * @Method("GET")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function indexAction()
     {
@@ -34,29 +36,13 @@ class OfferController extends Controller
         ));
     }
 
-     /**
-     * Lists all offer entities.
-     *
-     * @Route("/usuario/", name="offer_indexusers")
-     * @Method("GET")
-     */
-    public function indexusersAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $offers = $em->getRepository('AppBundle:Offer')->findAll();
-
-        return $this->render('vistaUsuario/index.html.twig', array(
-            'offers' => $offers,
-        ));
-    }
-
 
     /**
      * Creates a new offer entity.
      *
      * @Route("/new", name="offer_new")
      * @Method({"GET", "POST"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -106,6 +92,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}", name="offer_show")
      * @Method("GET")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function showAction(Offer $offer)
     {
@@ -116,23 +103,6 @@ class OfferController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
-    /**
-     * Finds and displays a offer entity.
-     *
-     * @Route("/usuario/{id}", name="offer_showusers")
-     * @Method("GET")
-     */
-    public function showusersAction(Offer $offer)
-    {
-        $deleteForm = $this->createDeleteForm($offer);
-
-        return $this->render('vistaUsuario/show.html.twig', array(
-            'offer' => $offer,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
 
     /**
      * Displays a form to edit an existing offer entity.
@@ -190,6 +160,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}/delete", name="offer_delete")
      * @Method({"GET", "DELETE"})
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, $id)
     {
