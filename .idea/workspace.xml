@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="224fbc82-9ee2-4825-b5cf-0ce524ce4ca2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/proyectAUC/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="symfony: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="symfony@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="symfony: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="offer: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1217532714">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="company" value="1" />
+          <entry key="css" value="2" />
+          <entry key="js" value="9" />
+          <entry key="php" value="7" />
+          <entry key="sql" value="1" />
+          <entry key="twig" value="53" />
+          <entry key="yml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="Database Element" value="1" />
+          <entry key="JavaScript" value="9" />
+          <entry key="PHP" value="7" />
+          <entry key="Scratch" value="1" />
+          <entry key="Twig" value="53" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cell" value="71" />
+          <entry key="css" value="37" />
+          <entry key="js" value="29" />
+          <entry key="php" value="7" />
+          <entry key="twig" value="932" />
+          <entry key="txt" value="157" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="37" />
+          <entry key="JavaScript" value="29" />
+          <entry key="PHP" value="7" />
+          <entry key="PLAIN_TEXT" value="157" />
+          <entry key="Scratch" value="71" />
+          <entry key="Twig" value="932" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/login/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#237#306#0#HTML" expanded="true" />
+                <element signature="e#376#488#0#HTML" expanded="true" />
+                <element signature="e#883#916#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/proyectAUC/web/js/formUser.js" />
+        <option value="$PROJECT_DIR$/proyectAUC/web/js/formCompany.js" />
+        <option value="$PROJECT_DIR$/proyectAUC/web/js/formOffer.js" />
+        <option value="$PROJECT_DIR$/proyectAUC/web/js/formDisability.js" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/edit.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/index.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/new.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/show.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/company/edit.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/company/new.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/company/show.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/show.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/user/edit.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/user/new.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/edit.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/company/index.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/user/index.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/index.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/base1.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/login.html.twig" />
+        <option value="$PROJECT_DIR$/proyectAUC/src/AppBundle/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/proyectAUC/web/css/login.css" />
+        <option value="$PROJECT_DIR$/proyectAUC/app/Resources/views/login/index.html.twig" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/composer" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/proyectAUC/vendor/psr/cache" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="disability" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="imagenes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AUC-Catarroja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AUC-Catarroja" type="462c0819:PsiDirectoryNode" />
+              <item name="proyectAUC" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="imagenes" type="462c0819:PsiDirectoryNode" />
+              <item name="Adaptadas" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\AUC-Catarroja\AUC-Catarroja\proyectAUC\app\Resources\views\login" />
+      <recent name="C:\xampp\htdocs\AUC-Catarroja\AUC-Catarroja\proyectAUC\app\Resources\views" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/index.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/show.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/proyectAUC/app/config/security.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/proyectAUC/src/AppBundle/Controller/OfferController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/proyectAUC/src/AppBundle/Form/OfferType.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="224fbc82-9ee2-4825-b5cf-0ce524ce4ca2" name="Default Changelist" comment="" />
+      <created>1551171891051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551171891051</updated>
+      <workItem from="1551171892524" duration="12038000" />
+      <workItem from="1551256997477" duration="8620000" />
+    </task>
+    <task id="LOCAL-00001" summary="Subir cambios en la barra de navegación">
+      <created>1551174812346</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551174812346</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Barra de navegación completa">
+      <created>1551175694442</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551175694442</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cambio tipo evento js">
+      <created>1551176350751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551176350751</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Subir cambios, todo el front funcional">
+      <created>1551182526877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551182526877</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Subir cambios, todo el front funcional">
+      <created>1551183366994</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551183366994</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Subir cambios, todo el front funcional">
+      <created>1551257294356</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551257294356</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Subir cambios login cambio de sitio">
+      <created>1551259491588</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551259491588</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Subir cambios login cambio de sitio">
+      <created>1551266669169</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551266669169</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20658000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Subir cambios en la barra de navegación" />
+    <MESSAGE value="Barra de navegación completa" />
+    <MESSAGE value="Cambio tipo evento js" />
+    <MESSAGE value="Subir cambios, todo el front funcional" />
+    <MESSAGE value="Subir cambios login cambio de sitio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subir cambios login cambio de sitio" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/proyectAUC/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9511" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/js/formDisability.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/js/formCompany.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/js/formUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/js/formOffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ed47b906-edca-466b-b759-966ed8e3e070/schema/symfony/table/company">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ed47b906-edca-466b-b759-966ed8e3e070/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/company/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="109" column="134" selection-start-line="109" selection-start-column="134" selection-end-line="109" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/company/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="112" column="52" lean-forward="true" selection-start-line="112" selection-start-column="52" selection-end-line="112" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/company/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="111" column="119" selection-start-line="111" selection-start-column="119" selection-end-line="111" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/user/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1836">
+          <caret line="12" column="61" lean-forward="true" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/user/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="134" column="97" selection-start-line="134" selection-start-column="97" selection-end-line="134" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/user/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2312">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/user/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="166" selection-start-line="36" selection-start-column="166" selection-end-line="36" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/company/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/js/dataTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/css/dataTable.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/offer/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/src/AppBundle/AppBundle.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/src/AppBundle/Controller/DisabilityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#40#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/src/AppBundle/Controller/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/src/AppBundle/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/base1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/disability/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/web/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectAUC/app/Resources/views/login/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#237#306#0#HTML" expanded="true" />
+            <element signature="e#376#488#0#HTML" expanded="true" />
+            <element signature="e#883#916#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
