@@ -23,7 +23,7 @@ class OfferController extends Controller
      *
      * @Route("/", name="offer_index")
      * @Method("GET")
-     * @Security("is_granted('ROLE_ADMIN')")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function indexAction()
     {
@@ -32,24 +32,6 @@ class OfferController extends Controller
         $offers = $em->getRepository('AppBundle:Offer')->findAll();
 
         return $this->render('offer/index.html.twig', array(
-            'offers' => $offers,
-        ));
-    }
-
-     /**
-     * Lists all offer entities.
-     *
-     * @Route("/usuario/", name="offer_indexusers")
-     * @Method("GET")
-     * @Security("is_granted('ROLE_USER')")
-     */
-    public function indexusersAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $offers = $em->getRepository('AppBundle:Offer')->findAll();
-
-        return $this->render('vistaUsuario/index.html.twig', array(
             'offers' => $offers,
         ));
     }
@@ -110,7 +92,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}", name="offer_show")
      * @Method("GET")
-     * @Security("is_granted('ROLE_ADMIN')")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function showAction(Offer $offer)
     {
@@ -121,24 +103,6 @@ class OfferController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
-    /**
-     * Finds and displays a offer entity.
-     *
-     * @Route("/usuario/{id}", name="offer_showusers")
-     * @Method("GET")
-     * @Security("is_granted('ROLE_USER')")
-     */
-    public function showusersAction(Offer $offer)
-    {
-        $deleteForm = $this->createDeleteForm($offer);
-
-        return $this->render('vistaUsuario/show.html.twig', array(
-            'offer' => $offer,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
 
     /**
      * Displays a form to edit an existing offer entity.

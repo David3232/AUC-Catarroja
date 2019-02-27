@@ -10,11 +10,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * User controller.
  *
  * @Route("user")
+ * @Security("is_granted('ROLE_ADMIN')")
  */
 class UserController extends Controller
 {
@@ -95,16 +97,20 @@ class UserController extends Controller
      * @Route("/{id}/edit", name="user_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, User $user)
+    public function editAction(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder)
     {
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('AppBundle\Form\UserType', $user);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
         }
 
         return $this->render('user/edit.html.twig', array(

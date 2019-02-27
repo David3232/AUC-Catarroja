@@ -20,8 +20,7 @@ class UserType extends AbstractType
                 ->add('surname1')
                 ->add('surname2')
                 ->add('plainPassword',PasswordType::class, array(
-                    'label' => 'Contraseña',
-                    'required' => false))
+                    'label' => 'Contraseña'))
                 ->add('address')
                 ->add('zipCode')
                 ->add('telephone')

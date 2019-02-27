@@ -36,17 +36,21 @@
                     <td>
                         <a href="{{ path('offer_show', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/show.png') }}" class="actions pl-2 pr-2" alt="Show" title="Mostar"></a>
                         <!--<a href="{#{ path('offer_edit', { 'id': offer.id }) }}"><img src="{{ asset('imagenes/edit.png') }#}" class="actions pl-2 pr-2" alt="Edit" title="Editar"></a>-->
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('offer_delete', {'id': offer.id}) }}"><img src="{{ asset('imagenes/delete.png') }}" class="actions" alt="Borrar" title="Borrar"></a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+        {% if is_granted('ROLE_ADMIN') %}
         <div class="row">
             <div class="col-md-4 float-left">
                 <a class="shadow btn btn-primary border-dark" href="{{ path('offer_new') }}">Crear nueva oferta</a>
             </div>
         </div>
+        {% endif %}
     </div>
 {% endblock %}
 
