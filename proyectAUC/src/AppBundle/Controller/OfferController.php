@@ -104,7 +104,7 @@ class OfferController extends Controller
      *
      * @Route("/{id}/edit", name="offer_edit")
      * @Method({"GET", "POST"})
-     */
+
     public function editAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
@@ -117,15 +117,12 @@ class OfferController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
-
             //PDF
             // $file stores the uploaded PDF file
-            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file
             $file = $offer->getPdf();
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
-
-            dump($offer->getPdf());
 
             // Move the file to the directory where pdfs are stored
             try {
@@ -151,7 +148,7 @@ class OfferController extends Controller
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
-    }
+    }*/
 
     /**
      * Deletes a offer entity.
