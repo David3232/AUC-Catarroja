@@ -37,7 +37,7 @@ class OfferController extends Controller
      /**
      * Lists all offer entities.
      *
-     * @Route("/usuario/", name="offer_indexusers")
+     * @Route("usuario/", name="offer_indexusers")
      * @Method("GET")
      */
     public function indexusersAction()
@@ -120,7 +120,7 @@ class OfferController extends Controller
     /**
      * Finds and displays a offer entity.
      *
-     * @Route("/usuario/{id}", name="offer_showusers")
+     * @Route("usuario/{id}", name="offer_showusers")
      * @Method("GET")
      */
     public function showusersAction(Offer $offer)
