@@ -14,12 +14,14 @@
                     <!-- Fila 1 -->
                     <div class="row">
                         <!-- Columna 1/4 -->
+                        {% if is_granted('ROLE_ADMIN') %}
                         <div class="form-group col-md-1">
                             <label class="font-weight-bold">Id</label>
                             <div class="border shadow border-secondary rounded pl-2 p-2">
                                 {{ offer.id }}
                             </div>
                         </div>
+                        {% endif %}
 
                         <!-- Columna 2/4 -->
                         <div class="form-group col-md-6">

@@ -91,7 +91,7 @@ class DisabilityController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('disability_edit', array('id' => $disability->getId()));
+            return $this->redirectToRoute('disability_show', array('id' => $disability->getId()));
         }
 
         return $this->render('disability/edit.html.twig', array(
